@@ -1,0 +1,130 @@
+#install git
+sudo apt update
+sudo apt install git
+sudo apt install tig
+sudo apt install git-cola
+sudo apt install meld
+sudo apt install colordiff
+
+//For example
+git diff
+git difftool
+tig 
+cola, git-cola, git cola
+
+
+=================================================================
+git配置文件
+
+    /etc/gitconfig 对所有用户有效
+    ~/.gitconfig 对当前用户有效
+    {工作目录}/.git/config 仅对当前项目有效
+
+    $HOME 或者 C:Documents and Settings$USER 下的.gitconfig
+    git安装目录下的/etc/gitconfig
+    同上
+
+=================================================================
+$git config --global core.excludesfile ~/.gitignore
+//.gitignore
+*.swp
+
+
+=================================================================
+$git config --global user.name "alex"
+$git config --global user.email "alex.yuan@emerson.com"
+$git config --global core.editor emacs
+$git config --global core.editor vim
+$git config --global core.excludesfile ~/.gitignore
+$git config --global color.ui auto
+$git config --global alias.glog "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+$git config --list
+
+=================================================================
+$git config --global diff.tool meld  
+$git config --global difftool.prompt false  
+$git config --global alias.d difftool  
+$git config --global merge.tool meld
+$git d (hashid)
+
+
+=================================================================
+$git config --global diff.tool vimdiff  
+$git config --global difftool.prompt false  
+$git config --global alias.d difftool  
+$git config --global merge.tool vimdiff
+$git d (hashid)
+
+=================================================================
+$git config --global diff.tool diffmerge  
+$git config --global difftool.prompt false  
+$git config --global alias.d difftool  
+$git config --global merge.tool diffmerge
+$git d (hashid)
+只需要配置如下：
+	git  config  --global   diff.tool   vimdiff
+使用的时候只需要使用git  difftool 替换 git  diff就可以了。
+这时你会发现，每比较一个文件，都会提示你是否Launch  vimdiff ?， 我们把这个询问去掉：
+	git  config  --global  difftool.prompt  false
+为了输入方便，difftool输入实在太长， 我们用别名 d 来替代 difftool  ：
+	git  config  --global   alias.d  difftool
+这样以后只需要输入git  d即可， 同时原来的git  diff功能不受影响，可以照常使用！
+然后使用 git d 打开对比代码，然后用 :wq 继续比较下一个文件。
+配置是否成功可以查看当前登录用户的文件夹下的.gitconfig文件是否有如下配置:
+	[diff]
+		tool = vimdiff
+	[difftool]
+		prompt = false
+	[alias]
+		d = difftool
+同理， 其他文件比较工具也可以配置。
+
+
+
+=================================================================
+功能强大的git提供了diff功能，来比较不同的branch、commit等等。但是默认的git diff是在Terminal里面显示的，查看起来比较费劲。git自己也深知这一点，所以提供对第三方diff工具的支持。
+
+这里就抛砖引玉，讲一下如何利用git difftool和diffmerge来多代码比较。
+
+首先diffmerge是一款跨平台的免费软件，支持Windows, Mac OS, Ubuntu以及Fedora。>>点此下载diffmerge<<
+
+注意，因为git需要在Terminal下调用diffmerge，所以下载的时候要下载Installer版的。这样在安装的时候就自动将diffmerge写入环境变量，就可以在命令行下调用diffmerge了。否则在后面使用的时候会出现如下错误：
+
+    /usr/libexec/git-core/git-mergetool--lib: line 327: diffmerge: command not found
+
+下载并安装好diffmerge之后，就需要来配置git了。在Terminal下执行：
+
+    git config --global diff.tool diffmerge
+    git config --global difftool.diffmerge.cmd 'diffmerge "$LOCAL" "$REMOTE"'
+    git config --global merge.tool diffmerge
+    git config --global mergetool.diffmerge.cmd 'diffmerge --merge --result="$MERGED" "$LOCAL" "$(if test -f "$BASE"; then echo "$BASE"; else echo "$LOCAL"; fi)" "$REMOTE"'
+    git config --global mergetool.diffmerge.trustExitCode true
+
+这些命令的作用其实就是修改用户目录下的.gitconfig文件。比如这是的我的~/.gitconfig文件：
+
+
+.gitconfig git diff
+
+好了，接下来就可以使用git difftool命令来比较代码了：
+
+    # 将某个文件的当前版本和代码库中的版本做比较
+    git difftool index.php
+     
+    # 将某个文件的当前版本，和某个分支中这个文件的版本做比较
+    git difftool some-branch script.js
+     
+    # 将两个tag中的某个文件做比较
+    git difftool tag1..tag2 style.css
+     
+    # 比较两个分支
+    git difftool branch1 branch2
+
+成功运行的话就会出现diffmerge的窗口。这使查看比较大量的代码更新变得方便直观。
+
+
+DiffMerge & Git
+
+另外还可以用git mergetool来解决merge时的冲突。
+
+当然git不只支持diffmerge，还可以凭你自己的喜好选用其他的第三方软件，包括但不限于：
+kdiff3, kompare, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, diffuse, opendiff, p4merge, araxis等等。

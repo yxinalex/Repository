@@ -1,0 +1,748 @@
+" ##################################################################################
+" 				Alex - Vim
+" ##################################################################################
+" 			Vim Install & Pre-Install
+" ##################################################################################
+" $sudo apt install vim
+" $sudo apt install ctags
+" $sudo apt-get install silversearcher-ag
+" $vim --version | grep "clipboard"     "Check if vim support system clipboard
+" $sudo apt-get install vim-gnome       "Install this GUI vim to support system clipboard
+" $git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
+" Copy Vim Config to ~/.vimrc
+" $vim +PluginInstall +qall, or :PluginInstall
+
+" Use Vim settings, rather then Vi settings. This setting must be as early as 
+" possible, as it has side effects. 
+set nocompatible        "Be Improved
+filetype off            "Required 
+
+
+" ##################################################################################
+" 				Vundle Install 
+" ##################################################################################
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugin/Bundle ##### Install Start #####
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle  
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'  
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'bling/vim-airline'
+Plugin 'majutsushi/tagbar'
+Plugin 'rking/ag.vim'
+Plugin 'tomasr/molokai'
+Plugin 'fcevado/molokai_dark'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Yggdroot/LeaderF'
+
+" Plugin 'Valloric/YouCompleteMe'
+
+" Plugin 'VundleVim/taglist.vim'	
+" Bundle 'kien/ctrlp.vim'
+" Bundle 'croaky/vim-colors-github'
+
+
+call vundle#end()    
+filetype plugin indent on     " required!  
+" Plugin/Bundle ##### Install End ######
+
+
+" Vundle Command
+" $vim +PluginInstall +qall
+" :PluginList
+" :PluginInstall
+" :PluginSearch
+" :PluginClean
+" :BundleList
+" :BundleInstall
+" :BundleInstall!
+" :BundleSearch
+" :BundleSearch!
+" :BundleClean
+" :BundleClean!
+" :h vundle Get more details and wiki and FAQ
+
+
+" ##################################################################################
+" 				NERDTree
+" ##################################################################################
+" let NERDTreeDirArrows=1
+" let NERDTreeShowLineNumbers=1
+let NERDTreeMinimalUI=1		" Don't show help menu
+let NERDTreeAutoCenter=1
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=0
+let NERDTreeWinSize=30
+let NERDTreeIgnore=[
+    \'\.doc','\.docx','\.xls','\.xlsx','\.pdf',
+    \'\.vsd','\.zip','\.rar',
+    \'\.jpg','\.graphml']
+
+
+" ##################################################################################
+" 				vim-nerdtree-tabs
+" ##################################################################################
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" ##################################################################################
+" 				nerdtree-git-plugin
+" ##################################################################################
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+
+" ##################################################################################
+" 				airline
+" ##################################################################################
+set laststatus=2
+
+
+" ##################################################################################
+" 				tagbar
+" ##################################################################################
+let g:tagbar_ctags_bin='/usr/bin/ctags'  
+let g:tagbar_width=30  
+let g:tagbar_right=0
+autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+
+
+" ##################################################################################
+" 			silversearcher - Ag
+" ##################################################################################
+" Speed Compare: ag>ack>grep
+" :h Ag
+" :AgBuffer[!] [options] {pattern}
+" :AgAdd [options] {pattern} [{directory}] 
+" :AgFromSearch [{directory}] 
+" :LAg [options] {pattern} [{directory}] 
+" :LAgBuffer [options] {pattern} 
+" :LAgAdd [options] {pattern} [{directory}] 
+" :AgFile [options] {pattern} [{directory}]
+
+" Ag --list-file-types              " List Ag support file types
+" Ag --cc -sw {pattern}             " --c means .c, .h, .xs
+" Ag -asw {pattern}                 " -a means all files, -s means Match case-sensitively, -w means match whole words
+" Ag --cc -iw {pattern}             
+" Ag -aiw {pattern}                 " -a means all files, -i means ignore-case Match ase-insensitively, -w means match whole words
+" Ag --cc --count -sw {pattern}     " Only print the number of matches in each file
+"
+
+" e    to open file and close the quickfix window
+" o    to open (same as enter)
+" go   to preview file (open but maintain focus on ag.vim results)
+" t    to open in new tab
+" T    to open in new tab silently
+" h    to open in horizontal split
+" H    to open in horizontal split silently
+" v    to open in vertical split
+" gv   to open in vertical split silently
+" q    to close the quickfix window
+"
+" let g:ag_prg="<custom-ag-path-goes-here> --vimgrep" 	"  specify a custom ag name and path
+let g:ag_working_path_mode='r'		" configure ag.vim to always start searching from your project root instead of the cwd
+
+
+" ##################################################################################
+" 				taglist
+" ##################################################################################
+" let Tlist_File_Fold_Auto_Close=1
+" let Tlist_WinHeight=30
+" let Tlist_WinWidth=30
+" let Tlist_Use_Horiz_Window=1
+" let Tlist_Sort_Type=name
+
+" let Tlist_Show_One_File=1
+" let Tlist_WinWidth=30
+" let Tlist_Exit_OnlyWindow=1
+" let Tlist_Use_Right_Window=1
+" let Tlist_Use_SingleClick=1
+" let Tlist_Auto_Open=1
+
+" <CR>        jump tag's definition 
+" o           open tag in new window
+" <Space>     show tag prototype
+" u           Update taglist 
+" s	      change sort between time and name
+" x           increase or decease taglist the window size
+" +           open zedie, ==zo
+" -           close zedie, ==zc
+" *           open all zedie, ==zR
+" =           close all zedie, ==zM
+" [[          jump the previous file
+" ]]          jump the next file
+" :TlistOpen
+" :Tlist
+" :TlistClose
+" :TlistToggle
+
+
+" ##################################################################################
+" 				LeaderF
+" ##################################################################################
+" vim7.3 or higher. Only support vim7.4.330 or higher after v1.01. 
+" :LeaderfFile or :LeaderfFile [directory] or ,f	" Launch LeaderF to search files.
+" :LeaderfBuffer or ,b					" Launch LeaderF to search buffers.
+" :LeaderfMru						" Launch LeaderF to search Mru.
+" :LeaderfMruCwd					" Launch LeaderF to search Mru in current working directory.
+" :LeaderfTag						" Launch LeaderF to navigate tags.
+" :LeaderfBufTag					" Launch LeaderF to navigate tags in current buffer.
+" :LeaderfBufTagAll					" Launch LeaderF to navigate tags in all opening buffers.
+
+" Once LeaderF is launched:
+" <C-C> : quit from LeaderF.
+" <C-R> : switch between fuzzy search mode and regex mode.
+" <C-F> : switch between full path search mode and name only search mode.
+" <ESC> : switch to normal mode.
+" <C-V>, <S-Insert> : paste from clipboard.
+" <C-U> : clear the prompt.
+" <C-J>, <Down>, <C-K>, <Up> : navigate the result list.
+" <2-LeftMouse> or <CR> : open the file under cursor or selected(when multiple files are selected).
+" <C-X> : open in horizontal split window.
+" <C-]> : open in vertical split window.
+" <C-T> : open in new tabpage.
+" <F5> : refresh the cache.
+" <C-LeftMouse> or <C-S> : select multiple files.
+" <S-LeftMouse> : select consecutive multiple files.
+" <C-A> : select all files.
+" <C-L> : clear all selections.
+" <BS> : delete the preceding character in the prompt.
+" <Del> : delete the current character in the prompt.
+" <Home>: move the cursor to the begin of the prompt.
+" <End> : move the cursor to the end of the prompt.
+" <Left>: move the cursor one character to the left.
+" <Right> : move the cursor one character to the right. 
+
+
+" ##################################################################################
+" 				MiniBufExplorer
+" ##################################################################################
+" Download: http://www.vim.org/scripts/script.php?script_id=159
+" Copy minibufexpl.vim to $HOME/.vim/plugin
+" 
+" let g:miniBufExplMapCTabSwitchBufs = 1	" Enable <Tab>, <S-Tab>
+" let g:miniBufExplMapWindowNavVim = 1		" <C-h,j,k,l> switch buffer?
+" let g:miniBufExplMapWindowNavArrows = 1	" <C-up,down,left,right> switch buffer?
+" let g:miniBufExplModSelTarget = 1
+" let g:bufExplorerMaxHeight=30
+" let g:miniBufExplorerMoreThanOne=0
+
+
+" <Enter>
+" d       Delete curson's buffer 
+" :bn   Open the next buffer
+" :bp   Open the previous buffer
+" :b"num" 
+
+" :MiniBufExplorer    " Open and/or goto Explorer
+" :CMiniBufExplorer   " Close the Explorer if it's open
+" :UMiniBufExplorer   " Update Explorer without naviting
+" :TMiniBufExplorer   " Toggle the Explorer window open and closed
+
+
+" ##################################################################################
+" 				Vim Key Map
+" ##################################################################################
+" commend   normal   Visual   OperatorPending     InsertOnly  CommandLine
+" :map      y        y        y
+" :nmap     y
+" :vmap              y
+" :omap                       y  
+" :map!                                           y           y
+" :imap                                           y
+" :cmap                                                       y
+" 
+" :h key-notation	" Meaning in Keyboard 
+"
+" For Example: 
+" <C-Esc>=Ctrl+Esc, <S-F1>=Shift+F1, <A-S>=Alt+S, <CR>=Enter, <Leader>=\, <BS>=BackSpace
+" Bash: <C-s>=LockVim, <C-q>=QuitLockVim 	" !stty -ixon	" Disable Bash: <C-s>, <C-q>
+
+let mapleader = '\'
+
+
+"""""""""""""""""""""""""""""""""""""""
+"	 NERDTree Key Map
+"""""""""""""""""""""""""""""""""""""""
+nmap <F2> :NERDTreeToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 tagbar Key Map
+"""""""""""""""""""""""""""""""""""""""
+nmap <F10> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 ctags Key Map
+"""""""""""""""""""""""""""""""""""""""
+" nmap <F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
+nmap <silent><F5> :!ctags -R<CR><CR>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 taglist Key Map
+"""""""""""""""""""""""""""""""""""""""
+" nmap <F11> :TlistToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 silversearcher - Ag
+"""""""""""""""""""""""""""""""""""""""
+nmap <Leader>g :Ag --cc --cpp -sw 
+
+"""""""""""""""""""""""""""""""""""""""
+"	 LeaderF Key Map
+"""""""""""""""""""""""""""""""""""""""
+nmap <Leader>ff :LeaderfFile<cr>
+nmap <Leader>fb :LeaderfBuffer<cr>
+nmap <Leader>fr :LeaderfMruCwd<cr>
+nmap <Leader>far :LeaderfMru<cr>
+nmap <Leader>ft :LeaderfBufTag<cr>
+nmap <Leader>fat :LeaderfBufTagAll<cr>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 Vim Key Map
+"""""""""""""""""""""""""""""""""""""""
+nmap <S-h> <C-w>h
+nmap <S-j> <C-w>j
+nmap <S-k> <C-w>k
+nmap <S-l> <C-w>l
+
+" nmap <S-b> :buffers<CR>
+nmap <S-Home> :bf<CR>
+nmap <S-End> :bl<CR>
+nmap <S-Pageup> :bn<CR>
+nmap <S-Pagedown> :bp<CR>
+" nmap <S-d> :bdelete<CR>
+
+nmap <S-t> :tabnew<CR>
+nmap <S-c> :tabc<CR>
+nmap <C-Home> :tabfirst<CR>
+nmap <C-End> :tablast<CR>
+nmap <C-Pageup> :tabn<CR>
+nmap <C-Pagedown> :tabp<CR>
+
+nmap <C-z> u
+nmap <silent><Leader>s :w!<CR>
+nmap <silent><Leader>sa :wa!<CR>
+
+" nmap <C-x> dd 		
+" nmap <C-c> yy 		
+" nmap <C-v> p 		
+" nmap <C-a> ggvG
+"
+" vmap <C-x> d
+" vmap <C-c> y
+" vmap <C-v> p
+" vmap <C-a> <Esc>ggvG
+"
+" imap <C-x> d
+" imap <C-c> y
+" imap <C-v> p
+" imap <C-a> <Esc>ggvG
+
+" Required vim system clipboard support below
+" nmap <C-x> "+dd 		
+" nmap <C-c> "+yy 		
+" nmap <C-v> "+p 		
+nmap <C-a> ggvG
+
+vmap <C-x> "+d
+vmap <C-c> "+y
+vmap <C-v> "+p
+vmap <C-a> <Esc>ggvG
+
+imap <C-x> "+d
+imap <C-c> "+y
+imap <C-v> <Esc>"+pi
+imap <C-a> <Esc>ggvG
+
+vmap <silent><Leader>s <Esc>:w!<CR>v
+imap <silent><Leader>s <Esc>:w!<CR>i
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       Hot Key
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" i, I, a, A, o, O, c, C, r, R, s, S
+" dd, yy, cc
+" 3dd, 3yy, 3cc
+" p, P
+" "0p, "ap, "Ap, "*p, "+p
+" "0dd, "add, "Add, "*dd, "+dd
+" "0yy, "ayy, "Ayy, "*yy, "+yy
+" "0cc, "acc, "Acc, "*cc, "+cc
+" gg, G, %, 
+" f, F, n, N, t
+"
+" diw, di{, di}, di(, di), di<, di>, di', di
+" daw, da{, da}, da(, da), da<, da>, da', da
+" d3w, d3e, d3b, dh, dj, dk, dl, da, ds, dp, d$, d^, d0, dgg, dG, df'*'
+"
+" yiw, yi{, di}, yi(, yi), yi<, yi>, yi', yi
+" yaw, ya{, da}, ya(, ya), ya<, ya>, ya', ya
+" y3w, y3e, y3b, yh, yj, yk, yl, ya, ys, yp, y$, y^, y0, ygg, yG, yf'*'
+"
+" ciw, ci{, ci}, ci(, ci), ci<, ci>, ci', ci
+" caw, ca{, ca}, ca(, ca), ca<, ca>, ca', ca
+" c3w, c3e, c3b, ch, cj, ck, cl, ca, cs, cp, c$, c^, c0, cgg, cG, cf'*'
+"
+" J
+" .
+" u, U, <C-r>, :earlier 2m
+" g;, <C-i>, <C-o>
+" <C-]>, <C-st>
+
+" <<, >> 
+" gUw, gUb, gUe, gU$, gU^
+" guw, gub, gue, gu$, gu^
+
+" Auto Complete 
+" <c-n>-	Normal Key
+" <c-x><c-n>-	Current Buffer
+" <c-x><c-i>-	Include File Key
+" <c-x><c-]>-	Tag File Key
+" <c-x><c-k>-	Dictory Search
+" <c-x><c-l>-	Complete the whole line
+" <c-x><c-f>-	File name complete
+" <c-x><c-o>-	Full Function complete
+" <c-n>- Next
+" <c-p>- Previous
+" <c-y>- Enter
+" <c-e>- Exit Complete List
+
+
+" ##################################################################################
+"			Vim Command
+" ##################################################################################
+set number
+set numberwidth=4
+set ruler         " show the cursor position all the time 
+" set showcmd       " display incomplete commands 
+set laststatus=2  " Always display the status line 
+set confirm       " Need confrimation while exit 
+set cursorline
+" set cursorcolumn
+" set autowrite     " Auto Save
+" set autowriteall  " Auto Save All
+" set completeopt=preview,menu
+" set clipboard+=unnamed      " Share clipboard 
+" set history=1024 
+" set iskeyword+=_,$,@,%,#,-  " don't wrapline if keyword has these char/sign
+" set whichwrap=b,s,<,>,[,] 
+set hidden
+
+set showmatch
+" set matchtime=2
+
+" set foldenable 
+" set foldmethod=syntax
+" set foldcolumn=0
+" setlocal foldlevel=1
+" set foldclose=all 
+
+" set filetype=xhtml<CR>
+" set filetype=css<CR>
+" set filetype=javascript<CR>
+" set filetype=php<CR>
+
+" set fileformats=unix,dos,mac
+" set fileformat=dos<CR>
+" set fileformat=unix<CR>
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mouse Feature
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=a 
+" set mouse=nv
+" n  normal mode
+" v  visual mode
+" i insert mode  
+" c command mode
+" h in help fiel for above mode
+" a all of mode  
+" r skip |lit-enter| prompt
+" A auto select  
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Softtabs, 4 spaces 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+set autoindent
+"set nowrap 
+set wrapscan
+" set list
+" set nolist
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open & Quit & Save
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $vim -R       "Read-Only
+" $vim -b       "Binary
+" $vim -M       "Forcefully Read-Only
+" $vim -r       "recover *.swp  , ==:recover
+"
+" :w
+" :w!
+" :q
+" :q!
+" :e
+" :e!
+" :wq      " ==ZZ,  ==x
+" :wq!
+" :wa
+" :qa
+" :wqa!
+" :wqall!
+
+" :line_number      "Jump line-number
+" :3wfile
+" :3,5w file
+" :1,.w file
+" :.,$w file
+" :.,.+5w file
+" :1,$w file
+"
+" :r                :read the current file in this current line
+" :r file
+" :f(ile) new.c     "Re-name file but not save
+" :sav(eas) new.c   "save as
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Session
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :mksession ~/.mysession.vim
+" :mksession! ~/.mysession.vim
+" $vim -S ~/.mysession.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buffers & Tab & Window
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -u   Out of buffer list
+" -%   The current buffer
+" -#   Toggle buffer
+" -a   Actived buffer, loaded and display
+" -h   Hidden buffer, loaded but don't display
+" -=   Read-Only buffer
+" --   Can't modify buffer, 'modifiable'==0
+" -+   Modified Buffer
+"
+" :ls
+" :buffers
+" :bdelete
+"
+" :split
+" :vsplit
+" :sp
+" :vs
+" :new
+" :quite
+" :close
+" :only
+"
+" :resize +5
+" :vertical resize +5
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Register
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $vim --version | grep "clipboard"     "Check if vim support system clipboard
+" $sudo apt-get install vim-gnome       "Install this GUI vim to support system clipboard
+"
+" :reg
+" "*
+" "0 - 9    "numbered register
+" "a - z    "named register
+" "A - Z    "named register
+" "-        "small delete register
+" ""        "unnamed register
+" "*        "system register
+" "~        "system register
+" "+        "system register
+" "
+" 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mark
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :marks
+" :delmarks a
+" :delm a
+" :delm!
+" 'a     "Jump mark-a
+" "      'Jump the last
+"
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set incsearch     " do incremental searching 
+set ic            " set ignorecase
+" set noic        " set noignorecase
+set hlsearch
+" set nohlsearch
+" :nohl           " :nohlsearch
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Swap/Replace - For exmple
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :s/str1/str2/        "replace the first str1 in current line, no 'g' means replace only one str1
+" :s/str1/str2/g        "fand str1 in current line, use str2 to replace all of str1 in the current line, 'g' means replace all of str1
+"
+" :%s/str1/str2/g       "find str1 in current file and use str2 to replace all of str1 in the current file
+" :%s/str1/str2/gc      "find str1 in current file and use str2 to replace all of str1 in the current file, but need confirm
+" :%s/\<str1\>/str2/gc  "find the whole word str1 in current file and use str2 to replace str1 in the current file, but need confirm
+" :%s/\<str1\>/str2/gci "find the whole word str1 in current file and use str2 to replace str1 in the current file, insensitive
+" 
+" :n, m, %s/str1/str2/g       "from line-n to line-m, find str1 in current file and use str2 to replace all of str1 in the current file
+" :1, $, %s/str1/str2/g       "from line-1 to line-end, find str1 in current file and use str2 to replace all of str1 in the current file
+" :., $, %s/str1/str2/g       "from line-current to line-end, find str1 in current file and use str2 to replace all of str1 in the current file
+"
+" Special Char - \., \*, \\, \[, \^, \$, \<, \>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Delete & Copy & Past & Comments
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :n, m, co new_line
+" :1, $, co $
+" :n, m, m new_line
+"
+" :m,n s/^/#/g
+" :m,n s/^#//g
+"
+" :m,n s/^/\/\//g       "Add comments
+" :m,n s/^\/\///g       "Remove comments
+" :1,$ s/^/\/\//g       "Add comments
+" :1,$ s/^\/\///g       "Remove comments
+" :%s/^/\/\//g          "Add comments to all of file
+
+" Add comments(V mode, select line, :, normal i//, <CR>)
+" Remove comments(<C-v>, select //, delte //)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CTags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :set tags=./tags      "Set tags file in current working path
+" :!ctags -R
+" :!ctags -R *
+" :!ctags -R --fields=+iaS --extra=+q *
+"   –fields=[+|-]flags      " Specify tags extension fields
+"       i: Inheritance information
+"       a：Access (or export) of class members
+"       S：Signature of routine(e.g. prototype or parameter list
+"   –extra=[+|-]flags       " Specify tags extension fields
+"       q：Include class member information (e.g. c++,java,Eiffel)
+"
+" "Jump the System Function Definition
+" :!ctags --fields=+iaS --extra=+q -R -f ~/.vim/systags /usr/include /usr/local/include
+" set tags+=~/.vim/systags
+
+" map <F4> :!ctags -I __THROW -I __attribute_pure__ -I __nonnull -I __attribute__ --file-scope=yes --languages=c,c++ --links=yes --c-kinds=+c+d+e+f+g+l+m+n+p+s+t+u+v+x --c++-kinds=+c+d+e+f+g+l+m+n+p+s+t+u+v+x --fields=+iaS --extra=+q -R .<CR><CR> :TlistUpdate<CR>
+" imap <F4> <ESC>:!ctags -I __THROW -I __attribute_pure__ -I __nonnull -I __attribute__ --file-scope=yes --languages=c,c++ --links=yes --c-kinds=+c+d+e+f+g+l+m+n+p+s+t+u+v+x --c++-kinds=+c+d+e+f+g+l+m+n+p+s+t+u+v+x --fields=+iaS --extra=+q -R .<CR><CR> :TlistUpdate<CR>
+" set tags=tags
+" set tags+=./tags
+" set tags+=~/.vim/tags/include_tags
+" set tags+=~/.vim/tags/local_tags
+" set tags+=~/.vim/tags/linux_tags
+" set tags+=~/.vim/tags/stl_tags
+" set tags+=~/.vim/tags/boost_tags
+" set tags+=~/.vim/tags/airnas_tags
+
+" ##################################################################################
+" 					Color scheme
+" ##################################################################################
+" :colorscheme molokai 
+" set background=dark
+set t_Co=256 
+
+syntax enable
+syntax on
+
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+" colorscheme molokai
+colorscheme molokai_dark
+" colorscheme solarized
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       Customized Color Hightlight Start
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" molokai.vim default doesn't highlight function
+" hilight function name
+" autocmd BufNewFile,BufRead * :syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
+" autocmd BufNewFile,BufRead * :syntax match cfunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
+"
+autocmd BufNewFile,BufRead * :syntax match Alex_CArray       "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s\{0,3\}\["me=e-1
+autocmd BufNewFile,BufRead * :syntax match Alex_CFunction    "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s\{0,3\}("me=e-1
+autocmd BufNewFile,BufRead * :syntax match Alex_CObeject     "\<[a-zA-Z_][a-zA-Z_0-9]*\>\."me=e-1
+autocmd BufNewFile,BufRead * :syntax match Alex_CObejectP    "\<[a-zA-Z_][a-zA-Z_0-9]*\>\->"me=e-2
+" Standard Regular expression"\+|-|\*|\/|&|\||~|=|,|\.|\?|<|>|'|%|@|!|#"
+" Vim Regular for CLang Syntax"+\{1,2\}[^+]\|-\{1,2\}[^-]\|*\{1,2\}[^*]\|/\{1,2\}[^/]\|%\{1,2\}[^%]\|=\{1,2\}[^=]\|,\{1,2\}[^,]\|:\{1,2\}[^:]\|'\{1,2\}[^']\|?\{1,2\}[^?]\|>\{1,2\}[^>]\|<\{1,2\}[^<]\|&\{1,2\}[^&]\||\{1,2\}[^|]\|\~\{1,2\}[^~]\|!\{1,2\}[^!]"me=e-1
+autocmd BufNewFile,BufRead * :syntax match Alex_COperator    "+\{1,2\}[^+]\|-\{1,2\}[^-]\|*\{1,2\}[^*]\|%\{1,2\}[^%]\|=\{1,2\}[^=]\|,\{1,2\}[^,]\|:\{1,2\}[^:]\|'\{1,2\}[^']\|?\{1,2\}[^?]\|>\{1,2\}[^>]\|<\{1,2\}[^<]\|&\{1,2\}[^&]\||\{1,2\}[^|]\|\~\{1,2\}[^~]\|!\{1,2\}[^!]"me=e-1
+autocmd BufNewFile,BufRead * :syntax match Alex_CMacro       "\<[A-Z_][A-Z_0-9]*\>"
+
+" 218=Pink, 214=chocolate2, 208=chocolate, 197=wine-red, 161=crimson, 154=Lime, 117=skyblue3, 81=skyblue, 45=skyblue2, 70=Geen, 
+hi Alex_CFunction    ctermfg=81
+hi Alex_CArray       ctermfg=214
+hi Alex_CObeject     ctermfg=214
+hi Alex_CObejectP    ctermfg=214
+hi Alex_COperator    ctermfg=161               cterm=bold		
+hi Alex_CMacro       ctermfg=222	
+
+hi Typedef 	     ctermfg=154               cterm=none
+hi Type 	     ctermfg=154               cterm=none
+hi PreCondit         ctermfg=197	       cterm=none
+
+" highlight NonText guibg=#060606
+" highlight Folded guibg=#0A0A0A guifg=#9090D0
+
+" hi Type         ctermfg=118 cterm=none
+" hi Structure    ctermfg=118 cterm=none
+" hi Macro        ctermfg=161 cterm=bold
+" hi PreCondit    ctermfg=161 cterm=bold
+
+" hi Keyword         ctermfg=255     ctermbg=210          cterm=bold
+" hi cfunctions       ctermfg=118
+" hi Type             ctermfg=181 cterm=none
+" hi Structure        ctermfg=118 cterm=none
+"
+" hi Macro            ctermfg=161 
+" hi PreCondit        ctermfg=161 cterm=bold
+" hi CursorLine       cterm=underline
+" highlight String    ctermfg=3
+" hi Function  ctermfg=255  ctermbg=210
+"
+" hi Operator  ctermfg=255  ctermbg=210
+" highlight PmenuSel  ctermfg=4   ctermbg=11
+" highlight Pmenu     ctermfg=11  ctermbg=4
+" highlight Conditional ctermfg=11
+" highlight Type      ctermfg=11
+" highlight LineNr    ctermfg=255  ctermbg=210
+" highlight LineNr    ctermfg=118  ctermbg=0
+" highlight Comment   ctermfg=230
+" highlight Special   ctermfg=99
+" highlight Structure ctermfg=9
+" highlight Statement ctermfg=5
+" hi Statement       ctermfg=161               cterm=bold
+" hi Tag             ctermfg=255
+" highlight Constant  ctermfg=1
+" highlight StorageClass ctermfg=81
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       Customized Color Hightlight End
+""""""""""""""""""""""""""""""""""""""""""""""""""""""

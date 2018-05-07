@@ -1,0 +1,8 @@
+$ df				//Check the disk filesystem information
+$ cat /proc/version		//Check the Linux version
+
+$ cd /boot
+$ ls -l
+
+$ sudo ll ./*21-generic		//display the install linux package 
+$ sudo rm ./*21-generic		//remove the install linux package 

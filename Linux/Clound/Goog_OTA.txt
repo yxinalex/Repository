@@ -1,0 +1,22 @@
+//Local OTA
+ssh://ota@192.168.0.105
+ssh ota@192.168.0.105
+rsync -azhe ssh --progress /home/alexyuan/Desktop/01-1616_ADR_T01.bin ota@192.168.0.105:/home/ota/Desktop/
+rsync -azhe ssh --progress /home/alexyuan/Desktop/1506OTA/01-6004970500.bin ota@192.168.0.105:/home/ota/Desktop/
+rsync -azhe ssh --progress /home/alexyuan/Desktop/1506OTA/01-6005120500.bin ota@192.168.0.105:/home/ota/Desktop/
+rsync -azhe ssh --progress /home/alexyuan/Desktop/1506OTA/01-6004970601.bin ota@192.168.0.105:/home/ota/Desktop/
+rsync -azhe ssh --progress /home/alexyuan/Desktop/1506OTA/01-6005120601.bin ota@192.168.0.105:/home/ota/Desktop/
+rsync -azhe ssh --progress /home/alexyuan/Desktop/1506OTA/01-6004970601-PRPrt01.bin ota@192.168.0.105:/home/ota/Desktop/
+rsync -azhe ssh --progress /home/alexyuan/Desktop/01-6004970601-NORTC-V1.0.bin ota@192.168.0.105:/home/ota/Desktop/
+rsync -azhe ssh --progress /home/alexyuan/Desktop/01-*.bin ota@192.168.0.105:/home/ota/Desktop/
+
+
+
+//Google
+ssh://alexyuan@35.201.169.182:1337
+ssh alexyuan@35.201.169.182 -p 1337
+ssh alexyuan@abclab.xyz -p 1337
+scp -P 1337 /home/alexyuan/Desktop/01-6004970501-SIF-V34.html alexyuan@35.201.169.182:/home/alexyuan/
+rsync -azhe "ssh -p 1337" --progress /home/alexyuan/Desktop/01-6004970501-SIF-V372.html alexyuan@35.201.169.182:/home/alexyuan/
+rsync -azhe "ssh -p 1337" --progress /home/alexyuan/Desktop/01-6004970501-SIF-V373.html alexyuan@35.201.169.182:/home/alexyuan/
+rsync -azhe "ssh -p 1337" --progress /home/alexyuan/Desktop/01-*.html alexyuan@35.201.169.182:/home/alexyuan/

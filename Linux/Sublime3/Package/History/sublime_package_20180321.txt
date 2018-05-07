@@ -1,0 +1,91 @@
+################################################################
+#2016.11.11
+#install Sublime Text 3
+
+#Ctrl+Shift+P --> Open Command Paletter
+-C Improved
+-SideBarEnhancements
+-Terminal
+-Compare Side-By-Side
+-HexViewer
+-Git
+-TortoiseSVN
+-CTags
+-Evernote
+-markdown preview
+
+-BracketHighlighter
+-Alignment: Ctrl+Alt+A
+-CoolFormat: Ctrl+Alt+Shift+Q, Ctrl+Alt+Shift+S
+-AllAutocomplete
+
+-EncodingHelper
+-ConvertToUTF8
+
+#Theme
+-ColorSublime   " This allows to effictive the color in Sublime
+
+-Predawn
+-Spacegray
+-Material Theme 
+–Soda
+-Boxy 
+-A File Icon
+
+-Monokai
+-Brogrammer
+  "theme": "Brogrammer.sublime-theme",
+  "color_scheme": "Packages/Theme - Brogrammer/brogrammer.tmTheme"
+  
+#Vintage(Vim) Mode
+Vintage包含大部分的基本命令：d (delete), y (copy), c (change), gu (lower case), gU (upper case), g~ (swap case), g? (rot13), < (unindent), and > (indent)。
+同时也包含许多移动操作，包括l, h, j, k, W, w, e, E, b, B, alt+w (move by sub-words), alt+W (move backwards by sub-words), $, ^, %, 0, G, gg, f, F, t, T, ^f, ^b, H, M, and L.
+文本对象的支持，包括词，引号，括号和标签。
+重复点号('.')也是支持的， 用于重复指定次数的命令和移动。寄存器也是支持的，有宏命令和书签。许多其它混合命令也支持，比如*, /, n, N, s, S 等等。
+哪些没有
+插入模式时常规的Sublime Text编辑模式，绑定的是Sublime Text常用的快捷键：并没有模仿vi 插入模式的键盘绑定。
+通过via命令面板执行的Ex commands没有实现，除了:w和:e。 
+
+
+################################
+Preference  ->  Setting User
+{
+	"font_face": "courier new",
+	//"font_face": "DejaVu Sans Mono",
+	//"font_face": "DejaVu Sans Mono Book",
+	//"font_face": "Consolas",
+	//"font_face": "microsoft yahei",
+	//"font_face": "microsoft yahei UI",
+	//"font_face": "Comic Sans MS",
+	//"font_face": "Cambria",
+	//"font_face": "Lucida Console",
+	//"font_face": "Estrangelo Edessa",
+	"font_size": 10,
+	"highlight_line": true,
+	"scroll_past_end": false,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true
+	//"theme": "Soda Dark.sublime-theme",
+	"theme": "Soda Dark 3.sublime-theme",
+	"word_wrap": true,
+    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS"],
+    "file_exclude_patterns": 
+    [
+    	"*.doc", "*.docx", "*.xls", "*.xlsx", "*.graphml",
+    	"*.exe", "*.dll", "*.obj","*.o", "*.a", "*.l",
+    	"*.zip", "*.rar", 
+    ],
+    //"ignored_packages": ["Vintage"],      //http://feliving.github.io/Sublime-Text-3-Documentation/vintage.html
+    //"vintage_ctrl_keys": true,
+    //"vintage_start_in_command_mode": true,
+}
+
+Preference  ->  Key Bindings -user 
+[
+    { "keys": ["ctrl+u"], "command": "upper_case" },
+    { "keys": ["ctrl+l"], "command": "lower_case" },
+    { "keys": ["ctrl+shift+t"], "command": "reindent" },
+    { "keys": ["ctrl+o"], "command": "jump_back" },
+    { "keys": ["ctrl+i"], "command": "jump_forward" },
+]
+

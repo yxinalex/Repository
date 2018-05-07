@@ -1,0 +1,34 @@
+:AirlineTheme dark
+
+badwolf 和dark差不多 
+base16 银，紫 
+behelit 浅蓝
+bubblegum 暗绿，粉。          (我的推荐)
+dark 亮黄
+durant 比dark暗些
+hybrid 灰
+hybridline 绿，棕
+jellybeans 黑灰
+kalisi 暗黄，绿
+kolor 蓝色的
+laederon 银，红
+light 浅亮蓝，红，银
+lucius 灰，银
+luna 蓝绿色
+molokai 棕，蓝，橙
+monochrome
+murmur 蓝，橙
+papercolor 银，浅蓝
+powerlineish 暗黄，橙
+raven 灰
+serene 黑
+silver 太银了，深绿
+simple 亮蓝
+sol 银，深蓝
+solarized 太多色了
+term 绿，蓝
+tomorrow 
+ubaryd
+understated
+wombat 亮黄
+zenburn 蓝，橙

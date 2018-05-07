@@ -1,0 +1,92 @@
+###############################################################
+#2017.5.09
+
+#Install git
+$ sudo apt install openssh-client
+$ ssh-keygen
+*Your identification has been saved in /home/alexyuan/.ssh/id_rsa.
+*Your public key has been saved in /home/alexyuan/.ssh/id_rsa.pub.
+*Add the public key into accounter of git server
+*Git Server IP: 192.168.1.101:3000
+*Git Account: alex.yuan,Emeerson
+*Clone copy from server to location's current path
+$ git clone git@192.168.1.101:1LD/WR_1LD_DEMO.git
+
+###############################################################
+#2017.5.02
+
+#install tp-link wifi network driver
+$ cd Tools/rtl8192eu-linux-driver/
+$ make 
+$ sudo make install
+$ sudo modprobe 8192eu
+
+#install WICED for 1LD
+$ cd ./WICED/
+$ chmod +x ./WICED-Studio-4.1.1.8-IDE-Installer.bin
+$ sudo ./WICED-Studio-4.1.1.8-IDE-Installer.bin
+
+###############################################################
+#2017.4.28 
+# install software in new uBuntu 16.4
+$ sudo apt install synaptic qterminal
+$ sudo apt install gdb-arm-none-eabi gcc-arm-none-eabi binutils-arm-none-eabi
+$ sudo apt install nano vim git git-cola
+
+# update system
+-> Software Updater
+
+# Additionally needed by WMSDK
+$ sudo apt install libssl-dev
+
+
+################################################################
+#2016.05.26
+#install synaptic, aptitude, libdbus-1-dev
+$ sudo apt-get install synaptic
+$ sudo apt-get install aptitude
+$ sudo aptitude search dbus
+$ sudo aptitude install libdbus-1-dev
+
+################################################################
+#2016.11.11
+#install Sublime Text 3 using Installer package
+
+################################################################
+#2016.11.23
+#install QTerminal
+$ sudo add-apt-repository ppa:lubuntu-dev/lubuntu-daily
+$ sudo apt-get update
+$ sudo apt-get install qterminal
+
+################################################################
+#2016.11.30
+#install meld which is similar Beyond to compare code
+sudo apt install meld
+
+################################################################
+#2016.12.01
+#using command "nano" for command editor
+#using command "nautilus .&"
+
+################################################################
+#2016.12.06
+#install git
+sudo apt update
+sudo apt install git
+sudo apt install tig
+sudo apt install git-cola
+#usage command
+git config --global user.name "Alex"
+git config --global user.email "alex.yuan@emerson.com"
+git init
+git add dns_lookup.c
+git commit
+git commit -m "Test Modify"
+git log
+git diff
+git cola
+tig
+
+
+

@@ -1,0 +1,687 @@
+" ##################################################################################
+" 				Alex - Vim
+" ##################################################################################
+" 			Vim Install & Pre-Install
+" ##################################################################################
+" $sudo apt install vim
+" $sudo apt install ctags
+" $git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
+" Copy Vim Config to ~/.vimrc
+" $vim +PluginInstall +qall, or :PluginInstall
+
+" Use Vim settings, rather then Vi settings. This setting must be as early as 
+" possible, as it has side effects. 
+set nocompatible        "Be Improved
+filetype off            "Required 
+
+
+" ##################################################################################
+" 				Vundle Install 
+" ##################################################################################
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugin/Bundle ##### Install Start #####
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle  
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'  
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'bling/vim-airline'
+Plugin 'majutsushi/tagbar'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Yggdroot/LeaderF'
+
+" Plugin 'Valloric/YouCompleteMe'
+
+" Plugin 'VundleVim/taglist.vim'	
+" Bundle 'kien/ctrlp.vim'
+" Bundle 'croaky/vim-colors-github'
+
+
+call vundle#end()    
+filetype plugin indent on     " required!  
+" Plugin/Bundle ##### Install End ######
+
+
+" Vundle Command
+" $vim +PluginInstall +qall
+" :PluginList
+" :PluginInstall
+" :PluginSearch
+" :PluginClean
+" :BundleList
+" :BundleInstall
+" :BundleInstall!
+" :BundleSearch
+" :BundleSearch!
+" :BundleClean
+" :BundleClean!
+" :h vundle Get more details and wiki and FAQ
+
+
+" ##################################################################################
+" 				NERDTree
+" ##################################################################################
+" o open or close file or dir
+" O open all dir in this node
+" go open one file, but the cursor still stay in NERDTreem, it is buffer
+" t open file in tab
+" T open file in background tab
+" i H split the window
+" gi H split the window, but the cursor still stay in NERDTree, it is buffer
+" s V split the window 
+" gs V split the window, but the cursor still stay in NERDTree, it is buffer
+" X Helong all of dir in the current node 
+" x Helong father's dir in the current node 
+" e use the folder explorer way to open the selected dir
+" gT swithc previouse Tab
+" gt switch next Tab
+" D delete mark
+" p jump the father dir
+" P jump the root dir
+" K jump the first node
+" J jump the last node
+" C set root as cursor  in folder
+" u open father dir
+" U open father dir, but stay original dir opened status
+" r refresh curer in folder
+" R refresh the current root dir
+" I show or un-show hidden file
+" f open or close the filter
+" m show file system menu (add, delete, move)
+" A Fullscreen display NERDTree or closer full screen
+" q close
+" ! execute this file
+" ? help
+
+" let NERDTreeDirArrows=1
+" let NERDTreeMinimalUI=1		" Don't show help menu
+" let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=0
+let NERDTreeWinSize=25
+let NERDTreeIgnore=['\.doc','\.docx','\.xls','\.xlsx','\.pdf','\.vsd','\.zip','\.rar']
+
+
+" ##################################################################################
+" 				vim-nerdtree-tabs
+" ##################################################################################
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" ##################################################################################
+" 				nerdtree-git-plugin
+" ##################################################################################
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+
+" ##################################################################################
+" 				airline
+" ##################################################################################
+set laststatus=2
+
+
+" ##################################################################################
+" 				tagbar
+" ##################################################################################
+" :help tagbar
+" :Tagbar
+let g:tagbar_ctags_bin='/usr/bin/ctags'  
+let g:tagbar_width=30  
+let g:tagbar_right=0
+autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+
+
+" ##################################################################################
+" 				taglist
+" ##################################################################################
+" let Tlist_File_Fold_Auto_Close=1
+" let Tlist_WinHeight=30
+" let Tlist_WinWidth=30
+" let Tlist_Use_Horiz_Window=1
+" let Tlist_Sort_Type=name
+
+" let Tlist_Show_One_File=1
+" let Tlist_WinWidth=30
+" let Tlist_Exit_OnlyWindow=1
+" let Tlist_Use_Right_Window=1
+" let Tlist_Use_SingleClick=1
+" let Tlist_Auto_Open=1
+
+" <CR>        jump tag's definition 
+" o           open tag in new window
+" <Space>     show tag prototype
+" u           Update taglist 
+" s	      change sort between time and name
+" x           increase or decease taglist the window size
+" +           open zedie, ==zo
+" -           close zedie, ==zc
+" *           open all zedie, ==zR
+" =           close all zedie, ==zM
+" [[          jump the previous file
+" ]]          jump the next file
+" :TlistOpen
+" :Tlist
+" :TlistClose
+" :TlistToggle
+
+
+" ##################################################################################
+" 				LeaderF
+" ##################################################################################
+" vim7.3 or higher. Only support vim7.4.330 or higher after v1.01. 
+" :LeaderfFile or :LeaderfFile [directory] or ,f	" Launch LeaderF to search files.
+" :LeaderfBuffer or ,b					" Launch LeaderF to search buffers.
+" :LeaderfMru						" Launch LeaderF to search Mru.
+" :LeaderfMruCwd					" Launch LeaderF to search Mru in current working directory.
+" :LeaderfTag						" Launch LeaderF to navigate tags.
+" :LeaderfBufTag					" Launch LeaderF to navigate tags in current buffer.
+" :LeaderfBufTagAll					" Launch LeaderF to navigate tags in all opening buffers.
+
+" Once LeaderF is launched:
+" <C-C> : quit from LeaderF.
+" <C-R> : switch between fuzzy search mode and regex mode.
+" <C-F> : switch between full path search mode and name only search mode.
+" <ESC> : switch to normal mode.
+" <C-V>, <S-Insert> : paste from clipboard.
+" <C-U> : clear the prompt.
+" <C-J>, <Down>, <C-K>, <Up> : navigate the result list.
+" <2-LeftMouse> or <CR> : open the file under cursor or selected(when multiple files are selected).
+" <C-X> : open in horizontal split window.
+" <C-]> : open in vertical split window.
+" <C-T> : open in new tabpage.
+" <F5> : refresh the cache.
+" <C-LeftMouse> or <C-S> : select multiple files.
+" <S-LeftMouse> : select consecutive multiple files.
+" <C-A> : select all files.
+" <C-L> : clear all selections.
+" <BS> : delete the preceding character in the prompt.
+" <Del> : delete the current character in the prompt.
+" <Home>: move the cursor to the begin of the prompt.
+" <End> : move the cursor to the end of the prompt.
+" <Left>: move the cursor one character to the left.
+" <Right> : move the cursor one character to the right. 
+
+
+" ##################################################################################
+" 				MiniBufExplorer
+" ##################################################################################
+" Download: http://www.vim.org/scripts/script.php?script_id=159
+" Copy minibufexpl.vim to $HOME/.vim/plugin
+" 
+" let g:miniBufExplMapCTabSwitchBufs = 1	" Enable <Tab>, <S-Tab>
+" let g:miniBufExplMapWindowNavVim = 1		" <C-h,j,k,l> switch buffer?
+" let g:miniBufExplMapWindowNavArrows = 1	" <C-up,down,left,right> switch buffer?
+" let g:miniBufExplModSelTarget = 1
+" let g:bufExplorerMaxHeight=30
+" let g:miniBufExplorerMoreThanOne=0
+
+
+" <Enter>
+" d       Delete curson's buffer 
+" :bn   Open the next buffer
+" :bp   Open the previous buffer
+" :b"num" 
+
+" :MiniBufExplorer    " Open and/or goto Explorer
+" :CMiniBufExplorer   " Close the Explorer if it's open
+" :UMiniBufExplorer   " Update Explorer without naviting
+" :TMiniBufExplorer   " Toggle the Explorer window open and closed
+
+" ##################################################################################
+" 					Color scheme
+" ##################################################################################
+syntax enable
+colorscheme molokai
+" colorscheme solarized
+set background=dark
+
+
+let g:molokai_original = 1
+"let g:rehash256 = 1
+highlight NonText guibg=#060606
+highlight Folded guibg=#0A0A0A guifg=#9090D0
+
+" Vim color file
+"
+" Author: Tomas Restrepo <tomas@winterdom.com>
+" https://github.com/tomasr/molokai
+"
+" Note: Based on the Monokai theme for TextMate
+" by Wimer Hazenberg and its darker variant
+" by Hamish Stuart Macpherson
+"
+
+hi clear
+
+if version > 580
+    " no guarantees for version 5.8 and below, but this makes it stop
+    " complaining
+    hi clear
+    if exists("syntax_on")
+        syntax reset
+    endif
+endif
+let g:colors_name="molokai"
+
+if exists("g:molokai_original")
+    let s:molokai_original = g:molokai_original
+else
+    let s:molokai_original = 0
+endif
+
+
+hi Boolean         guifg=#AE81FF
+hi Character       guifg=#E6DB74
+hi Number          guifg=#AE81FF
+hi String          guifg=#E6DB74
+hi Conditional     guifg=#F92672               gui=bold
+hi Constant        guifg=#AE81FF               gui=bold
+hi Cursor          guifg=#000000 guibg=#F8F8F0
+hi iCursor         guifg=#000000 guibg=#F8F8F0
+hi Debug           guifg=#BCA3A3               gui=bold
+hi Define          guifg=#66D9EF
+hi Delimiter       guifg=#8F8F8F
+hi DiffAdd                       guibg=#13354A
+hi DiffChange      guifg=#89807D guibg=#4C4745
+hi DiffDelete      guifg=#960050 guibg=#1E0010
+hi DiffText                      guibg=#4C4745 gui=italic,bold
+
+hi Directory       guifg=#A6E22E               gui=bold
+hi Error           guifg=#E6DB74 guibg=#1E0010
+hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
+hi Exception       guifg=#A6E22E               gui=bold
+hi Float           guifg=#AE81FF
+hi FoldColumn      guifg=#465457 guibg=#000000
+hi Folded          guifg=#465457 guibg=#000000
+hi Function        guifg=#A6E22E
+hi Identifier      guifg=#FD971F
+hi Ignore          guifg=#808080 guibg=bg
+hi IncSearch       guifg=#C4BE89 guibg=#000000
+
+hi Keyword         guifg=#F92672               gui=bold
+hi Label           guifg=#E6DB74               gui=none
+hi Macro           guifg=#C4BE89               gui=italic
+hi SpecialKey      guifg=#66D9EF               gui=italic
+
+hi MatchParen      guifg=#000000 guibg=#FD971F gui=bold
+hi ModeMsg         guifg=#E6DB74
+hi MoreMsg         guifg=#E6DB74
+hi Operator        guifg=#F92672
+
+" complete menu
+hi Pmenu           guifg=#66D9EF guibg=#000000
+hi PmenuSel                      guibg=#808080
+hi PmenuSbar                     guibg=#080808
+hi PmenuThumb      guifg=#66D9EF
+
+hi PreCondit       guifg=#A6E22E               gui=bold
+hi PreProc         guifg=#A6E22E
+hi Question        guifg=#66D9EF
+hi Repeat          guifg=#F92672               gui=bold
+hi Search          guifg=#000000 guibg=#FFE792
+" marks
+hi SignColumn      guifg=#A6E22E guibg=#232526
+hi SpecialChar     guifg=#F92672               gui=bold
+hi SpecialComment  guifg=#7E8E91               gui=bold
+hi Special         guifg=#66D9EF guibg=bg      gui=italic
+if has("spell")
+    hi SpellBad    guisp=#FF0000 gui=undercurl
+    hi SpellCap    guisp=#7070F0 gui=undercurl
+    hi SpellLocal  guisp=#70F0F0 gui=undercurl
+    hi SpellRare   guisp=#FFFFFF gui=undercurl
+endif
+hi Statement       guifg=#F92672               gui=bold
+hi StatusLine      guifg=#455354 guibg=fg
+hi StatusLineNC    guifg=#808080 guibg=#080808
+hi StorageClass    guifg=#FD971F               gui=italic
+hi Structure       guifg=#66D9EF
+hi Tag             guifg=#F92672               gui=italic
+hi Title           guifg=#ef5939
+hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
+
+hi Typedef         guifg=#66D9EF
+hi Type            guifg=#66D9EF               gui=none
+hi Underlined      guifg=#808080               gui=underline
+
+hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
+hi VisualNOS                     guibg=#403D3D
+hi Visual                        guibg=#403D3D
+hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
+hi WildMenu        guifg=#66D9EF guibg=#000000
+
+hi TabLineFill     guifg=#1B1D1E guibg=#1B1D1E
+hi TabLine         guibg=#1B1D1E guifg=#808080 gui=none
+
+if s:molokai_original == 1
+   hi Normal          guifg=#F8F8F2 guibg=#272822
+   hi Comment         guifg=#75715E
+   hi CursorLine                    guibg=#3E3D32
+   hi CursorLineNr    guifg=#FD971F               gui=none
+   hi CursorColumn                  guibg=#3E3D32
+   hi ColorColumn                   guibg=#3B3A32
+   hi LineNr          guifg=#BCBCBC guibg=#3B3A32
+   hi NonText         guifg=#75715E
+   hi SpecialKey      guifg=#75715E
+else
+   hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
+   hi Comment         guifg=#7E8E91
+   hi CursorLine                    guibg=#293739
+   hi CursorLineNr    guifg=#FD971F               gui=none
+   hi CursorColumn                  guibg=#293739
+   hi ColorColumn                   guibg=#232526
+   hi LineNr          guifg=#465457 guibg=#232526
+   hi NonText         guifg=#465457
+   hi SpecialKey      guifg=#465457
+end
+
+"
+" Support for 256-color terminal
+"
+if &t_Co > 255
+   if s:molokai_original == 1
+      hi Normal                   ctermbg=234
+      hi CursorLine               ctermbg=235   cterm=none
+      hi CursorLineNr ctermfg=208               cterm=none
+   else
+      hi Normal       ctermfg=252 ctermbg=233
+      hi CursorLine               ctermbg=234   cterm=none
+      hi CursorLineNr ctermfg=208               cterm=none
+   endif
+   hi Boolean         ctermfg=135
+   hi Character       ctermfg=144
+   hi Number          ctermfg=135
+   hi String          ctermfg=144
+   hi Conditional     ctermfg=161               cterm=bold
+   hi Constant        ctermfg=135               cterm=bold
+   hi Cursor          ctermfg=16  ctermbg=253
+   hi Debug           ctermfg=225               cterm=bold
+   hi Define          ctermfg=81
+   hi Delimiter       ctermfg=241
+
+   hi DiffAdd                     ctermbg=24
+   hi DiffChange      ctermfg=181 ctermbg=239
+   hi DiffDelete      ctermfg=162 ctermbg=53
+   hi DiffText                    ctermbg=102 cterm=bold
+
+   hi Directory       ctermfg=118               cterm=bold
+   hi Error           ctermfg=219 ctermbg=89
+   hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
+   hi Exception       ctermfg=118               cterm=bold
+   hi Float           ctermfg=135
+   hi FoldColumn      ctermfg=67  ctermbg=16
+   hi Folded          ctermfg=67  ctermbg=16
+   hi Function        ctermfg=118
+   hi Identifier      ctermfg=208               cterm=none
+   hi Ignore          ctermfg=244 ctermbg=232
+   hi IncSearch       ctermfg=193 ctermbg=16
+
+   hi keyword         ctermfg=161               cterm=bold
+   hi Label           ctermfg=229               cterm=none
+   hi Macro           ctermfg=193
+   hi SpecialKey      ctermfg=81
+
+   hi MatchParen      ctermfg=233  ctermbg=208 cterm=bold
+   hi ModeMsg         ctermfg=229
+   hi MoreMsg         ctermfg=229
+   hi Operator        ctermfg=161
+
+   " complete menu
+   hi Pmenu           ctermfg=81  ctermbg=16
+   hi PmenuSel        ctermfg=255 ctermbg=242
+   hi PmenuSbar                   ctermbg=232
+   hi PmenuThumb      ctermfg=81
+
+   hi PreCondit       ctermfg=118               cterm=bold
+   hi PreProc         ctermfg=118
+   hi Question        ctermfg=81
+   hi Repeat          ctermfg=161               cterm=bold
+   hi Search          ctermfg=0   ctermbg=222   cterm=NONE
+
+   " marks column
+   hi SignColumn      ctermfg=118 ctermbg=235
+   hi SpecialChar     ctermfg=161               cterm=bold
+   hi SpecialComment  ctermfg=245               cterm=bold
+   hi Special         ctermfg=81
+   if has("spell")
+       hi SpellBad                ctermbg=52
+       hi SpellCap                ctermbg=17
+       hi SpellLocal              ctermbg=17
+       hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
+   endif
+   hi Statement       ctermfg=161               cterm=bold
+   hi StatusLine      ctermfg=238 ctermbg=253
+   hi StatusLineNC    ctermfg=244 ctermbg=232
+   hi StorageClass    ctermfg=208
+   hi Structure       ctermfg=81
+   hi Tag             ctermfg=161
+   hi Title           ctermfg=166
+   hi Todo            ctermfg=231 ctermbg=232   cterm=bold
+
+   hi Typedef         ctermfg=81
+   hi Type            ctermfg=81                cterm=none
+   hi Underlined      ctermfg=244               cterm=underline
+
+   hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
+   hi VisualNOS                   ctermbg=238
+   hi Visual                      ctermbg=235
+   hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
+   hi WildMenu        ctermfg=81  ctermbg=16
+
+   hi Comment         ctermfg=59
+   hi CursorColumn                ctermbg=236
+   hi ColorColumn                 ctermbg=236
+   hi LineNr          ctermfg=250 ctermbg=236
+   hi NonText         ctermfg=59
+
+   hi SpecialKey      ctermfg=59
+
+   if exists("g:rehash256") && g:rehash256 == 1
+       hi Normal       ctermfg=252 ctermbg=234
+       hi CursorLine               ctermbg=236   cterm=none
+       hi CursorLineNr ctermfg=208               cterm=none
+
+       hi Boolean         ctermfg=141
+       hi Character       ctermfg=222
+       hi Number          ctermfg=141
+       hi String          ctermfg=222
+       hi Conditional     ctermfg=197               cterm=bold
+       hi Constant        ctermfg=141               cterm=bold
+
+       hi DiffDelete      ctermfg=125 ctermbg=233
+
+       hi Directory       ctermfg=154               cterm=bold
+       hi Error           ctermfg=222 ctermbg=233
+       hi Exception       ctermfg=154               cterm=bold
+       hi Float           ctermfg=141
+       hi Function        ctermfg=154
+       hi Identifier      ctermfg=208
+
+       hi Keyword         ctermfg=197               cterm=bold
+       hi Operator        ctermfg=197
+       hi PreCondit       ctermfg=154               cterm=bold
+       hi PreProc         ctermfg=154
+       hi Repeat          ctermfg=197               cterm=bold
+
+       hi Statement       ctermfg=197               cterm=bold
+       hi Tag             ctermfg=197
+       hi Title           ctermfg=203
+       hi Visual                      ctermbg=238
+
+       hi Comment         ctermfg=244
+       hi LineNr          ctermfg=239 ctermbg=235
+       hi NonText         ctermfg=239
+       hi SpecialKey      ctermfg=239
+   endif
+end
+
+" Must be at the end, because of ctermbg=234 bug.
+" https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
+
+
+" ##################################################################################
+" 				Vim Key Map
+" ##################################################################################
+" commend   normal   Visual   OperatorPending     InsertOnly  CommandLine
+" :map      y        y        y
+" :nmap     y
+" :vmap              y
+" :omap                       y  
+" :map!                                           y           y
+" :imap                                           y
+" :cmap                                                       y
+" 
+" :h key-notation	" Meaning in Keyboard 
+"
+" For Example: 
+" <C-Esc>=Ctrl+Esc, <S-F1>=Shift+F1, <A-S>=Alt+S, <CR>=Enter, <Leader>=\, <BS>=BackSpace
+" Bash: <C-s>=LockVim, <C-q>=QuitLockVim 	" !stty -ixon	" Disable Bash: <C-s>, <C-q>
+
+let mapleader = '\'
+
+
+"""""""""""""""""""""""""""""""""""""""
+"	 NERDTree Key Map
+"""""""""""""""""""""""""""""""""""""""
+nmap <F2> :NERDTreeToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 tagbar Key Map
+"""""""""""""""""""""""""""""""""""""""
+nmap <F10> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 taglist Key Map
+"""""""""""""""""""""""""""""""""""""""
+" nmap <F11> :TlistToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 LeaderF Key Map
+"""""""""""""""""""""""""""""""""""""""
+map <Leader>ff :LeaderfFile<cr>
+map <Leader>fb :LeaderfBuffer<cr>
+map <Leader>fr :LeaderfMruCwd<cr>
+map <Leader>far :LeaderfMru<cr>
+map <Leader>ft :LeaderfBufTag<cr>
+map <Leader>fat :LeaderfBufTagAll<cr>
+
+"""""""""""""""""""""""""""""""""""""""
+"	 Vim Key Map
+"""""""""""""""""""""""""""""""""""""""
+map <C-s> :buffers<CR>
+
+nmap <S-h> <C-w>h
+nmap <S-j> <C-w>j
+nmap <S-k> <C-w>k
+nmap <S-l> <C-w>l
+
+nmap <S-b> :buffers<CR>
+nmap <S-Home> :bf<CR>
+nmap <S-End> :bl<CR>
+nmap <S-Pageup> :bn<CR>
+nmap <S-Pagedown> :bp<CR>
+
+nmap <S-t> :tabnew<CR>
+nmap <S-c> :tabc<CR>
+nmap <C-Home> :tabfirst<CR>
+nmap <C-End> :tablast<CR>
+nmap <C-Pageup> :tabn<CR>
+nmap <C-Pagedown> :tabp<CR>
+
+nmap <C-z> u
+nmap <silent><Leader>s :w!<CR>
+nmap <silent><Leader>sa :wa!<CR>
+
+nmap <C-x> dd 		
+nmap <C-c> yy 		
+nmap <C-v> p 		
+nmap <C-a> ggvG
+
+vmap <C-x> d
+vmap <C-c> y
+vmap <C-v> p
+vmap <C-a> <Esc>ggvG
+vmap <silent><Leader>s <Esc>:w!<CR>v
+
+imap <silent><Leader>s <Esc>:w!<CR>i
+
+" ##################################################################################
+"			Vim Command
+" ##################################################################################
+
+set number
+set numberwidth=4
+set ruler         " show the cursor position all the time 
+set showcmd       " display incomplete commands 
+set laststatus=2  " Always display the status line 
+set confirm       " Need confrimation while exit 
+set cursorline  
+
+" Mouse Feature
+set mouse=a 
+" set mouse=nv
+" n  normal mode
+" v  visual mode
+" i insert mode  
+" c command mode
+" h in help fiel for above mode
+" a all of mode  
+" r skip |lit-enter| prompt
+" A auto select  
+
+" Softtabs, 4 spaces 
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+set autoindent
+"set nowrap 
+set wrapscan
+" set list
+" set nolist
+
+" Search
+set incsearch     " do incremental searching 
+set ignorecase
+" set noignorecase
+set hlsearch
+" set nohlsearch
+" :nohlsearch
+set incsearch
+
+
+syntax on
+" set showmatch
+" set matchtime=2
+
+" Auto Complete 
+" <c-n>-	Normal Key
+" <c-x><c-n>-	Current Buffer
+" <c-x><c-i>-	Include File Key
+" <c-x><c-]>-	Tag File Key
+" <c-x><c-k>-	Dictory Search
+" <c-x><c-l>-	Complete the whole line
+" <c-x><c-f>-	File name complete
+" <c-x><c-o>-	Full Function complete
+" <c-n>- Next
+" <c-p>- Previous
+" <c-y>- Enter
+" <c-e>- Exit Complete List
+
+
+
+
