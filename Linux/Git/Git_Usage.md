@@ -157,6 +157,7 @@ Create by alex on 2018.05.07
 
 # 9. Diff
 
+TBD
   - $ git diff  # 显示工作区和暂存区的差异 
   - $ git diff --stat       # 显示工作区和暂存区的差异 
   - $ git diff --cached []  # 显示暂存区和上一个commit的差异 
@@ -165,8 +166,29 @@ Create by alex on 2018.05.07
 
 # 10. Redo
 
+TBD
+# 恢复暂存区的指定文件到工作区 $ git checkout [file] 
+# 恢复某个commit的指定文件到工作区 $ git checkout [commit] [file] 
+$ git checkout [branch] 
+$ git checkout [file] 
+$ git checkout HEAD [file] 
+$ git checkout [Commit] [file] 
+# 恢复上一个commit的所有文件到工作区 $ git checkout . 
+# 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变 $ git reset [file] 
+$ git reset [file] 
+$ git reset HEAD [file] 
+$ git reset [Commit] [file] 
+# 重置暂存区与工作区，与上一次commit保持一致 $ git reset --hard 
+# 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变 $ git reset [commit] 
+# 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致 $ git reset --hard [commit] 
+# 重置当前HEAD为指定commit，但保持暂存区和工作区不变 $ git reset --keep [commit] 
+# 新建一个commit，用来撤销指定commit 
+# 后者的所有变化都将被前者抵消，并且应用到当前分支 $ git revert [commit]
+
+
 # 11. Merge
 
+TBD
   - $ git merge [branch] "合并指定分支到当前分支 
   - $ git cherry-pick [commit] "选择一个commit，合并进当前分支 
 
