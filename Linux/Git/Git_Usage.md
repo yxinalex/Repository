@@ -70,6 +70,11 @@ Create by alex on 2018.05.07
   - Index / Stage：暂存区
   - Repository：仓库区 或 本地仓库
   - Remote：远程仓库 
+  - git status 时,  modified 是显示红色还是绿色，是根据于 commit 处状态来决定的
+    - 显示红色是 「Woring Dir 区的 commit」与 「Staged Snapshot 的 commit / Commit History 的 commit」有区别
+    - 显示绿色是 「Woring Dir 区的 commit / Staged Snapshot 的 commit」 与「Commit History 的 commit」有区别
+    - 红色 modified 为「Woring Dir 区的 commit」还未被 add。
+    - 绿色 modified 为「Staged Snapshot 的 commit」还未被 commit。
 
 # 4. Add/Remove/Rename
 
@@ -98,7 +103,11 @@ Create by alex on 2018.05.07
 ## - 改名文件，并且将这个改名放入暂存区 
   - $ git mv [file-original] [file-renamed]
 
-# 5. Commit
+# 5. Stash
+
+TBD
+
+# 6. Commit
 
   - $ git commit -m "comments"   "提交暂存区到仓库区 
   - $ git commit [file1] [file2] -m "comments"   "提交暂存区的指定文件到仓库区 
@@ -109,7 +118,7 @@ Create by alex on 2018.05.07
   - $ git commit --amend "使用一次新的commit，替代上一次提交
   - $ git commit --amend -m "comments"  "如果代码没有任何新变化，则用来改写上一次commit的提交信息 
 
-# 6. Branch
+# 7. Branch
 ## - List
   - $ git branch      "列出所有本地分支 
   - $ git branch -r   "列出所有远程分支
@@ -122,18 +131,18 @@ Create by alex on 2018.05.07
   - $ git branch --track [branch] [remote-branch] "新建一个分支，与指定的远程分支建立追踪关系 
   - $ git branch --set-upstream [branch] [remote-branch] "建立追踪关系，在现有分支与指定的远程分支之间 
 ## - Switch
-  - $ git checkout [branch-name] "切换到指定分支，并更新工作区 
+  - $ git checkout [branch-name] "切换到指定分支，并更新暂存区和工作区，HEAD发生变化，指向新的Branch
 ## - Delete
   - $ git branch -d [branch-name] "删除分支 
   - $ git push origin --delete  "删除远程分支 
   - $ git branch -dr "删除远程分支 
 
-# 7. Tag
+# 8. Tag
   - $ git tag       # 列出所有tag 
   - $ git tag [tag] # 新建一个tag在当前commit 
   - $ git tag [tag] [commit]  # 新建一个tag在指定commit 
 
-# 8. Check
+# 9. Check
   - $ git status      # 显示有变更的文件 
  
   - $ git log         # 显示当前分支的版本历史  
@@ -155,58 +164,112 @@ Create by alex on 2018.05.07
   - $ git show [branch] 
   - $ git show [branch] [commit]
 
-# 9. Diff
+  - $ git checkout          #汇总显示工作区、暂存区与HEAD的差异
+  - $ git checkout HEAD     #汇总显示工作区、暂存区与HEAD的差异 
 
-TBD
-  - $ git diff  # 显示工作区和暂存区的差异 
-  - $ git diff --stat       # 显示工作区和暂存区的差异 
-  - $ git diff --cached []  # 显示暂存区和上一个commit的差异 
-  - $ git diff HEAD    # 显示工作区与当前分支最新commit之间的差异 
-  - $ git diff [first-branch]... [second-branch]  # 显示两次提交之间的差异  
+# 10. Diff
 
-# 10. Redo
+## diff file level
+  - $ git diff [file]               # 显示工作区和暂存区的差异 
+  - $ git diff [file] --cached      # 显示暂存区和HEAD(或上一个commmit)的差异
+  - $ git diff [file] --staged      # 同上
+  - $ git diff HEAD [file]          # 显示工作区和当前分支的HEAD的差异 
+  - $ git diff [branch] [file]      # 工作区的文件与branch 分支的文件进行比较
+  - $ git diff [branch1] [branch2] [file]  #比较两个分支的指定文件的差异
+  - $ git diff [commit] [file]      # 工作区与某一次提交进行比较
+  - $ git diff [commit1] [commit2] [file]  #比较两个commit的指定文件的差异
+  - $ git diff -- cached [commit] [file] # 比较暂存区与指定commit-id的差异
+  - $ git diff -- cached [branch] [file] # 比较暂存区与指定branch-id的差异
 
-TBD
-# 恢复暂存区的指定文件到工作区 $ git checkout [file] 
-# 恢复某个commit的指定文件到工作区 $ git checkout [commit] [file] 
-$ git checkout [branch] 
-$ git checkout [file] 
-$ git checkout HEAD [file] 
-$ git checkout [Commit] [file] 
-# 恢复上一个commit的所有文件到工作区 $ git checkout . 
-# 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变 $ git reset [file] 
-$ git reset [file] 
-$ git reset HEAD [file] 
-$ git reset [Commit] [file] 
-# 重置暂存区与工作区，与上一次commit保持一致 $ git reset --hard 
-# 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变 $ git reset [commit] 
-# 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致 $ git reset --hard [commit] 
-# 重置当前HEAD为指定commit，但保持暂存区和工作区不变 $ git reset --keep [commit] 
-# 新建一个commit，用来撤销指定commit 
-# 后者的所有变化都将被前者抵消，并且应用到当前分支 $ git revert [commit]
+## diff commit level  
+  - $ git diff HEAD                  # 显示工作区与当前分支最新commit之间的差异 
+  - $ git diff HEAD --cached         # 显示暂存区与当前分支最新commit之间的差异 
+  - $ git diff HEAD --stat           # 显示工作区与当前分支最新commit之间的文件差异列表
+  - $ git diff HEAD HEAD^
+  - $ git diff [branch1] [branch2]          # 显示两个branch之间的差异  
+  - $ git diff [branch1] [branch2] --stat   # 显示两个branch之间的差异的文件列表  
+  - $ git diff [commit1] [commit2]          # 任意两次commit之间的差别
+  - $ git diff [commit1] [commit2] --stat   # 任意两次commit之间的差别的文件列表
 
+## difftool = vimdiff, meld, diffmerge
+  - $ git difftool HEAD
+  - $ git difftool HEAD --stat
+  - $ git d HEAD
+  - $ git d HEAD --stat
 
-# 11. Merge
+# 11. Redo
 
-TBD
-  - $ git merge [branch] "合并指定分支到当前分支 
-  - $ git cherry-pick [commit] "选择一个commit，合并进当前分支 
+## checkout file level
+  - $ git checkout .                # 用暂存区的所有文件直接覆盖本地文件，HEAD不变
+  - $ git checkout [file]           # 恢复暂存区的指定文件到工作区，对象是暂存区的commit，HEAD不变
+  - $ git checkout [commit] [file]  # 恢复某个commit的指定文件到工作区，对象是commit history中的commit，HEAD不变
+  - $ git checkout [branch] [file]  # 用branch所指向的提交中filename替换暂存区和工作区中相应的文件。注意会将暂存区和工作区中的filename文件直接覆盖，HEAD不变
+  - $ git checkout HEAD [file]      # 恢复HEAD的指定文件到工作区，对象是commit history中的HEAD，HEAD不变
+  - $ git checkout HEAD^^ [file_path]   #恢复HEAD之前的第二个commit的指定文件到工作区，对象是commit history中的commit，HEAD不变
 
-# 12. Remote
+## checkout commit level  
+  - $ git checkout [commit]         # 恢复指定的commit到stage和working，HEAD发生变化指向commit，并且是匿名分支，可通过git branch new_branch命令建立新的分支
+
+## reset file level
+  - $ git reset [file]              # 重置暂存区的指定文件，与上一次commit保持一致，工作区不变，HEAD不变 
+  - $ git reset [Commit] [file]     # 用commit中指定的文件重置暂存区的指定文件，工作区不变，HEAD不变
+  - $ git reset HEAD [file]         # 用HEAD中指定的文件重置暂存区的指定文件，工作区不变，HEAD不变
+
+## reset commit level  
+  - $ git reset [commit] --soft     # 重置当前分支的HEAD为指定commit，但是保持暂存区和工作区不变
+  - $ git reset [commit] --mixed    # 重置当前分支的HEAD为指定commit，同时重置暂存区，但工作区保持不变 
+  - $ git reset [commit]            # 同上 --mixed 
+  - $ git reset [commit] --hard     # 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致 
+  - $ git reset [commit] --keep     # ?
+
+## revert  
+  - $ git revert [commit]           # 新建一个commit，用来撤销指定commit， 后者的所有变化都将被前者抵消，并且应用到当前分支 
+
+```
+|------------------------------------------------------------------------------------|
+|working |index |HEAD |target-commit |args                   |working |index |HEAD   |
+|------------------------------------------------------------------------------------|
+|A       |B     |C    |D             |--soft                 |A       |B     |D      |
+|        |      |     |              |--mixed                |A       |D     |D      |
+|        |      |     |              |--hard                 |D       |D     |D      |
+|        |      |     |              |--merge (disallowed)   |        |      |       |     
+|------------------------------------------------------------------------------------|
+
+|------------------------------------------------------------------------------------|
+|working |index |HEAD |target-commit |args                   |working |index |HEAD   |
++------------------------------------------------------------------------------------+
+|A       |B     |C    |C             |--soft                 |A       |B     |C      |
+|        |      |     |              |--mixed                |A       |C     |C      |
+|        |      |     |              |--hard                 |C       |C     |C      |
+|        |      |     |              |--merge (disallowed)   |        |      |       |     
+|------------------------------------------------------------------------------------|
+```
+
+# 12. Merge
+
+  - $ git merge [branch]            #合并指定分支到当前分支 
+  - $ git merge [origin/master]     #将远端master分支的代码merge进本地当前分支,?
+  - $ git mergetool                 #使用merge工具解决merge冲突
+
+  - $ git cherry-pick [commit]      #选择一个commit，合并进当前分支 
+
+# 13. Remote
 
   - $ git clone [url]
   - $ git clone https://github.com/yxinalex/Repository
 
-  - $ git remote -v # 显示所有远程仓库 
-  - $ git remote show [remote]  # 显示某个远程仓库的信息 
+  - $ git remote -v                 # 显示所有远程仓库 
+  - $ git remote show [remote]      # 显示某个远程仓库的信息 
   - $ git remote add [shortname] [url]  # 增加一个新的远程仓库，并命名 
 
-  - $ git fetch [remote]  # 下载远程仓库的所有变动 
-  - $ git pull [remote] [branch]  # 取回远程仓库的变化，并与本地分支合并 
+  - $ git fetch [remote]            # 下载远程仓库的所有变动 
+  - $ git pull [remote] [tag]       # 取回远程仓库的变化，并与本地分支合并 
+  - $ git pull [remote] [branch]    # 取回远程仓库的变化，并与本地分支合并 
 
-  - $ git push [remote] [tag]     # 提交指定tag 
-  - $ git push [remote] [branch]  # 上传本地指定分支到远程仓库 
-  - $ git push [remote] --force   # 强行推送当前分支到远程仓库，即使有冲突 
-  - $ git push [remote] --all     # 推送所有分支到远程仓库 
-  - $ git push [remote] --tags # 提交所有tag 
+  - $ git push [remote] [tag]       # 提交指定tag 
+  - $ git push [remote] [branch]    # 上传本地指定分支到远程仓库 
+
+  - $ git push [remote] --force     # 强行推送当前分支到远程仓库，即使有冲突 
+  - $ git push [remote] --all       # 推送所有分支到远程仓库 
+  - $ git push [remote] --tags      # 提交所有tag 
 
