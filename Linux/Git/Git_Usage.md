@@ -85,7 +85,8 @@ Create by alex on 2018.05.07
   - $ git add [dir] 
 
 ## - 删除工作区文件，并且将这次删除放入暂存区
-  - $ git rm .
+  - $ git rm . -r
+  - $ git rm ./* -r
   - $ git rm -r *.obj
   - $ git rm -r *.obj *.bin *.doc *docx *.xls *.xlsx *.pdf *.graphml *.uml *.suo *.sdf *.opensdf *.idb *.pdb
   - $ git rm [file1] [file2] ... 
@@ -210,12 +211,16 @@ Create by alex on 2018.05.07
 
 ## checkout file level
   - $ git checkout .                # 用暂存区的所有文件直接覆盖本地文件，HEAD不变
+                                    # NOTES: If "$ rm ./* -r", then "$ git checkout ."
   - $ git checkout [file]           # 用暂存区的指定文件重置工作区，对象是暂存区的commit，HEAD不变
 
   - $ git checkout [commit] [file]  # 用commit的指定文件重置暂存区和工作区，对象是commit history中的commit，HEAD不变
   - $ git checkout [branch] [file]  # 用branch的指定文件重置暂存区和工作区，注意会将暂存区和工作区中的filename文件直接覆盖，HEAD不变
   - $ git checkout HEAD [file]      # 用HEAD  的指定文件重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
   - $ git checkout HEAD^^ [file_path]   #用HEAD之前的第二个commit的指定文件重置暂存区和工作区，对象是commit history中的commit，HEAD不变
+
+  - $ git checkout HEAD .      	    # 用HEAD  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
+                                    # NOTES: If "$ git rm ./* -r", then it is required "$ git checkout HEAD ."
 
 ## checkout commit level  
   - $ git checkout                  # 汇总显示工作区、暂存区与HEAD的差异

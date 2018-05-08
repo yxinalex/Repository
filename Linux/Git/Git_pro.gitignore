@@ -1,3 +1,5 @@
+.gitignore
+
 *.obj
 *.bin
 *.swp
