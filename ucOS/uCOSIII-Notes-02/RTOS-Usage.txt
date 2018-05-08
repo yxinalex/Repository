@@ -1,0 +1,28 @@
+1.	Background.
+
+We use UC-OS III on K30, FreeRTOS on MW300.Although they are mature commercial grade RTOS, they all support common features such as Queue,Task,Mutex,Semaphore,Mailbox. The detailed API function may have subtle  and important difference. Especially on MW300 Marvell has provided wrapper in wm_os.h for Raw FreeRTOS API, these are much more recommended.
+
+
+2.	Mutex 
+2.1	Was mutex created using the correct API?
+2.2	Mutex should be acquire and release in the same task context, and always released once acquired.
+2.3	Mutex should never be used in ISR.
+
+3.	Semaphore
+3.1	Was Semaphore created using correct API? For a binary semaphore, is it available right after creation or need to be given before taken? Is this properly taken care of when writing the code?
+3.2	Was Semaphore taken and given using correct API when in ISR?
+
+4.	Task
+4.1	What kind of priority is the task? If high-priority, it’s better be simple and small and try not to share resources with low-priority task if possible. 
+4.2	Was the task created and stay there forever or dynamically created and deleted? Was the related resource properly taken care of once task is deleted?
+4.3	 Did the task has enough task stack?
+
+5.	Multi-threading resource sharing
+
+5.1	What kind of resource are shared between multi-task? Was it allowed to be shared? For example, LWIP on MW300 not allowed to be shared between tasks, the result is un-predictable. Maybe it’s OK for now, but definitely not guaranteed. 
+5.2	Was proper protection created to avoid corruption? Was the protection method correct? For example ,one should not got confused on the difference on mutex and binary semaphore.
+
+6.	Multi-threading monitor
+
+6.1	Does system has Watch Dog? 
+6.2	Where do the system feed the dog? Is there any possibility Watch Dog will not protect the system?
