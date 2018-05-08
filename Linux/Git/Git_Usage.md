@@ -283,6 +283,7 @@ Create by alex on 2018.05.07
 
   - $ git clone [url]
   - $ git clone https://github.com/yxinalex/Repository
+  - $ git checkout -b branch origin # 基于远程分支"origin"，创建一个叫"branch"的分支
 
   - $ git remote -v                 # 显示所有远程仓库 
   - $ git remote show [remote]      # 显示某个远程仓库的信息 
