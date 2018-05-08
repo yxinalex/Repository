@@ -105,7 +105,13 @@ Create by alex on 2018.05.07
 
 # 5. Stash
 
-TBD
+  - $ git stash                 # 想切换分支,但是不想提交正在进行中的工作，可以向堆栈上推送一个储藏保存当前变更
+  - $ git stash list            # 查看现有的储藏
+  - $ git stash drop stash@{0}  # 移除指定的储藏
+  - $ git stash apply           # 重新应用最近的储藏，对工作区的变更被重新应用，但是被暂存的文件没有重新被暂存
+  - $ git stash apply --index   # 重新应用最近的储藏，对工作区的变更和暂存区的变更，都重新应用
+  - $ git stash pop             # 重新应用最近的储藏，并将其从栈顶移除
+  - $ git stash branch [branch_name]    # 从储藏中创建分支
 
 # 6. Commit
 
@@ -117,6 +123,8 @@ TBD
   
   - $ git commit --amend                        # 使用一次新的commit，替代上一次提交
   - $ git commit --amend -m "comments"          # 如果代码没有任何新变化，则用来改写上一次commit的提交信息 
+
+  - $ git cherry-pick [commit]                  # 选择一个commit，合并进当前分支? 
 
 # 7. Branch
 ## - List
@@ -270,8 +278,6 @@ TBD
   - $ git merge [branch]            # 合并指定分支到当前分支 
   - $ git merge [origin/master]     # 将远端master分支的代码merge进本地当前分支,?
   - $ git mergetool                 # 使用merge工具解决merge冲突
-
-  - $ git cherry-pick [commit]      # 选择一个commit，合并进当前分支? 
 
 # 13. Remote
 
