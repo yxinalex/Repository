@@ -3,6 +3,7 @@
 " ##################################################################################
 " 			Vim Install & Pre-Install
 " ##################################################################################
+" NOTES_01:
 " $sudo apt install vim
 " $sudo apt install ctags
 " $sudo apt-get install silversearcher-ag
@@ -200,6 +201,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " ##################################################################################
 " 				vim-airline-themes
 " ##################################################################################
+" NOTES_02:
 " Put the self-customized-airline-theme into below path
 " "/.vim/bundle/vim-airline-themes/autoload/airline/themes/"
 "
@@ -229,6 +231,7 @@ let g:airline_theme='alexdark'
 " ##################################################################################
 " 				tagbar
 " ##################################################################################
+" NOTES_03:
 let g:tagbar_ctags_bin='/usr/bin/ctags'  
 let g:tagbar_width=30  
 let g:tagbar_right=0
@@ -336,6 +339,7 @@ let g:tagbar_right=0
 " ##################################################################################
 " 				LeaderF
 " ##################################################################################
+" NOTES_04:
 " vim7.3 or higher. Only support vim7.4.330 or higher after v1.01. 
 " :LeaderfFile or :LeaderfFile [directory] or ,f	" Launch LeaderF to search files.
 " :LeaderfBuffer or ,b					" Launch LeaderF to search buffers.
@@ -350,6 +354,7 @@ let g:tagbar_right=0
 " :LeaderfHelp
 " :LeaderfColorscheme  
 
+" NOTES_05:
 let g:Lf_Ctags = "/usr/bin/ctags"
 
 " Once LeaderF is launched:
@@ -487,7 +492,7 @@ let g:syntastic_warning_symbol='>'
 let g:syntastic_enable_highlighting=1
 
 " See error location list
-" Nots: 
+" NOTES_06:
 " Manual:   ensure:(check_on_open==0 && auto_loc_list==0)
 " Auto:     ensure:(check_on_open==1 && auto_loc_list==1)
 let g:syntastic_check_on_open = 0               
@@ -552,6 +557,7 @@ nmap <F10> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""
 "	 ctags Key Map
 """""""""""""""""""""""""""""""""""""""
+" NOTES_07:
 " nmap <F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
 nmap <silent><F9> :!ctags -R<CR><CR>
 " nmap <Leader>d <C-]> 
@@ -908,8 +914,8 @@ set nowrap
 " :w!
 " :q
 " :q!
-" :e
-" :e!
+" :e            "reload
+" :e!           "drop current changes and reload
 " :wq      " ==ZZ,  ==x
 " :wq!
 " :wa
@@ -1022,6 +1028,7 @@ set sessionoptions-=winsize
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Register
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NOTES_08:
 " $vim --version | grep "clipboard"     "Check if vim support system clipboard
 " $sudo apt-get install vim-gnome       "Install this GUI vim to support system clipboard
 "
@@ -1251,9 +1258,13 @@ endfunction
 " ##################################################################################
 " 					Terminal Font
 " ##################################################################################
+" NOTES_09:
 " Set Terminal Font (Custom Font) = Monospace Regular, 12     " Terminal's Default Font in Ubuntu
+" Set Terminal Font (Custom Font) = DejaVu Sans Mono Book, 10 " Vim Terminal's Font in Ubuntu
 " Set Terminal Font (Custom Font) = DejaVu Sans Mono, 9       " Sublime's Font in Ubuntu
 " Set Terminal Font (Custom Font) = DejaVu Sans Mono Book, 9  " Sublime's Font in Ubuntu
+"
+" Optiont:
 " Set Terminal Font (Custom Font) = consolas, 10
 " Set Terminal Font (Custom Font) = Inconsolata, 10
 "
@@ -1261,6 +1272,7 @@ endfunction
 " ##################################################################################
 " 					Color scheme
 " ##################################################################################
+" NOTES_10:
 " :colorscheme molokai 
 " set background=dark
 set t_Co=256 
