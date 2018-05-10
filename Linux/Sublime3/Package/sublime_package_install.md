@@ -2,6 +2,8 @@ Sublime Text 3 Package
 ==========================================================
 
 > ***Updated on 2018-03-25 by Alex***
+> ***Updated on 2018-05-10 by Alex*** 
+    - Add WordHighlight
 
 ----------------------------------------------------------
 
@@ -39,6 +41,7 @@ apt - Ubuntu, Debian Install Usage. [Official Installation Link](http://www.subl
   * AllAutocomplete
   * EncodingHelper
   * ConvertToUTF8
+  * WordHighlight
 
 ### 2.1 Markdown Editing
 
@@ -84,7 +87,20 @@ apt - Ubuntu, Debian Install Usage. [Official Installation Link](http://www.subl
 **MarkdownLivePreview Keymap**  
 `Ctrl+Shift+P -> Open Command Paletter -> MarkdownLivePreview: Edit Current File`
 
-## 3.0 Sublime Package Theme List 
+### 2.4 WordHighlight
+
+> Menu: Preferences -> Package Settings -> WordHighlight -> Settings
+> HotKey: Ctrl+Shift+P -> Open Command Paletter -> Preference: MarkdownLivePreview Settings
+
+**WordHightlight Settings**
+```
+{
+    "color_scope_name": "monokai",
+    "draw_outlined": false,
+}
+```
+
+## 3. Sublime Package Theme List 
 
 ### 3.1 Theme
 
@@ -127,7 +143,7 @@ apt - Ubuntu, Debian Install Usage. [Official Installation Link](http://www.subl
 }
 ```
 
-## 4.0 Sublime Vintage Mode
+## 4. Sublime Vintage Mode
 
 Vintage是Sublime Text的vi模式编辑包. [Vintage](http://feliving.github.io/Sublime-Text-3-Documentation/vintage.html)
 
@@ -140,45 +156,59 @@ Vintage包含大部分的基本命令：d (delete), y (copy), c (change), gu (lo
 通过via命令面板执行的Ex commands没有实现，除了:w和:e。 
 ```
 
-## 5.0 Sublime Settings User
+## 5. Sublime Settings User
 
 > Menu: Preference -> Setting - User
 > HotKey: Ctrl+Shift+P -> Open Command Paletter -> Preference: Settings
 
 ```c
 {
-	//"font_face": "Courier New",            
-	"font_face": "DejaVu Sans Mono",         //Linux
-	//"font_face": "DejaVu Sans Mono Book",
-	//"font_face": "Source Code Pro",
-	//"font_face": "Source Code Pro Black",
-	//"font_face": "Source Code Pro Light",
-	//"font_face": "Source Code Pro ExtraLight",
-	//"font_face": "Source Code Pro Light",
-	"font_face": "Source Code Pro Medium",	//Windows
-	//"font_face": "Source Code Pro Semibold",
-	//"font_face": "Inconsolata",
-	//"font_face": "Consolas",
-	//"font_face": "Monaco",
-	//"font_face": "Calibri",
-	//"font_face": "microsoft yahei",
-	//"font_face": "microsoft yahei UI",
-	//"font_face": "Comic Sans MS",
-	//"font_face": "Cambria",
-	//"font_face": "Lucida Console",
-	//"font_face": "Estrangelo Edessa",
-	"font_size": 9,
-	"highlight_line": true,
-	"scroll_past_end": false,
-	"tab_size": 4,
-	"translate_tabs_to_spaces": true
-	"word_wrap": false,
-    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS"],
+    //"font_face": "Courier New",            
+    "font_face": "DejaVu Sans Mono",         //Linux
+    //"font_face": "DejaVu Sans Mono Book",
+    //"font_face": "Source Code Pro",
+    //"font_face": "Source Code Pro Black",
+    //"font_face": "Source Code Pro Light",
+    //"font_face": "Source Code Pro ExtraLight",
+    //"font_face": "Source Code Pro Light",
+    "font_face": "Source Code Pro Medium",	//Windows
+    //"font_face": "Source Code Pro Semibold",
+    //"font_face": "Inconsolata",
+    //"font_face": "Consolas",
+    //"font_face": "Monaco",
+    //"font_face": "Calibri",
+    //"font_face": "microsoft yahei",
+    //"font_face": "microsoft yahei UI",
+    //"font_face": "Comic Sans MS",
+    //"font_face": "Cambria",
+    //"font_face": "Lucida Console",
+    //"font_face": "Estrangelo Edessa",
+    "font_size": 9,
+    "highlight_line": true,
+    "scroll_past_end": false,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true
+    "word_wrap": false,
+
+    "highlight_modified_tabs": true,    // Highlight the modified file
+    "fade_fold_buttons": false,         // false: always show fade fold buttions
+    "show_encoding": true, 　　           // Show file encoded
+    "show_full_path": true, 　　　　　　　　　　  // Show full path, this is default setting.
+    //"bold_folder_labels": true,       // Bold the folder name
+    // "draw_white_space": "all",       // Show all of white space: "none"|"selection"|"all"
+    // "save_on_focus_lost": true, 　　　　　// Auto save on focus lost
+
+    "folder_exclude_patterns": 
+    [
+        ".svn", ".git", ".hg", "CVS"
+    ],
+
     "file_exclude_patterns": 
     [
     	"*.doc", "*.docx", "*.xls", "*.xlsx", "*.graphml",
     	"*.exe", "*.dll", "*.obj","*.o", "*.a", "*.l",
     	"*.zip", "*.rar", 
+        "*.swp",
     ],
 
     //Sublime Theme
@@ -195,7 +225,7 @@ Vintage包含大部分的基本命令：d (delete), y (copy), c (change), gu (lo
 }
 ```
 
-## 6.0 Sublime Keymap User
+## 6. Sublime Keymap User
 
 > Menu: Preference -> Key Bindings - User
 
