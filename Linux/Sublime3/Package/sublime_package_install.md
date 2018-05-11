@@ -23,6 +23,7 @@ apt - Ubuntu, Debian Install Usage. [Official Installation Link](http://www.subl
   > Menu: Preferences -> Package Control: Install Package
   > HotKey: Ctrl+Shift+P -> Open Command Paletter -> Package Control: Install Package
 
+  * PackageResourceViewer
   * C Improved
   * SideBarEnhancements
   * Terminal
