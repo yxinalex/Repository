@@ -55,7 +55,7 @@ Create by alex on 2018.05.07
   - $ git config --global merge.tool vimdiff
   - $ git d (hashid)
 
-## 4. Git SSH
+## 4. Set SSH Github/Bitbucket
 
   - $ ssh-keygen                          # generate ssh key
   - $ vim /home/alexyuan/.ssh/id_rsa.pub  # copy ssh key and put it in github or bitbucket ssh key for access
