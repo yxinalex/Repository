@@ -1,8 +1,16 @@
-.gitignore
+
+*.dep
+*.ewd
+*.ewp
+*.eww
+*.lnt
 
 *.obj
 *.bin
+*.out
 *.swp
+tags
+tag
 
 *.doc
 *.docx
@@ -11,9 +19,12 @@
 *.pdf
 *.graphml
 *.uml
+*.vsd
+*.uxf
 
 *.jpg
 *.png
+*.bmp
 
 *.suo
 *.sdf

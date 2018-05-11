@@ -292,7 +292,8 @@ Create by alex on 2018.05.07
 
   - $ git remote -v                 # 显示所有远程仓库 
   - $ git remote show [remote]      # 显示某个远程仓库的信息 
-  - $ git remote add [shortname] [url]  # 增加一个新的远程仓库，并命名 
+  - $ git remote add [shortname] [url]      # 增加一个新的远程仓库，并命名 
+  - $ git remote remove [shortname_origin]  # Remove one remote repository
 
   - $ git fetch [remote]            # 下载远程仓库的所有变动 
   - $ git pull [remote] [tag]       # 取回远程仓库的变化，并与本地分支合并 
@@ -300,6 +301,7 @@ Create by alex on 2018.05.07
 
   - $ git push [remote] [tag]       # 提交指定tag 
   - $ git push [remote] [branch]    # 上传本地指定分支到远程仓库 
+  - $ git push -u origin master     # 把origin设置成upstream, 以后就可以直接使用不带别的参数的git pull从之前push到的分支来pull
 
   - $ git push [remote] --force     # 强行推送当前分支到远程仓库，即使有冲突 
   - $ git push [remote] --all       # 推送所有分支到远程仓库 
