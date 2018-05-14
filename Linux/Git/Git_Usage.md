@@ -60,6 +60,14 @@ Create by alex on 2018.05.07
   - $ ssh-keygen                          # generate ssh key
   - $ vim /home/alexyuan/.ssh/id_rsa.pub  # copy ssh key and put it in github or bitbucket ssh key for access
 
+  - $ ssh -T git@github.com               # Check the access rights and authority
+  - $ ssh -T git@bitbucket.org
+  - $ ssh -vT git@github.com
+  - $ ssh -vT git@bitbucket.org
+
+  - $ eval "$(ssh-agent -s)"              # For example feedback: Agent pid 11918
+  - $ ssh-add
+
 # 3. Creat Repository
 
 ## - Clone
@@ -186,8 +194,8 @@ Create by alex on 2018.05.07
 
 ## diff file level
   - $ git diff [file]                       # 显示工作区和暂存区的差异 
-  - $ git diff [file] --cached              # 显示暂存区和HEAD(或上一个commmit)的差异
-  - $ git diff [file] --staged              # 同上
+  - $ git diff --cached [file]              # 显示暂存区和HEAD(或上一个commmit)的差异
+  - $ git diff --staged [file]              # 同上
   - $ git diff HEAD [file]                  # 显示工作区和当前分支的HEAD的差异 
   - $ git diff [branch] [file]              # 工作区的文件与branch 分支的文件进行比较
   - $ git diff [branch1] [branch2] [file]   # 比较两个分支的指定文件的差异
