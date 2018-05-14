@@ -1,4 +1,8 @@
 
+
+
+.svn
+
 *.dep
 *.ewd
 *.ewp
@@ -8,9 +12,15 @@
 *.obj
 *.bin
 *.out
+*.hex
 *.swp
+*.tags
+*.tags_sorted_by_file
 tags
 tag
+/Debug
+/Release
+/Settings
 
 *.doc
 *.docx
@@ -31,4 +41,7 @@ tag
 *.opensd
 *.idb
 *.pdb
+
+
+
 
