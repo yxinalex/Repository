@@ -95,10 +95,14 @@ let NERDTreeAutoCenter=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=0
 let NERDTreeWinSize=30
-let NERDTreeIgnore=[
-    \'\.doc','\.docx','\.xls','\.xlsx','\.pdf',
-    \'\.vsd','\.zip','\.rar',
-    \'\.jpg','\.graphml']
+let NERDTreeIgnore=
+    \[
+    \'\.doc', '\.docx', '\.xls', '\.xlsx', '\.pdf',
+    \'\.vsd', '\.uml', '\.graphml',
+    \'\.zip', '\.rar',
+    \'\.jpg','\.bmp','\.png'
+    \]
+
 
 " vim doesn't special file, auto open nerdtree
 " autocmd StdinReadPre * let s:std_in=1
