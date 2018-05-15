@@ -77,6 +77,7 @@ Create by alex on 2018.05.07
 ## - Location
   - $ git init
   - $ git init [project_name]
+  - $ rm -rf .git                         # Delete local repository!!!!!
 
 ## - Name 
   - Workspace：工作区
@@ -141,21 +142,29 @@ Create by alex on 2018.05.07
   - $ git cherry-pick [commit]                  # 选择一个commit，合并进当前分支? 
 
 # 7. Branch
-## - List
+
+## List
   - $ git branch                # 列出所有本地分支 
   - $ git branch -r             # 列出所有远程分支
   - $ git branch -a             # 列出所有本地分支和远程分支 
-## - Create
+
+## Create
   - $ git branch [branch-name]          # 新建一个分支，但依然停留在当前分支 
   - $ git checkout -b [branch]          # 新建一个分支，并切换到该分支 
   - $ git checkout -b [branch] [tag]    # 新建一个分支，指向某个tag 
   - $ git branch [branch] [commit]      # 新建一个分支，指向指定commit 
   - $ git branch --track [branch] [remote-branch]        # 新建一个分支，与指定的远程分支建立追踪关系 
   - $ git branch --set-upstream [branch] [remote-branch] # 建立追踪关系，在现有分支与指定的远程分支之间 
-## - Switch
+
+## Rename Branch
+  - $ git branch -m branch-name branch-new-name
+
+## Switch
   - $ git checkout [branch-name]        # 切换到指定分支，并更新暂存区和工作区，HEAD发生变化，指向新的Branch
-## - Delete
+
+## Delete
   - $ git branch -d [branch-name]       # 删除分支 
+  - $ git branch -D [branch-name]       # Force 删除分支 
   - $ git push origin --delete          # 删除远程分支 
   - $ git branch -dr                    # 删除远程分支 
 
@@ -299,24 +308,58 @@ Create by alex on 2018.05.07
 
 # 13. Remote
 
+## Init Remote Repository
   - $ git clone [url]
   - $ git clone https://github.com/yxinalex/Repository
   - $ git checkout -b branch origin # 基于远程分支"origin"，创建一个叫"branch"的分支
 
+## Look/Add/Remove/Rename Remote
   - $ git remote -v                 # 显示所有远程仓库 
   - $ git remote show [remote]      # 显示某个远程仓库的信息 
   - $ git remote add [shortname] [url]      # 增加一个新的远程仓库，并命名 
   - $ git remote remove [shortname_origin]  # Remove one remote repository
+  - $ git remote origin origin-new-name
 
-  - $ git fetch [remote]            # 下载远程仓库的所有变动 
-  - $ git pull [remote] [tag]       # 取回远程仓库的变化，并与本地分支合并 
-  - $ git pull [remote] [branch]    # 取回远程仓库的变化，并与本地分支合并 
+## Pull/Push Remote
+  - $ git fetch [remote]                        # 下载远程仓库的所有变动 
+  - $ git fetch [remote] [branch]               # 取回特定分支的更新
+  - $ git fetch origin master
+  - $ git log -p FETCH_HEAD                     # 取回更新后，会返回一个FETCH_HEAD ，指的是某个branch在服务器上的最新状态
+                                                # 可以在本地通过它查看刚取回的更新信息, 通过这些信息来判断是否产生冲突，以确定是否将更新merge到当前分支
+  - $ git log -p master..origin/master
+  - $ git merge origin/master
+  - $ git merge FETCH_HEAD                      # 将拉取下来的最新内容合并到当前所在的分支中
+  - $ git checkout -b new_branch_for_fetch      # 将拉取下来的最新内容 place 本地指定新的分支
+  - $ git fetch --all
 
-  - $ git push [remote] [tag]       # 提交指定tag 
-  - $ git push [remote] [branch]    # 上传本地指定分支到远程仓库 
+  - $ git pull [remote] [tag]                   # 取回远程仓库的变化，并与本地分支合并 
+  - $ git pull [remote] [branch]                # 取回远程仓库的变化，并与本地分支合并 
+  - $ git pull origin master
+  - $ git pull origin remote-b:local-b          # 使用远程的对应分支来更新对应的本地分支
+
+  - $ git push [remote] [tag]                   # 提交指定tag 
+  - $ git push [remote] [branch]                # 上传本地指定分支到远程仓库 
+  - $ git push origin master
+  - $ git push origin local-b:remote-b          # 使用本地的对应分支来更新对应的远程分支
   - $ git push -u origin master     # 把origin设置成upstream, 以后就可以直接使用不带别的参数的git pull从之前push到的分支来pull
+                                    # 如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用 git push
 
-  - $ git push [remote] --force     # 强行推送当前分支到远程仓库，即使有冲突 
-  - $ git push [remote] --all       # 推送所有分支到远程仓库 
-  - $ git push [remote] --tags      # 提交所有tag 
+  - $ git push [remote] --force                 # 强行推送当前分支到远程仓库，即使有冲突 
+  - $ git push [remote] --all                   # 不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用–all选项
+  - $ git push [remote] --tags                  # 提交所有tag 
 
+  - $ git checkout -b local_branch origin/remote_branch     # 从远程仓库里拉取一条本地不存在的分支
+
+## Delete Remote
+  - $ git branch -r                             # Look all of remote branches
+
+  - $ git branch -r -d origin/remote-b          # Delete the remote branch
+  - $ git push origin --delete remote-b         # Delete the remote branch
+  - $ git push origin :remote-b                 # Same above  (Push local empty branch to remote branch as delete remote branch)
+
+  - $ git push origin --delete tag remote-tag   # Delete the remote tag
+  - $ git tag -d tag-name                       # The other way to delete the remote tag
+  - $ git push origin :refs/tags/tag-name       # Above contine...
+
+  - $ git remote add origin <url>               # 彻底删除/替换git远程仓库, 将某个工程向现在的仓库强制推送即可
+  - $ git push --force --set-upstream origin master # Above contine...
