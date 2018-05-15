@@ -332,6 +332,7 @@ Create by alex on 2018.05.07
   - $ git checkout -b new_branch_for_fetch      # 将拉取下来的最新内容 place 本地指定新的分支
   - $ git fetch --all
 
+  - $ git pull --all
   - $ git pull [remote] [tag]                   # 取回远程仓库的变化，并与本地分支合并 
   - $ git pull [remote] [branch]                # 取回远程仓库的变化，并与本地分支合并 
   - $ git pull origin master
