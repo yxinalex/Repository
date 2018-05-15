@@ -679,8 +679,8 @@ nmap <C-Pageup> :tabn<CR>
 nmap <C-Pagedown> :tabp<CR>
 
 nmap <C-z> u
-nmap <silent><Leader>s :w!<CR>
-nmap <silent><Leader>as :wa!<CR>
+nmap <silent><Leader>ss :w!<CR>
+nmap <silent><Leader>sa :wa!<CR>
 
 nmap <silent><Leader>ps :wa!<CR> :NERDTreeClose<CR> :TagbarClose<CR> :mksession! proj.vim<CR> :wviminfo proj.viminfo<CR>
 nmap <silent><Leader>po :source ./proj.vim<CR> :rviminfo ./proj.viminfo<CR>
@@ -720,8 +720,8 @@ imap <C-x> "+d
 imap <C-z> <Esc>ui
 imap <C-a> <Esc>ggvG
 
-vmap <silent><Leader>s <Esc>:w!<CR>v
-imap <silent><Leader>s <Esc>:w!<CR>i
+vmap <silent><Leader>ss <Esc>:w!<CR>v
+imap <silent><Leader>ss <Esc>:w!<CR>i
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Hot Key
