@@ -311,19 +311,24 @@ Create by alex on 2018.05.07
 ## Init Remote Repository
   - $ git clone [url]
   - $ git clone https://github.com/yxinalex/Repository
-  - $ git checkout -b branch origin # 基于远程分支"origin"，创建一个叫"branch"的分支
 
 ## Look/Add/Remove/Rename Remote
-  - $ git remote -v                 # 显示所有远程仓库 
-  - $ git remote show [remote]      # 显示某个远程仓库的信息 
-  - $ git remote add [shortname] [url]      # 增加一个新的远程仓库，并命名 
-  - $ git remote remove [shortname_origin]  # Remove one remote repository
+  - $ git remote -v                             # 显示所有远程仓库 
+  - $ git remote show [remote]                  # 显示某个远程仓库的信息 
+  - $ git remote add [shortname] [url]          # 增加一个新的远程仓库，并命名 
+  - $ git remote remove [shortname_origin]      # Remove one remote repository
   - $ git remote origin origin-new-name
 
-## Pull/Push Remote
+## Create Tracked Remote-Location
+  - $ git branch --track local-b origin/remote-b            # 新建一个分支，与指定的远程分支建立追踪关系，但不切换分支，仍停留在当前分支  
+  - $ git branch --set-upstream local-b origin/remote-b     # 建立追踪关系，在现有分支与指定的远程分支之间
+  - $ git checkout -b local-b origin/remote-b               # 基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
+
+## Fetch Remote
   - $ git fetch [remote]                        # 下载远程仓库的所有变动 
   - $ git fetch [remote] [branch]               # 取回特定分支的更新
   - $ git fetch origin master
+  - $ git fetch origin local-b:remote-b         # 取回远程remote-b到本地local-b，不切换分支仍停留在当前分支，不merge remote-b到当前分支
   - $ git log -p FETCH_HEAD                     # 取回更新后，会返回一个FETCH_HEAD ，指的是某个branch在服务器上的最新状态
                                                 # 可以在本地通过它查看刚取回的更新信息, 通过这些信息来判断是否产生冲突，以确定是否将更新merge到当前分支
   - $ git log -p master..origin/master
@@ -332,12 +337,15 @@ Create by alex on 2018.05.07
   - $ git checkout -b new_branch_for_fetch      # 将拉取下来的最新内容 place 本地指定新的分支
   - $ git fetch --all
 
+## Pull Remote
   - $ git pull --all
+
   - $ git pull [remote] [tag]                   # 取回远程仓库的变化，并与本地分支合并 
   - $ git pull [remote] [branch]                # 取回远程仓库的变化，并与本地分支合并 
   - $ git pull origin master
-  - $ git pull origin remote-b:local-b          # 使用远程的对应分支来更新对应的本地分支
+  - $ git pull origin remote-b:local-b          # 使用远程的对应分支来更新对应的本地分支，不切换分支，但会Merge remote-b到当前分支
 
+## Push Remote
   - $ git push [remote] [tag]                   # 提交指定tag 
   - $ git push [remote] [branch]                # 上传本地指定分支到远程仓库 
   - $ git push origin master
@@ -348,8 +356,6 @@ Create by alex on 2018.05.07
   - $ git push [remote] --force                 # 强行推送当前分支到远程仓库，即使有冲突 
   - $ git push [remote] --all                   # 不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用–all选项
   - $ git push [remote] --tags                  # 提交所有tag 
-
-  - $ git checkout -b local_branch origin/remote_branch     # 从远程仓库里拉取一条本地不存在的分支
 
 ## Delete Remote
   - $ git branch -r                             # Look all of remote branches
