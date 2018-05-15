@@ -33,7 +33,7 @@ Create by alex on 2018.05.07
   - $ git config --global user.email "yxinsiva@163.com"
   - $ git config --global core.editor emacs
   - $ git config --global core.editor vim
-  - $ git config --global core.excludesfile ~/.gitignore
+  - $ git config --global core.excludesfile ~/.gitignore        # https://github.com/github/gitignore
   - $ git config --global color.ui auto
   - $ git config --global alias.glog "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
   - $ git config -e [--global] 
