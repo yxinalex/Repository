@@ -153,8 +153,10 @@ Create by alex on 2018.05.07
   - $ git checkout -b [branch]          # 新建一个分支，并切换到该分支 
   - $ git checkout -b [branch] [tag]    # 新建一个分支，指向某个tag 
   - $ git branch [branch] [commit]      # 新建一个分支，指向指定commit 
-  - $ git branch --track [branch] [remote-branch]        # 新建一个分支，与指定的远程分支建立追踪关系 
-  - $ git branch --set-upstream [branch] [remote-branch] # 建立追踪关系，在现有分支与指定的远程分支之间 
+
+  - $ git checkout -b local-b origin/remote-b               # 建立新分支，建立关系，切换到新分支：基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
+  - $ git branch --track local-b origin/remote-b            # 建立新分支，建立关系，不切换到新分支：新建一个分支，与指定的远程分支建立追踪关系，不切换分支，仍停留在当前分支  
+  - $ git branch --set-upstream local-b origin/remote-b     # 不建立新分支，只建立追踪关系，不切换分支：在现有分支与指定的远程分支之间建立追踪关系
 
 ## Rename Branch
   - $ git branch -m branch-name branch-new-name
@@ -320,9 +322,9 @@ Create by alex on 2018.05.07
   - $ git remote origin origin-new-name
 
 ## Create Tracked Remote-Location
-  - $ git branch --track local-b origin/remote-b            # 新建一个分支，与指定的远程分支建立追踪关系，但不切换分支，仍停留在当前分支  
-  - $ git branch --set-upstream local-b origin/remote-b     # 建立追踪关系，在现有分支与指定的远程分支之间
-  - $ git checkout -b local-b origin/remote-b               # 基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
+  - $ git checkout -b local-b origin/remote-b               # 建立新分支，建立关系，切换到新分支：基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
+  - $ git branch --track local-b origin/remote-b            # 建立新分支，建立关系，不切换到新分支：新建一个分支，与指定的远程分支建立追踪关系，不切换分支，仍停留在当前分支  
+  - $ git branch --set-upstream local-b origin/remote-b     # 不建立新分支，只建立追踪关系，不切换分支：在现有分支与指定的远程分支之间建立追踪关系
 
 ## Fetch Remote
   - $ git fetch [remote]                        # 下载远程仓库的所有变动 
