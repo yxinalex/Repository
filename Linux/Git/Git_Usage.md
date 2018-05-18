@@ -344,13 +344,15 @@ Create by alex on 2018.05.07
 
   - $ git pull [remote] [tag]                   # 取回远程仓库的变化，并与本地分支合并 
   - $ git pull [remote] [branch]                # 取回远程仓库的变化，并与本地分支合并 
-  - $ git pull origin master
+  - $ git pull origin remote-master-name        # 取回远程仓库上指定分支，并与本地当前分支合并
+  - $ git pull origin remote-branch-name        # 取回远程仓库上指定分支，并与本地当前分支合并
   - $ git pull origin remote-b:local-b          # 使用远程的对应分支来更新对应的本地分支，不切换分支，但会Merge remote-b到当前分支
 
 ## Push Remote
   - $ git push [remote] [tag]                   # 提交指定tag 
   - $ git push [remote] [branch]                # 上传本地指定分支到远程仓库 
-  - $ git push origin master
+  - $ git push origin remote-master-name        # 推送本地当前分支的变化，到远程仓库上指定分支
+  - $ git push origin remote-branch-name        # 推送本地当前分支的变化，到远程仓库上指定分支。如果远程仓库没有此分支名，将创建新的分支 remote-branch-name
   - $ git push origin local-b:remote-b          # 使用本地的对应分支来更新对应的远程分支
   - $ git push -u origin master     # 把origin设置成upstream, 以后就可以直接使用不带别的参数的git pull从之前push到的分支来pull
                                     # 如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用 git push
