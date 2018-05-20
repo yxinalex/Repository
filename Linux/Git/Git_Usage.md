@@ -316,6 +316,7 @@ Create by alex on 2018.05.07
 
 ## Look/Add/Remove/Rename Remote
   - $ git remote -v                             # 显示所有远程仓库 
+  - $ git branch -vv                            # 显示本地分支跟踪的远程分支
   - $ git remote show [remote]                  # 显示某个远程仓库的信息 
   - $ git remote add [shortname] [url]          # 增加一个新的远程仓库，并命名 
   - $ git remote remove [shortname_origin]      # Remove one remote repository
