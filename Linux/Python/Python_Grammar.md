@@ -34,6 +34,11 @@ print('hello,', name)
   - 浮点数  `1.23，3.14，-9.01, 1.23x109就是1.23e9，或者12.3e8，0.000012可以写成1.2e-5`
   - 字符串  `'I\'m \"OK\"!'`, 用r''表示''内部的字符串默认不转义
 
+# 编码
+ - ASCII 
+ - Unicode
+ - UTF-8
+
 # 字符串
   - print('包含中文的str')
   - ord('A')    # 65
@@ -51,5 +56,24 @@ print('hello,', name)
   - len(b'\xe4\xb8\xad\xe6\x96\x87')    # 6
   - len('中文'.encode('utf-8'))         # 6
 
+# 字符串格式化
+  - 'Hello, %s' % 'world'           #'Hello, world'
+  - 'Hi, %s, you have $%d.' % ('Michael', 1000000)  # 'Hi, Michael, you have $1000000.'
+| 占位符 |	替换内容    |
+| %d     |	整数        |
+| %f 	 |  浮点数      |
+| %s 	 |  字符串      |
+| %x     | 	十六进制整数 |
+ - 其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数
+```Python
+print('%2d-%02d' % (3, 1))
+print('%.2f' % 3.1415926)
+```
+ - 字符串的format()方法，它会用传入的参数依次替换字符串内的占位符{0}、{1}……，不过这种方式写起来比%要麻烦得多：
+```Python
+'Age: %s. Gender: %s' % (25, True)      # 'Age: 25. Gender: True'
+'growth rate: %d %%' % 7                # 'growth rate: 7 %'
+'Hello, {0}, 成绩提升了 {1:.1f}%'.format('小明', 17.125)  # 'Hello, 小明, 成绩提升了 17.1%'
+```
 
 
