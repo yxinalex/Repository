@@ -6,3 +6,6 @@ $ ls -l
 
 $ sudo ll ./*21-generic		//display the install linux package 
 $ sudo rm ./*21-generic		//remove the install linux package 
+
+
+$ sudo apt-get --purge autoremove	//Clean the system configuration about system upgrade
