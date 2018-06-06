@@ -221,9 +221,24 @@ Create by alex on 2018.05.07
   - $ git diff HEAD --stat                  # 显示工作区与当前分支最新commit之间的文件差异列表
   - $ git diff HEAD HEAD^
   - $ git diff [branch1] [branch2]          # 显示两个branch之间的差异  
-  - $ git diff [branch1] [branch2] --stat   # 显示两个branch之间的差异的文件列表  
   - $ git diff [commit1] [commit2]          # 任意两次commit之间的差别
-  - $ git diff [commit1] [commit2] --stat   # 任意两次commit之间的差别的文件列表
+
+  - $ git diff [branch1] [branch2] --stat   # 显示两个branch之间的差异的文件列表，文件新增和删除的总行数，用‘+’和‘-’的数量表示新增和删除的比例
+  - $ git diff [commit1] [commit2] --stat   # 显示两个commit之间的差异的文件列表，文件新增和删除的总行数，用‘+’和‘-’的数量表示新增和删除的比例
+  - $ git diff [commit1] [commit2] --stat-width=60 --stat-name-width=10 --stat-count=3  # 显示两个commit之间的差异的文件列表，一行显示的总宽度，文件名显示宽度，文件列表显示个数
+  - $ git diff [commit1] [commit2] --stat=60,10,3     # 同上，简写
+
+  - $ git diff [commit1] [commit2] --shortstat        # 显示两个commit之间的差别信息：文件变化的总数量，新增行数的总数量，和删除行数的总数量
+  - $ git diff [commit1] [commit2] --numstat          # 显示两个commit之间的差别的文件列表，分别显示文件新增的行数和删除的行数
+  - $ git diff [commit1] [commit2] --dirstat          #同下 
+  - $ git diff [commit1] [commit2] --dirstat=changes  #显示两个commit之间的差别以文件夹为单位 
+  - $ git diff [commit1] [commit2] --dirstat=lines    #显示两个commit之间的差别以文件夹为单位 
+  - $ git diff [commit1] [commit2] --dirstat=files    #显示两个commit之间的差别以文件夹为单位 
+
+  - $ git diff [commit1] [commit2] --ignore-space-at-eol        #比较两个commit之间的差别,Ignore changes in whitespace at EOL. 
+  - $ git diff [commit1] [commit2] -b, --ignore-space-change    #比较两个commit之间的差别,Ignore changes in amount of whitespace. This ignores whitespace at line end, and considers all other sequences of one or more whitespace characters to be equivalent.
+  - $ git diff [commit1] [commit2] -w, --ignore-all-space       #比较两个commit之间的差别,Ignore whitespace when comparing lines. This ignores differences even if one line has whitespace where the other line has none.
+  - $ git diff [commit1] [commit2] --ignore-blank-lines         #比较两个commit之间的差别,Ignore changes whose lines are all blank. 
 
 ## difftool = vimdiff, meld, diffmerge
   - $ git difftool HEAD
