@@ -36,6 +36,7 @@ Create by alex on 2018.05.07
   - $ git config --global core.excludesfile ~/.gitignore        # https://github.com/github/gitignore
   - $ git config --global color.ui auto
   - $ git config --global alias.glog "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  - $ git config --global alias.glog "log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %C(bold blue)<%cn>%Creset %Cgreen(%cd)%Creset -%C(yellow)%d%Creset %s' --abbrev-commit"
   - $ git config -e [--global] 
   - $ git config [--global] user.name "[name]" $ git config [--global] user.email "[email address]"
 
@@ -186,10 +187,28 @@ Create by alex on 2018.05.07
   - $ git log --graph
   - $ git log --color --graph
   - $ git log --stat            # 显示commit历史，以及每次commit发生变更的文件  
+  - $ git log --stat -3         # 显示commit历史，以及每次commit发生变更的文件，但只显示最近3个commit
   - $ git log --follow [file]   # 显示某个文件的版本历史，包括文件改名 
   - $ git whatchanged [file]    # 显示某个文件的版本历史，包括文件改名 
   - $ git log -p [file]         # 显示指定文件相关的每一次diff 
+
   - $ git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  - $ git log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %C(bold blue)<%cn>%Creset %Cgreen(%cd)%Creset -%C(yellow)%d%Creset %s' --abbrev-commit
+  - $ git log --pretty="%h - %s" --author=alex --after="2018-05-10" --before="2018-05-20" --grep="Comments Message" --no-merges
+  - $ git log --pretty="%h - %s" --committer=alex --after="2018-05-10" --before="2018-05-20" --grep="Comments Message" --no-merges
+
+  - $ git log commit            # 查询commit之前的记录，包含commit
+  - $ git log commit1 commit2   # 查询commit1与commit2之间的记录，包括commit1和commit2
+  - $ git log commit1..commit2  # 同上，但是不包括commit1
+
+  - $ git log tag1              # 查询标签tag1之前的commit
+  - $ git log tag1 tag2         # 查询标签tag1和tag2之间的commit
+  - $ git log tag1..tag2        # 同上，但是不包括tag1和tag2
+
+  - $ git glog -3               # 显示commit历史，但只显示最近3个commit
+  - $ git glog --stat -3        # 显示commit历史，以及每次commit发生变更的文件，但只显示最近3个commit
+  - $ git glog --author=alex --after="2018-05-10" --before="2018-05-20" --grep="Comments Message" --no-merges
+  - $ git glog --committer=alex --after="2018-05-10" --before="2018-05-20" --grep="Comments Message" --no-merges
 
   - $ git show --name-only [commit] # 显示某次提交发生变化的文件 
   - $ git show [commit]             # 显示某次提交的元数据和内容变化  
