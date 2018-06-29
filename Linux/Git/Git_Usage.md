@@ -345,16 +345,18 @@ Create by alex on 2018.05.07
 # 13. Remote
 
 ## Init Remote Repository
-  - $ git clone [url]
-  - $ git clone https://github.com/yxinalex/Repository
-
+  - $ git clone https://github.com/yxinalex/Repository  	#HTTP
+  - $ git clone git@github.org:alex/repository.git 			#SSH
+  
 ## Look/Add/Remove/Rename Remote
   - $ git remote -v                             # 显示所有远程仓库 
   - $ git branch -vv                            # 显示本地分支跟踪的远程分支
   - $ git remote show [remote]                  # 显示某个远程仓库的信息 
   - $ git remote add [shortname] [url]          # 增加一个新的远程仓库，并命名 
   - $ git remote remove [shortname_origin]      # Remove one remote repository
-  - $ git remote origin origin-new-name
+  - $ git remote origin-old-name origin-new-name 		# Rename the origin name
+  - $ git remote set-url origin git@github.org:alex/repository.git	# First, create remote connection
+  - $ git push -u origin master 									# Second, push master to remote origin
 
 ## Create Tracked Remote-Location
   - $ git checkout -b local-b origin/remote-b               # 建立新分支，建立关系，切换到新分支：基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
