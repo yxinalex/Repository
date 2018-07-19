@@ -280,6 +280,10 @@ Create by alex on 2018.05.07
   - $ git checkout HEAD .      	    # 用HEAD  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
                                     # NOTES: If "$ git rm ./* -r", then it is required "$ git checkout HEAD ."
 
+  - $ git checkout HEAD [file_path] # 用HEAD 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
+  - $ git checkout [commit] [file_path] # 用commit 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
+  - $ git checkout [branch] [file_path] # 用branch 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
+                                    									
 ## checkout commit level  
   - $ git checkout                  # 汇总显示工作区、暂存区与HEAD的差异
   - $ git checkout HEAD             # 汇总显示工作区、暂存区与HEAD的差异 
@@ -293,7 +297,7 @@ Create by alex on 2018.05.07
   - $ git checkout [commit]         # 用指定的commit重置Staged和Working，HEAD发生变化指向commit，并且是匿名分支，Be in 'detached HEAD' state
                                     # NOTES: If be in 'detached HEAD' state, use command to restore: $ git checkout [master or branch]
                                     # NOTES: If be in 'detached HEAD' state, use command to new branch  : $ git branch [branch_name]
-
+									
 ## reset file level
   - $ git reset [file]              # 重置暂存区的指定文件，与上一次commit保持一致，工作区不变，HEAD不变 
   - $ git reset [Commit] [file]     # 用commit中指定的文件重置暂存区的指定文件，工作区不变，HEAD不变
