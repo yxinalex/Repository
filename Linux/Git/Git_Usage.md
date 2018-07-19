@@ -355,6 +355,12 @@ Create by alex on 2018.05.07
   - $ git remote add [shortname] [url]          # 增加一个新的远程仓库，并命名 
   - $ git remote remove [shortname_origin]      # Remove one remote repository
   - $ git remote origin-old-name origin-new-name 		# Rename the origin name
+  
+  - Smaple-1:
+  - $ git remote add origin git@github.org:alex/repository.git		# First, create remote connection (When you have local repository)
+  - $ git push -u origin master 									# Second, push master to remote origin
+  
+  - Sample-2:
   - $ git remote set-url origin git@github.org:alex/repository.git	# First, create remote connection
   - $ git push -u origin master 									# Second, push master to remote origin
 
