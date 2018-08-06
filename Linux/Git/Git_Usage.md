@@ -272,15 +272,15 @@ Create by alex on 2018.05.07
                                     # NOTES: If "$ rm ./* -r", then "$ git checkout ."
   - $ git checkout [file]           # 用暂存区的指定文件重置工作区，对象是暂存区的commit，HEAD不变
 
-  - $ git checkout [commit] [file]  # 用commit的指定文件重置暂存区和工作区，对象是commit history中的commit，HEAD不变
-  - $ git checkout [branch] [file]  # 用branch的指定文件重置暂存区和工作区，注意会将暂存区和工作区中的filename文件直接覆盖，HEAD不变
-  - $ git checkout HEAD [file]      # 用HEAD  的指定文件重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
+  - $ git checkout [commit] [file]      # 用commit的指定文件重置暂存区和工作区，对象是commit history中的commit，HEAD不变，注意会将暂存区和工作区中的filename文件直接覆盖
+  - $ git checkout [branch] [file]      # 用branch的指定文件重置暂存区和工作区，对象是commit history中的branch，HEAD不变，注意会将暂存区和工作区中的filename文件直接覆盖
+  - $ git checkout HEAD [file]          # 用HEAD  的指定文件重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变，注意会将暂存区和工作区中的filename文件直接覆盖
   - $ git checkout HEAD^^ [file_path]   #用HEAD之前的第二个commit的指定文件重置暂存区和工作区，对象是commit history中的commit，HEAD不变
 
-  - $ git checkout HEAD .      	    # 用HEAD  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
-                                    # NOTES: If "$ git rm ./* -r", then it is required "$ git checkout HEAD ."
+  - $ git checkout HEAD .      	        # 用HEAD  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
+                                        # NOTES: If "$ git rm ./* -r", then it is required "$ git checkout HEAD ."
 
-  - $ git checkout HEAD [file_path] # 用HEAD 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
+  - $ git checkout HEAD [file_path]     # 用HEAD 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
   - $ git checkout [commit] [file_path] # 用commit 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
   - $ git checkout [branch] [file_path] # 用branch 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
                                     									
