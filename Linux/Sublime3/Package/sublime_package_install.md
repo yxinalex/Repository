@@ -157,6 +157,25 @@ Vintage包含大部分的基本命令：d (delete), y (copy), c (change), gu (lo
 通过via命令面板执行的Ex commands没有实现，除了:w和:e。 
 ```
 
+> Enabled Vintage Mode
+It requires below items in user setting.
+Setting - User
+{
+	"ignored_packages":[],
+	"vintage_ctrl_keys": true,
+    "vintage_start_in_command_mode": true,
+}
+	
+> Disabled Vintage Mode
+1. Setting - User
+{
+	"ignored_packages":["Vintage"]
+}
+2. Setting - User
+{
+	//Remove: "ignored_packages":[]
+}
+
 ## 5. Sublime Settings User
 
 > Menu: Preference -> Setting - User
@@ -211,7 +230,11 @@ Vintage包含大部分的基本命令：d (delete), y (copy), c (change), gu (lo
     	"*.zip", "*.rar", 
         "*.swp",
     ],
-
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
     //Sublime Theme
     //"theme": "Soda Dark.sublime-theme",
     //"theme": "Soda Dark 3.sublime-theme",
