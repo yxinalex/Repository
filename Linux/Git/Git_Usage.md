@@ -369,6 +369,7 @@ Create by alex on 2018.05.07
   - $ git push -u origin master 									# Second, push master to remote origin
 
 ## Create Tracked Remote-Location
+  - $ git checkout -b origin/remote-b                       # 建立新分支，建立关系，切换到新分支：基于远程分支"origin/remote-b"，创建一个叫"origin/remote-b"的分支，并切换到分支orign/remote-b
   - $ git checkout -b local-b origin/remote-b               # 建立新分支，建立关系，切换到新分支：基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
   - $ git branch --track local-b origin/remote-b            # 建立新分支，建立关系，不切换到新分支：新建一个分支，与指定的远程分支建立追踪关系，不切换分支，仍停留在当前分支  
   - $ git branch --set-upstream local-b origin/remote-b     # 不建立新分支，只建立追踪关系，不切换分支：在现有分支与指定的远程分支之间建立追踪关系
@@ -385,6 +386,12 @@ Create by alex on 2018.05.07
   - $ git merge FETCH_HEAD                      # 将拉取下来的最新内容合并到当前所在的分支中
   - $ git checkout -b new_branch_for_fetch      # 将拉取下来的最新内容 place 本地指定新的分支
   - $ git fetch --all
+
+  - Smaple-1:
+  - $ git fetch --all
+  - $ git fetch origin 
+  - $ git fetch origin/HumDehumFeature
+  - $ git checkout -b HumDehumFeature origin/HumDehumFeature 
 
 ## Pull Remote
   - $ git pull --all
