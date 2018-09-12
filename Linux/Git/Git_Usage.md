@@ -419,13 +419,14 @@ Create by alex on 2018.05.07
 ## Delete Remote
   - $ git branch -r                             # Look all of remote branches
 
-  - $ git branch -r -d origin/remote-b          # Delete the remote branch
   - $ git push origin --delete remote-b         # Delete the remote branch
   - $ git push origin :remote-b                 # Same above  (Push local empty branch to remote branch as delete remote branch)
 
   - $ git push origin --delete tag remote-tag   # Delete the remote tag
   - $ git tag -d tag-name                       # The other way to delete the remote tag
   - $ git push origin :refs/tags/tag-name       # Above contine...
+
+  - $ git branch -r -d origin/remote-b          # Delete the tracked remote branch
 
   - $ git remote add origin <url>               # 彻底删除/替换git远程仓库, 将某个工程向现在的仓库强制推送即可
   - $ git push --force --set-upstream origin master # Above contine...
