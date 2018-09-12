@@ -390,7 +390,8 @@ Create by alex on 2018.05.07
   - Smaple-1:
   - $ git fetch --all
   - $ git fetch origin 
-  - $ git fetch origin/HumDehumFeature
+  - $ git fetch origin HumDehumFeature
+  - $ git checkout HumDehumFeature
   - $ git checkout -b HumDehumFeature origin/HumDehumFeature 
 
 ## Pull Remote
