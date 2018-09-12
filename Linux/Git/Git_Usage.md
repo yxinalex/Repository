@@ -426,7 +426,7 @@ Create by alex on 2018.05.07
   - $ git tag -d tag-name                       # The other way to delete the remote tag
   - $ git push origin :refs/tags/tag-name       # Above contine...
 
-  - $ git branch -r -d origin/remote-b          # Delete the tracked remote branch
+  - $ git branch -r -d origin/remote-b          # Delete remote-tracking branch origin/remote-b, just delete local tracking 
 
   - $ git remote add origin <url>               # 彻底删除/替换git远程仓库, 将某个工程向现在的仓库强制推送即可
   - $ git push --force --set-upstream origin master # Above contine...
