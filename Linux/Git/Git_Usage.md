@@ -300,9 +300,10 @@ Create by alex on 2018.05.07
 									
 ## reset file level
   - $ git reset [file]              # 重置暂存区的指定文件，与上一次commit保持一致，工作区不变，HEAD不变 
+									# NOTES: "git reset [file]" doesn't have "--soft, --mixed, --hard" parameter
   - $ git reset [Commit] [file]     # 用commit中指定的文件重置暂存区的指定文件，工作区不变，HEAD不变
   - $ git reset HEAD [file]         # 用HEAD中指定的文件重置暂存区的指定文件，工作区不变，HEAD不变
-
+  
 ## reset commit level  
   - $ git reset HEAD                # HEAD不变，用HEAD重置暂存区，但工作区保持不变
   - $ git reset HEAD --hard         # HEAD不变，用HEAD重置暂存区和工作区
@@ -316,7 +317,14 @@ Create by alex on 2018.05.07
   - $ git reset [commit]            # 同上 --mixed 
   - $ git reset [commit] --hard     # 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致 
   - $ git reset [commit] --keep     # ?
-
+  
+## NOTES: "git reset [file]" & "git checkout [file]" Difference:
+									# checkout 只能同时重置工作区和暂存区 
+									# reset file 或者 reset --mixed 能只重置暂存区而不重置工作区
+  - Sample:
+  - $ git reset HEAD ./Project/main.c	# 用reset file 命令重置暂存区，主要是重置暂存区。如果只想重置暂存区，但又不想重置工作区，需要用reset file
+  - $ git checkout HEAD . 				# 用checkout 命令重置暂存区和工作区，主要是重置工作区，因为checkout不能只重置工作区，它是工作区和暂存区一起重置
+  
 ## revert  
   - $ git revert [commit]           # 新建一个commit，用来撤销指定commit， 后者的所有变化都将被前者抵消，并且应用到当前分支 
 
