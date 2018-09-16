@@ -196,6 +196,8 @@ Create by alex on 2018.05.07
 
   - $ git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   - $ git log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %C(bold blue)<%cn>%Creset %Cgreen(%cd)%Creset -%C(yellow)%d%Creset %s' --abbrev-commit
+  - $ git log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(bold blue)<%cn>%Creset -%C(yellow)%d%Creset %s' --abbrev-commit
+  - $ git log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(bold blue)<%cn>%Creset -%s %C(yellow)%d%Creset' --abbrev-commit
   - $ git log --pretty="%h - %s" --author=alex --after="2018-05-10" --before="2018-05-20" --grep="Comments Message" --no-merges
   - $ git log --pretty="%h - %s" --committer=alex --after="2018-05-10" --before="2018-05-20" --grep="Comments Message" --no-merges
 
