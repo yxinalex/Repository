@@ -1,12 +1,12 @@
 " ##################################################################################
-" 				Alex - Vim
+" 				Alex - Vim 
+"	   			   for
+"			     Windows Git Bash
 " ##################################################################################
 " 			Vim Install & Pre-Install
 " ##################################################################################
 " NOTES_01:
 " $sudo apt install vim
-" $sudo apt install ctags
-" $sudo apt-get install silversearcher-ag
 " $vim --version | grep "clipboard"     "Check if vim support system clipboard
 " $sudo apt-get install vim-gnome       "Install this GUI vim to support system clipboard
 " $git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
@@ -95,10 +95,14 @@ let NERDTreeAutoCenter=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=0
 let NERDTreeWinSize=30
-let NERDTreeIgnore=[
-    \'\.doc','\.docx','\.xls','\.xlsx','\.pdf',
-    \'\.vsd','\.zip','\.rar',
-    \'\.jpg','\.graphml']
+let NERDTreeIgnore=
+    \[
+    \'\.doc', '\.docx', '\.xls', '\.xlsx', '\.pdf',
+    \'\.vsd', '\.uml', '\.graphml',
+    \'\.zip', '\.rar',
+    \'\.jpg','\.bmp','\.png'
+    \]
+
 
 " vim doesn't special file, auto open nerdtree
 " autocmd StdinReadPre * let s:std_in=1
@@ -675,8 +679,8 @@ nmap <C-Pageup> :tabn<CR>
 nmap <C-Pagedown> :tabp<CR>
 
 nmap <C-z> u
-nmap <silent><Leader>s :w!<CR>
-nmap <silent><Leader>as :wa!<CR>
+nmap <silent><Leader>ss :w!<CR>
+nmap <silent><Leader>sa :wa!<CR>
 
 nmap <silent><Leader>ps :wa!<CR> :NERDTreeClose<CR> :TagbarClose<CR> :mksession! proj.vim<CR> :wviminfo proj.viminfo<CR>
 nmap <silent><Leader>po :source ./proj.vim<CR> :rviminfo ./proj.viminfo<CR>
@@ -716,8 +720,8 @@ imap <C-x> "+d
 imap <C-z> <Esc>ui
 imap <C-a> <Esc>ggvG
 
-vmap <silent><Leader>s <Esc>:w!<CR>v
-imap <silent><Leader>s <Esc>:w!<CR>i
+vmap <silent><Leader>ss <Esc>:w!<CR>v
+imap <silent><Leader>ss <Esc>:w!<CR>i
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Hot Key
@@ -867,6 +871,7 @@ set showmatch
 " set fileformat=unix<CR>
 
 " q:        " Display the history of command, enter :q to exit the history command
+" :shell    " enter shell, exit to shell
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -942,6 +947,11 @@ set nowrap
 " :pwd              "Show   the current working directory of vim
 " :set autochdir    "Auto set the current editor file directory as the current working directory
 " :open /current_working_directory/file  "open file which is in the current working directory or sub working directory
+" NOTES: open command can't use Table key to do smart complete, so perfer to use belows
+" :badd /path/name_file.txt
+" :sp /path/name_file.txt
+" :vs /path/name_file.txt
+" :vsp /path/name_file.txt
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Session & Viminfo
@@ -1017,6 +1027,7 @@ set sessionoptions-=winsize
 " :vsplit
 " :sp
 " :vs
+" :vsp
 " :new
 " :quite
 " :close
