@@ -100,6 +100,7 @@ Create by alex on 2018.05.07
   - $ git add *.c *.h *.py
   - $ git add [file1] [file2] ... 
   - $ git add [dir] 
+  - $ git add [dir1] [dir2] [dir3] ....
 
 ## - 删除工作区文件，并且将这次删除放入暂存区
   - $ git rm . -r
