@@ -275,7 +275,7 @@ Create by alex on 2018.05.07
 ## checkout file level
   - $ git checkout .                # 用暂存区的所有文件直接覆盖本地文件，HEAD不变
                                     # NOTES: If "$ rm ./* -r", then "$ git checkout ."
-  - $ git checkout [file]           # 用暂存区的指定文件重置工作区，对象是暂存区的commit，HEAD不变
+  - $ git checkout [file]           # 用暂存区的指定文件重置工作区，对象是暂存区的file，HEAD不变
 
   - $ git checkout [commit] [file]      # 用commit的指定文件重置暂存区和工作区，对象是commit history中的commit，HEAD不变，注意会将暂存区和工作区中的filename文件直接覆盖
   - $ git checkout [branch] [file]      # 用branch的指定文件重置暂存区和工作区，对象是commit history中的branch，HEAD不变，注意会将暂存区和工作区中的filename文件直接覆盖
@@ -289,6 +289,12 @@ Create by alex on 2018.05.07
   - $ git checkout [commit] [file_path] # 用commit 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
   - $ git checkout [branch] [file_path] # 用branch 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
                                     									
+##NOTES: "git checkout [...]", precondition: new file/folde in stage or delete file/folde in working, the following:
+  - 1. These file/folde is not reset by commit to stage/working. 
+  - 2. These file/folde is not reset by stage to working. 
+  - 3. Whatever, the "checkout" is just reset file/fold of (working)(stage/working) which thse file/fold is exist in (stage)(commit).
+  - 4. In this case, plesae follow the reminder from git-bash, to "reset, add/rm, checkout"
+
 ## checkout commit level  
   - $ git checkout                  # 汇总显示工作区、暂存区与HEAD的差异
   - $ git checkout HEAD             # 汇总显示工作区、暂存区与HEAD的差异 
