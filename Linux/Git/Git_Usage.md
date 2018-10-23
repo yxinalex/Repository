@@ -74,8 +74,8 @@ Create by alex on 2018.05.07
 # 3. Creat Repository
 
 ## - Clone
-  - $ git clone [url]
-  - $ git clone https://github.com/yxinalex/Repository
+  - $ git clone https://github.com/yxinalex/Repository.git  	#HTTP
+  - $ git clone git@github.com:yxinalex/Repository.git 			#SSH
 
 ## - Location
   - $ git init
@@ -368,8 +368,8 @@ Create by alex on 2018.05.07
 # 13. Remote
 
 ## Init Remote Repository
-  - $ git clone https://github.com/yxinalex/Repository  	#HTTP
-  - $ git clone git@github.org:alex/repository.git 			#SSH
+  - $ git clone https://github.com/yxinalex/Repository.git  	#HTTP
+  - $ git clone git@github.com:yxinalex/Repository.git 			#SSH
   
 ## Look/Add/Remove/Rename Remote
   - $ git remote -v                             # 显示所有远程仓库 
