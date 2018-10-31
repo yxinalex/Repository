@@ -26,6 +26,7 @@ apt - Ubuntu, Debian Install Usage. [Official Installation Link](http://www.subl
   * PackageResourceViewer
   * C Improved
   * SideBarEnhancements
+  * SyncedSideBar
   * Terminal
   * HexViewer
   * Git
