@@ -590,7 +590,7 @@ nmap <Leader>far :LeaderfMru<cr>
 nmap <Leader>fl  :LeaderfLine<cr>
 nmap <Leader>fal :LeaderfLineAll<cr>
 nmap <Leader>ft  :LeaderfBufTag<cr>
-nmap <Leader>fbt :LeaderfBufTagAll<cr>
+nmap <Leader>fwt :LeaderfBufTagAll<cr>
 nmap <Leader>fat :LeaderfTag<cr>
 
 
