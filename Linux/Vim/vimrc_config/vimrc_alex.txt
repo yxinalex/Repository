@@ -641,9 +641,9 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 
-"""""""""""""""""""""""""""""""""""""""
-"	 Vim Key Map
-"""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 	 Vim KeyMap
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nmap <S-h> <C-w>h
 " nmap <S-j> <C-w>j
 " nmap <S-k> <C-w>k
@@ -658,7 +658,7 @@ nmap gw <C-w>w
 nmap <S-j> 5<C-e>
 nmap <S-k> 5<C-y>
 
-nmap <Tab> :bn<CR>
+" nmap <Tab> :bn<CR>
 
 nmap <S-Up> :buffers<CR>
 nmap <S-Down> :bdelete<CR>
@@ -723,17 +723,29 @@ imap <C-a> <Esc>ggvG
 vmap <silent><Leader>ss <Esc>:w!<CR>v
 imap <silent><Leader>ss <Esc>:w!<CR>i
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       Hot Key
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 	 Vim KeyPad
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " i, I, a, A, o, O, c, C, x, X, r, R, s, S, v, V, <C-v>
 " dd, D, yy, Y, cc, C
 " 3dd, 3yy, 3cc
 " p, P
+"
+" vf(char)y         " Select from the current curson to (char), copy it
+" vf(char)d         " Select from the current curson to (char), delete it
+" vf(char)"+y       " Select from the current curson to (char), copy it to system clipboard
+" vf(char)"+d       " Select from the current curson to (char), delete it to system clipboard
+"
 " "0p, "ap, "Ap, "*p, "+p
 " "0dd, "add, "Add, "*dd, "+dd
 " "0yy, "ayy, "Ayy, "*yy, "+yy
 " "0cc, "acc, "Acc, "*cc, "+cc
+" 
+" "+p           " Paste from the global system clipboard
+" "+y           " Copy it while place it into the global system clipboard
+" "+d           " Delete it while place it into the global system clipboard
 "
 " diw, di{, di}, di(, di), di<, di>, di', di
 " daw, da{, da}, da(, da), da<, da>, da', da
@@ -751,14 +763,23 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " vaw, va{, va}, va(, va), va<, va>, va', va
 " v3w, v3e, v3b, vh, vj, vk, vl, va, vs, vp, v$, v^, v0, vgg, vG, vf'*'
 "
+"
+"--------------------------------------------------------------------------------------
+"  
+" <C-w>h, <C-w>j, <C-w>k, <C-w>l, <C-w>w
+" <C-e>, <C-d>, <C-f>, <Cy>, <C-u>, <C-b>
+" gg, G, (num)G, (num)%, :(num), (num)<Enter>
+" 
 " h, j, k, l, (num)h, (num)j, (num)k, (num)l, (num)|
 " w, e, b, W, E, B 
 " H, M, L, zt, zz, zb
-" <C-e>, <C-d>, <C-f>, <Cy>, <C-u>, <C-b>
-" gg, G, (num)G, (num)%, :(num), (num)<Enter>
 " 0, ^, $               " Hardware Head Line, Software Head Line, End Line
 " %                     " Match(), <>, {}, []
-" &                     " Repeat, :s
+" |:  Jump the      beginning of current line
+" 0:  Jump the hard-beginning of current line
+" ^:  Jump the soft-beginning of current line
+" $:  Jump the            end of current line
+" %:  Jump between the mached '()', '{}', '#if-#else-#endif'.
 "
 " /, ?
 " n, N, *, #
@@ -767,13 +788,24 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " ;                         " Repeat forward
 " ,                         " Repeat backword
 "
+" u, U, :earlier 2m     "Undo, Undo the current line, Undo to early 2 minutes
+" <C-r>                 "Redo
+" .                     "repeat command, '.' means repeat command once
+" (num)<command>        "repeat command, '(num)<command>' means repeat command (num) times.
+"
+"
+"
+" J                     "Merge Current and Below line into one line
+" &                     " Repeat, :s
 "
 " q(a-z,0-9)            "Start Record command into (a-z)
 " q                     "End Record
 " @(a-z,0-9)            "Replay the (a-z) Record
 " (num)@(a-z,0-9)       "Replay the (a-z) Record (num) timers
 " @@                    "Replay the latest Record  Marco
-
+"
+"--------------------------------------------------------------------------------------
+" 
 " <C-i>, <C-o>
 " <C-]>, <C-t>, [I, ]I, [i, ]i
 "
@@ -806,10 +838,6 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " $:  Jump the            end of current line
 " %:  Jump between the mached '()', '{}', '#if-#else-#endif'.
 "
-" J     "Merge Current and Below line into one line
-" ., (num)<command>   "repeat command, '.' means repeat once, '(num)<command>' means (num) times.
-"
-" u, U, <C-r>, :earlier 2m
 "
 " ~                             //Switch the Lower&Upper case for the selected block
 " (SelectedBlock)u, (SelectedBlock)U                          //Switch Lowercase or Uppercase for selected in visual mode
@@ -819,6 +847,8 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " <<, >>                "left, right indent
 " (SelectedBlock)=      "Auto indent for block
 
+"--------------------------------------------------------------------------------------
+"
 " Auto Complete 
 " <c-n>-	Normal Key
 " <c-x><c-n>-	Current Buffer
