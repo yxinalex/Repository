@@ -1005,7 +1005,11 @@ set sessionoptions-=winsize
 " :buffer 4     "Switch to buffer 4
 " :b 4          
 " :badd new_buffer.txt
-" :bdelete 4    "Delete to buffer 4
+" :bdelete 4        "Delete to buffer 4
+" :3,5bdelete       "Delete buffer from 3 to 5
+" :3, 5 bdelete 
+" :3, 5 bd
+" :3,5 bd
 " :bd 4
 " :bnext
 " :bn
@@ -1013,6 +1017,7 @@ set sessionoptions-=winsize
 " :bp
 " :blast
 " :bfirst
+" <c-6>            "Toggle two buffers next to each other 
 "
 "
 " :tabnew
