@@ -704,7 +704,9 @@ nmap <silent><Leader>po :source ./proj.vim<CR> :rviminfo ./proj.viminfo<CR>
 " imap <C-a> <Esc>ggvG
 
 " Required vim system clipboard support below
+nmap <Leader>v "+p
 nmap <Leader>w "+yiw
+nmap <Leader>x "+diw
 " nmap <C-x> "+dd 		
 " nmap <C-c> "+yy 		
 " nmap <C-v> "+p 		
