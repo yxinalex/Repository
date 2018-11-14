@@ -775,13 +775,11 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " h, j, k, l, (num)h, (num)j, (num)k, (num)l, (num)|
 " w, e, b, W, E, B 
 " H, M, L, zt, zz, zb
-" 0, ^, $               " Hardware Head Line, Software Head Line, End Line
-" %                     " Match(), <>, {}, []
 " |:  Jump the      beginning of current line
 " 0:  Jump the hard-beginning of current line
 " ^:  Jump the soft-beginning of current line
 " $:  Jump the            end of current line
-" %:  Jump between the mached '()', '{}', '#if-#else-#endif'.
+" %:  Jump between the mached '()', '{}', '<>', '[]', '#if-#else-#endif'.
 "
 " /, ?
 " n, N, *, #
