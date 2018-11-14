@@ -514,9 +514,9 @@ let g:syntastic_python_checkers = ['pyflakes']                "Python
 " let g:syntastic_javascript_checkers = ['jsl', 'jshint']       :JSP
 
 
-" ##################################################################################
-" 				Vim Key Map
-" ##################################################################################
+" ##########################################################################################
+"                                 	 Vim KeyMap - Plugin Key
+" ##########################################################################################
 " commend   normal   Visual   OperatorPending     InsertOnly  CommandLine
 " :map      y        y        y
 " :nmap     y
@@ -556,14 +556,14 @@ nmap <F2> :NERDTreeToggle<cr>
 """""""""""""""""""""""""""""""""""""""
 "	 tagbar Key Map
 """""""""""""""""""""""""""""""""""""""
-nmap <F10> :TagbarToggle<CR>
+nmap <F3> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""
 "	 ctags Key Map
 """""""""""""""""""""""""""""""""""""""
 " NOTES_07:
 " nmap <F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
-nmap <silent><F9> :!ctags -R<CR><CR>
+nmap <silent><F10> :!ctags -R<CR><CR>
 " nmap <Leader>d <C-]> 
 nmap <C-k> <C-]>
 nmap <C-j> <C-t>
@@ -642,7 +642,7 @@ inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 	 Vim KeyMap
+"                                 	 Vim KeyMap - Basic Key
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nmap <S-h> <C-w>h
 " nmap <S-j> <C-w>j
