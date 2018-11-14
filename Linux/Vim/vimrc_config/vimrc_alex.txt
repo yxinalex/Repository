@@ -658,7 +658,9 @@ nmap gw <C-w>w
 nmap <S-j> 5<C-e>
 nmap <S-k> 5<C-y>
 
-" nmap <Tab> :bn<CR>
+nmap <Tab> :bn<CR>
+nmap <S-Tab> :bp<CR>
+" nmap <C-Tab> :bp<CR>          " It always isn't effect.
 
 nmap <S-Up> :buffers<CR>
 nmap <S-Down> :bdelete<CR>
