@@ -240,6 +240,8 @@ Create by alex on 2018.05.07
   - $ git diff -- cached [branch] [file]    # 比较暂存区与指定branch-id的差异
 
 ## diff commit level  
+  - $ git diff 		                        # 显示工作区与暂存区之间的差异 
+  - $ git diff --cached                     # 显示暂存区与当前分支最新commit之间的差异  
   - $ git diff HEAD                         # 显示工作区与当前分支最新commit之间的差异 
   - $ git diff HEAD --cached                # 显示暂存区与当前分支最新commit之间的差异 
   - $ git diff HEAD --stat                  # 显示工作区与当前分支最新commit之间的文件差异列表
