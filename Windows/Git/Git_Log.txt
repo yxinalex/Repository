@@ -1,0 +1,7 @@
+﻿#1 Download
+	- https://git-scm.com/
+	- https://git-scm.com/downloads
+	- https://git-scm.com/download/win
+
+#2 Tools 
+	- Git-2.17.0-64-bit.exe

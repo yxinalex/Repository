@@ -1,0 +1,14 @@
+﻿[ATOM] A hackable text editor for the 21st Century
+===========================================================
+
+#Homepage: https://atom.io/
+
+#Keyhot
+ctrl+r
+ctrl+shift+r
+
+ctrl+b
+ctrl+t
+ctrl+p
+
+ctrl+shift+p
