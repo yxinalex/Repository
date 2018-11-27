@@ -152,17 +152,17 @@ let g:NERDTrimTrailingWhitespace = 1    " Enable trimming of trailing whitespace
 " ##################################################################################
 " 				nerdtree-git-plugin
 " ##################################################################################
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "✹",
-"     \ "Staged"    : "✚",
-"     \ "Untracked" : "✭",
-"     \ "Renamed"   : "➜",
-"     \ "Unmerged"  : "═",
-"     \ "Deleted"   : "✖",
-"     \ "Dirty"     : "✗",
-"     \ "Clean"     : "✔︎",
-"     \ "Unknown"   : "?"
-"     \ }
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 
 " ##################################################################################
@@ -237,9 +237,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " 				tagbar
 " ##################################################################################
 " NOTES_03:
-" let g:tagbar_ctags_bin='C:\ctags\'  
-" let g:tagbar_width=30  
-" let g:tagbar_right=0
+let g:tagbar_ctags_bin='C:\ctags\'  
+let g:tagbar_width=30  
+let g:tagbar_right=0
 
 " Enabled this feature, it will impact vimdiff feature because tagbar is also buffer, the tagbar will be joined the compare 
 " autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() 
@@ -360,7 +360,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " :LeaderfColorscheme  
 
 " NOTES_05:
-" let g:Lf_Ctags = "C:\ctags\"
+let g:Lf_Ctags = 'C:\ctags\'
 
 " Once LeaderF is launched:
 " <C-C>, <ESC> : quit from LeaderF.
