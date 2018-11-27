@@ -12,17 +12,36 @@
     - Path: $cd C:\Users\alex.yuan\vimfiles
     - git clone https://github.com/VundleVim/Vundle.vim.git 
     - 在vim启动设定文件_vimrc添加 bundle的配置 ，vim的启动设定文件 _vimrc （在linux文件名是 .vimrc , 在windows下面是 _vimrc）；这里直接配置一个全局的 _vimrc 文件，路径：C:\Program Files\Vim\_vimrc  , 添加如下内容
+	- C:\Users\alex.yuan\.vim\bundle\vim-airline-themes\plugin
 
 ```C
-"插件管理
-set rtp+=C:\Users\alex.yuan\vimfiles\Vundle.vim\
+" set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$HOME/vimfiles/Vundle.vim/
+" set rtp+=$VIM\vimfiles\bundle\Vundle.vim\
+" set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
+
+" Plugin/Bundle ##### Install Start #####
+" call vundle#begin('$HOME/vimfiles/bundle/Vundle.vim/')
 call vundle#begin()
-"let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-"my bundle plugin
- 
-call vundle#end()
-filetype plugin indent on
+
+Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle  
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'  
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'rking/ag.vim'
+Plugin 'tomasr/molokai'
+Plugin 'fcevado/molokai_dark'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Yggdroot/LeaderF'
+
+call vundle#end()    
+filetype plugin indent on     " required!  
+" Plugin/Bundle ##### Install End ######
 ```
 
 在Github vim-scripts 用户下的repos,只需要写出repos名称

@@ -1,4 +1,9 @@
 " ##################################################################################
+" 				Alex - GVim for Windows
+" ##################################################################################
+
+
+" ##################################################################################
 " 				Belows Original from Vim8
 " ##################################################################################
 " Vim with all enhancements
@@ -48,7 +53,7 @@ endfunction
 
 
 " ##################################################################################
-" 				Alex - Vim
+" 				Alex - GVim for Windows
 " ##################################################################################
 " 			Vim Install & Pre-Install
 " ##################################################################################
@@ -71,9 +76,15 @@ filetype off            "Required
 " ##################################################################################
 " 				Vundle Install 
 " ##################################################################################
-set rtp+=~/.vim/bundle/Vundle.vim
+" Vundles will be installed in this folder: $HOME\.vim\bundle\vim-airline-themes\plugin
+" set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=C:\\Users\\alex.yuan\\vimfiles\\Vundle.vim\\
+set rtp+=$HOME/vimfiles/Vundle.vim/
+" set rtp+=$VIM\vimfiles\bundle\Vundle.vim\
+" set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
 
 " Plugin/Bundle ##### Install Start #####
+" call vundle#begin('$HOME/vimfiles/bundle/Vundle.vim/')
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle  
@@ -202,17 +213,17 @@ let g:NERDTrimTrailingWhitespace = 1    " Enable trimming of trailing whitespace
 " ##################################################################################
 " 				nerdtree-git-plugin
 " ##################################################################################
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ "Unknown"   : "?"
+"     \ }
 
 
 " ##################################################################################
