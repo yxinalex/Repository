@@ -1,0 +1,19 @@
+﻿#1 Home Page to download: http://cmder.net/
+
+#2 Install Path
+	- C:\cmder
+	- Green version, unzip to execute directly
+	- 添加环境变量  C:\cmder
+	
+#3 Configuration
+	- 预设的命列列提示符号λ，修改为#
+		* 编辑Cmder安装目录下的vendor\init.bat批处理文件(min版本15行)
+		* Original: @prompt $E[1;32;40m$P$S{git}{hg}$S$_$E[1;30;40m {lamb} $S$E[0m
+		* ModifyTo: @prompt $E[1;32;40m$P$S{git}{hg}$S$_$E[1;30;40m $$ $S$E[0m
+	- 添加cmder到右键菜单， 这样右击的时候cmder就会直接跳转到该路径下
+		* "Cmder.exe /REGISTER ALL"
+	- 设置启动目录：setting -> Startup - > Task，修改{cmd::Cmder}项
+		* Original-1: *cmd /k ""%ConEmuDir%\..\init.bat" "
+		* ModifyTo-1: *cmd /k "%ConEmuDir%\..\init.bat" -new_console:d:%USERPROFILE%
+		* ModifyTo-2: *cmd /k "%ConEmuDir%\..\init.bat" -new_console:d:D:\
+	- 设置中文编码: setting -> 在Start-up下的environment中加入: set LANG=zh_CN.UTF8

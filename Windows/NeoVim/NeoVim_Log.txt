@@ -1,2 +1,22 @@
-﻿https://github.com/neovim/neovim/wiki/Installing-Neovim
+﻿#1 Neovim
+	- HomePage: https://neovim.io/
+	- Download: https://github.com/neovim/neovim/wiki/Installing-Neovim
 
+#2 Install Path
+	- C:\neovim
+	- Green version, unzip to execute directly
+	- 添加环境变量  C:\neovim\bin
+
+#3 Install Python
+	- Download:  https://www.python.org/downloads/windows/
+		* python-3.6.7-amd64.exe
+	- Install Path: "C:\Python36\"
+	
+#4 Install Package "vim-plug"
+	- Copy plug.vim(in "https://github.com/junegunn/vim-plug") into "C:\Users\alex.yuan\AppData\Local\nvim\autoload\plug.vim"
+	
+#4 Configuration
+	- ".vimrc" where: "C:\Users\alex.yuan\AppData\Local\nvim\init.vim"
+	- In neovim\init.vim, adding the belows:
+		* let g:python3_host_prog='C:\Python36\python.exe'
+		* let g:python_host_prog='C:\Python36\python.exe'
