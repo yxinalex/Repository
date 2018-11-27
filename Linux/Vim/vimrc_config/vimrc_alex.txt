@@ -240,7 +240,7 @@ let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:tagbar_width=30  
 let g:tagbar_right=0
 
-"Enabled this feature, it will impact vimdiff feature because tagbar is also buffer, the tagbar will be joined the compare 
+" Enabled this feature, it will impact vimdiff feature because tagbar is also buffer, the tagbar will be joined the compare 
 " autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() 
 
 
@@ -1267,10 +1267,10 @@ endfunction
 " :!ctags -R --fields=+iaS --extra=+q *
 "   –fields=[+|-]flags      " Specify tags extension fields
 "       i: Inheritance information
-"       a：Access (or export) of class members
-"       S：Signature of routine(e.g. prototype or parameter list
+"       a: Access (or export) of class members
+"       S: Signature of routine(e.g. prototype or parameter list
 "   –extra=[+|-]flags       " Specify tags extension fields
-"       q：Include class member information (e.g. c++,java,Eiffel)
+"       q: Include class member information (e.g. c++,java,Eiffel)
 "
 " "Jump the System Function Definition
 " :!ctags --fields=+iaS --extra=+q -R -f ~/.vim/systags /usr/include /usr/local/include
@@ -1289,8 +1289,8 @@ endfunction
 
 " :help tags
 " :tags             "List the history of searched/jumped tag
-" :tag xyz          "Jump the definition of xyz，or set cursor in xyz to press <C-]>, <C-t>
-" :stag xyz         "Use the split window to display xyz, or <C-w>]， <C-w>n], n means that n lines high window
+" :tag xyz          "Jump the definition of xyz,or set cursor in xyz to press <C-]>, <C-t>
+" :stag xyz         "Use the split window to display xyz, or <C-w>], <C-w>n], n means that n lines high window
 " :ptag xyz         "Open xyz in preview window, or <C-w>}
 " :pclose           "Close xyz of preview window, or <C-w>z
 " :pedit abc.h      "Edit the abc .h head file in preview window

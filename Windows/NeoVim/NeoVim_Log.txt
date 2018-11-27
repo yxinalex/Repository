@@ -14,9 +14,12 @@
 	
 #4 Install Package "vim-plug"
 	- Copy plug.vim(in "https://github.com/junegunn/vim-plug") into "C:\Users\alex.yuan\AppData\Local\nvim\autoload\plug.vim"
+	- in "init.vim", call plug#begin('C:\Neovim\share\nvim\plugged')
+	- Please Install Package then set package.
 	
 #4 Configuration
 	- ".vimrc" where: "C:\Users\alex.yuan\AppData\Local\nvim\init.vim"
 	- In neovim\init.vim, adding the belows:
 		* let g:python3_host_prog='C:\Python36\python.exe'
 		* let g:python_host_prog='C:\Python36\python.exe'
+		

@@ -46,11 +46,11 @@ Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 
-" Plug 'Xuyuanp/nerdtree-git-plugin'  
-" Plug 'jistr/vim-nerdtree-tabs'
-" Plug 'majutsushi/tagbar'
-" Plug 'rking/ag.vim'
-" Plug 'Yggdroot/LeaderF'
+Plug 'Xuyuanp/nerdtree-git-plugin'  
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'majutsushi/tagbar'
+Plug 'rking/ag.vim'
+Plug 'Yggdroot/LeaderF'
 
 
 call plug#end()
@@ -62,20 +62,13 @@ call plug#end()
 "                       Plugin Manager Command                               "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vundle Command
-" $vim +PluginInstall +qall
-" :PluginList
-" :PluginInstall
-" :PluginSearch
-" :PluginClean
-" :BundleList
-" :BundleInstall
-" :BundleInstall!
-" :BundleSearch
-" :BundleSearch!
-" :BundleClean
-" :BundleClean!
-" :h vundle Get more details and wiki and FAQ
+" PlugInstall [name ...] [#threads]		" Install plugins
+" PlugUpdate [name ...] [#threads]		" Install or update plugins
+" PlugClean[!]							" Remove unused directories (bang version will clean without prompt)
+" PlugUpgrade							" Upgrade vim-plug itself
+" PlugStatus							" Check the status of plugins
+" PlugDiff								" Examine changes from the previous update and the pending changes
+" PlugSnapshot[!] 						" [output path]	Generate script for restoring the current snapshot of the plugins
 
 
 
@@ -1156,10 +1149,10 @@ endfunction
 " :!ctags -R --fields=+iaS --extra=+q *
 "   –fields=[+|-]flags      " Specify tags extension fields
 "       i: Inheritance information
-"       a：Access (or export) of class members
-"       S：Signature of routine(e.g. prototype or parameter list
+"       a: Access (or export) of class members
+"       S: Signature of routine(e.g. prototype or parameter list
 "   –extra=[+|-]flags       " Specify tags extension fields
-"       q：Include class member information (e.g. c++,java,Eiffel)
+"       q: Include class member information (e.g. c++,java,Eiffel)
 "
 " "Jump the System Function Definition
 " :!ctags --fields=+iaS --extra=+q -R -f ~/.vim/systags /usr/include /usr/local/include
@@ -1178,8 +1171,8 @@ endfunction
 
 " :help tags
 " :tags             "List the history of searched/jumped tag
-" :tag xyz          "Jump the definition of xyz，or set cursor in xyz to press <C-]>, <C-t>
-" :stag xyz         "Use the split window to display xyz, or <C-w>]， <C-w>n], n means that n lines high window
+" :tag xyz          "Jump the definition of xyz,or set cursor in xyz to press <C-]>, <C-t>
+" :stag xyz         "Use the split window to display xyz, or <C-w>], <C-w>n], n means that n lines high window
 " :ptag xyz         "Open xyz in preview window, or <C-w>}
 " :pclose           "Close xyz of preview window, or <C-w>z
 " :pedit abc.h      "Edit the abc .h head file in preview window
