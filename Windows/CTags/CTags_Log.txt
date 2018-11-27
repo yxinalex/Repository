@@ -1,0 +1,20 @@
+﻿#1 Install 
+下载安装包
+http://ctags.sourceforge.net/
+解压安装包，将ctags.exe文件拷贝到C:/Windows/System32目录下
+在cmd下执行命令ctags --version验证安装是否成功
+
+
+#2 Sublime Configuration CTags
+在窗口选择Preferences -> Package Control -> Install Package
+在输入框中输入ctags搜索待安装插件，选择插件回车安装
+修改配置，在窗口选择Preferences -> Package Settings -> Ctags
+将Settings-Default中的内容全部复制到Settings->User中
+修改Settings-User中的变量command
+"command": "C:/Windows/System32/ctags.exe"
+重启Sublime Text
+
+
+#3 Sublime Configuration CTags使用
+在Sublime Text的项目目录上鼠标右击选择CTags:Rebuild Tags构建索引
+鼠标右击选择Navigate to Definition或Jump Back进行跳转，也可以使用快捷键（需要修改配置Key Bindings-User）
