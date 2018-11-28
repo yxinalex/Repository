@@ -4,50 +4,76 @@
 #2 Install
 	- VSCode-win32-x64-1.29.1.zip
 	- Green version, unzip to execute directly
-
+	- ctags: "C:\ctags\ctags.exe". While add the path into system environment variable: "C:\ctags\"
+	
 #3 Package
-	- vscode-icons, robertohuertasm.vscode-icons
 	- C/C++, ms-vscode.cpptools
-	- ctags, hcyang.ctags
 	- Vim, vscodevim.vim
+	- ctags, hcyang.ctags
+	- ctagsx, jtanx.ctagsx
+	
 	- SVN, johnstoncode.svn-scm
 		* Add the path into system environment variable: "C:\Program Files\TortoiseSVN\bin"
 	
-#4 Configuration
+#4 Theme
+	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons
+	- vscode-icons, robertohuertasm.vscode-icons
+	- Linux Themes for VS Code, solarliner.linux-themes
+	- Atom Material Theme, tobiasalthoff.atom-material-theme
+	
+	- Monokai
+	- Spirited Away Color Theme, maxfieldwalker.vscode-color-theme-spirited-away
+	- Atom One Dark Theme, akamud.vscode-theme-onedark
+	- Atom Material Theme, tobiasalthoff.atom-material-theme
+	- Monokai++, dcasella.monokai-plusplus
+	- Panda Theme, tinkertrain.theme-panda
+	
+#5 Configuration
 	- Font Size: 12
 	- Font Family:
 		* Original: Consolas, 'Courier New', monospace
 		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
 		* ModifyTo: 'DejaVu Sans Mono'
+	- VSCode 默认单击文件是预览, 双击文件是用一个新的Tab打开。如果想关掉预览模式，单击打开文件，在设置里加入below, 这样单击文件就是直接用新Tab打开了。
+		* "workbench.editor.enablePreview": false
+		* Or find Settings-> Workbench -> Breadcrumbs -> Enable Preview
 
-#5 Theme
 		
 #6 KeyMap
-	- Ctrl+Alt+V	 	#Vim: Toggle Vim Mode
+	- F5				#Open Settings
+	- F6				#Open Keyboard Shortcuts
+	- F7	 			#Show Extensions
+	- F8	 			#Show Explorer
 	
+	- F10 				#CTAGS:Generate
+	- F11 				#Full Screen
+	- F12			 	#Vim: Toggle Vim Mode
+	
+	- Ctrl+F4 			#Close Current Tab
 	- Ctrl+Shift+p 		#Command Palette	
 	- Ctrl+` 			#Terminal
-	- Ctrl+=			#Open Settings
-	- Ctrl+-			#Open Keyboard Shortcuts
-	- Ctrl+[ 			#Show Extensions
-	- Ctrl+] 			#Show Explorer
 	- Ctrl+\ 			#Toggle Side Bar Visibility
 	- Ctrl+Shift+\ 		#Toggle Pannel
 	
 	- Ctrl+o			#Go Back
 	- Ctrl+i 			#Go Forward
 	- Ctrl+Shift+k 		#Go Declaration
-	- Ctrl+k 			#Go Definition
-	- Ctrl+j 			#Go Last
+	- Ctrl+k 			#extension.findCTags
+	- Ctrl+j 			#extension.ctagsJumpBack
 	- Ctrl+g			#Go line
 	- Ctrl+l 			#Go Symbol in Workspace
-	- Ctrl+'			#Go Symbol in File
+	- Ctrl+;			#Go Symbol in File
+	- Ctrl+'			#C/C++ Navigate
 	- Alt+o 			#Swticher Header/Source
-	- Ctrl+;
+
 	- Ctrl+, 			#Go Previouse Edit Point
 	- Ctrl+.			#Go Next Edit Point
 	
-	-Ctrl+/ 			#Toggle Line Comment
+	- Ctrl+/ 			#Toggle Line Comment
+	
+	- Ctrl+shift+o 		#Explorer Outline Focus
+	
+
 	
 	
 	
