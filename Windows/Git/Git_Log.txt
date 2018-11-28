@@ -5,3 +5,18 @@
 
 #2 Tools 
 	- Git-2.17.0-64-bit.exe
+	
+#3 Git Bash
+	- 可完美使用 Git
+	- 自带编辑器之神 vim
+	- 自带远程安全连接 ssh
+	- 自带压缩解压命令 tar
+	- 自带sha系列算法
+	- 实现了大多数的Linux命令
+	
+#4 Git Configuration
+	- Path, Please "$cd ~" in Git Base to find where the "$HOME/User/" path, such as it is usually "C:\Users\alex.yuan" in windows.
+	- find belows: 
+		* Git: ".gitconfig", ".bash_history"
+		* SSH: ".ssh"
+		* Vim:".vim", ".vimrc", ".viminfo"

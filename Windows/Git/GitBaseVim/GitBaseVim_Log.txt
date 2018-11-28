@@ -1,0 +1,16 @@
+﻿#1 Download
+	- https://git-scm.com/
+	- https://git-scm.com/downloads
+	- https://git-scm.com/download/win
+	
+#2 Install
+	- GitBase installer with including vim 
+
+#3 Vim Configuration
+	- Path, Please "$cd ~" in Git Base to find where the "$HOME/User/" path, such as it is usually "C:\Users\alex.yuan" in windows.
+	- find belows: 
+		* Git: ".gitconfig", ".bash_history"
+		* SSH: ".ssh"
+		* Vim:".vim", ".vimrc", ".viminfo"
+		
+		
