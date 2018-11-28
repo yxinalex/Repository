@@ -1,0 +1,53 @@
+#1 Download
+	- https://code.visualstudio.com/
+
+#2 Install
+	- VSCode-win32-x64-1.29.1.zip
+	- Green version, unzip to execute directly
+
+#3 Package
+	- vscode-icons, robertohuertasm.vscode-icons
+	- C/C++, ms-vscode.cpptools
+	- ctags, hcyang.ctags
+	- Vim, vscodevim.vim
+	- SVN, johnstoncode.svn-scm
+		* Add the path into system environment variable: "C:\Program Files\TortoiseSVN\bin"
+	
+#4 Configuration
+	- Font Size: 12
+	- Font Family:
+		* Original: Consolas, 'Courier New', monospace
+		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
+		* ModifyTo: 'DejaVu Sans Mono'
+
+#5 Theme
+		
+#6 KeyMap
+	- Ctrl+Alt+V	 	#Vim: Toggle Vim Mode
+	
+	- Ctrl+Shift+p 		#Command Palette	
+	- Ctrl+` 			#Terminal
+	- Ctrl+=			#Open Settings
+	- Ctrl+-			#Open Keyboard Shortcuts
+	- Ctrl+[ 			#Show Extensions
+	- Ctrl+] 			#Show Explorer
+	- Ctrl+\ 			#Toggle Side Bar Visibility
+	- Ctrl+Shift+\ 		#Toggle Pannel
+	
+	- Ctrl+o			#Go Back
+	- Ctrl+i 			#Go Forward
+	- Ctrl+Shift+k 		#Go Declaration
+	- Ctrl+k 			#Go Definition
+	- Ctrl+j 			#Go Last
+	- Ctrl+g			#Go line
+	- Ctrl+l 			#Go Symbol in Workspace
+	- Ctrl+'			#Go Symbol in File
+	- Alt+o 			#Swticher Header/Source
+	- Ctrl+;
+	- Ctrl+, 			#Go Previouse Edit Point
+	- Ctrl+.			#Go Next Edit Point
+	
+	-Ctrl+/ 			#Toggle Line Comment
+	
+	
+	
