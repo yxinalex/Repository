@@ -60,8 +60,8 @@
 	- Ctrl+PgUp			#Previouse Editor
 	- Ctrl+PgDn			#Next Editor
 	- Ctrl+Shift+p 		#Command Palette	
+	- Ctrl+p 			#Quick Open File
 	- Ctrl+` 			#Terminal
-	- Ctrl+Shift+\ 		
 	
 	- Ctrl+o			#Go Back
 	- Ctrl+i 			#Go Forward
