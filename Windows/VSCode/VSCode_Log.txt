@@ -38,6 +38,27 @@
 		* "workbench.editor.enablePreview": false
 		* Or find Settings-> Workbench -> Breadcrumbs -> Enable Preview
 
+	- Settings: Place your settings here to overwrite the Default Settings.
+		* "Workspace Settings" in "..\workspace_folder\.vscode\settings.json"
+		* "User Settings" in "C:\Users\alex.yuan\AppData\Roaming\Code\User\settings.json"
+			{
+				"editor.fontSize": 12,
+				"editor.fontFamily": "'DejaVu Sans Mono'",
+				"workbench.statusBar.feedback.visible": false,
+				"workbench.activityBar.visible": false,
+				"window.menuBarVisibility": "default",
+				"search.location": "panel",
+				"vim.disableExtension": false,
+				"editor.renderControlCharacters": false,
+				"editor.renderWhitespace": "none",
+				"explorer.confirmDelete": false,
+				"window.zoomLevel": 0,
+				"workbench.iconTheme": "vscode-simpler-icons",
+				"workbench.colorTheme": "Monokai",
+				"workbench.editor.enablePreview": false,
+				"workbench.sideBar.location": "left"
+			}
+		
 		
 #6 KeyMap
 	- F1				#Command Palette
@@ -92,6 +113,8 @@ alt+s l : "Workspace: SVN Log"
 alt+s r : "Workspace: SVN Revert"
 alt+s d : "Workspace: SVN Diff"
 alt+s m : "SVN ... (Select Path)"
+
+
 
 
 	
