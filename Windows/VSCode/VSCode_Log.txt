@@ -5,15 +5,15 @@
 	- VSCode-win32-x64-1.29.1.zip
 	- Green version, unzip to execute directly
 	- ctags: "C:\ctags\ctags.exe". While add the path into system environment variable: "C:\ctags\"
+	- svn-TortoiseSVN-1.7.11.23600-x64-svn-1.7.8.msi: "C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe". While add the path into system environment variable: "C:\Program Files\TortoiseSVN\bin\"
 	
 #3 Package
 	- C/C++, ms-vscode.cpptools
 	- Vim, vscodevim.vim
 	- ctags, hcyang.ctags
 	- ctagsx, jtanx.ctagsx
+	- TortoiseSVN, fantasytyx.tortoise-sv
 	
-	- SVN, johnstoncode.svn-scm
-		* Add the path into system environment variable: "C:\Program Files\TortoiseSVN\bin"
 	
 #4 Theme
 	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons
@@ -40,20 +40,28 @@
 
 		
 #6 KeyMap
+	- F1				#Command Palette
+	- F2				#Toggle Side Bar Visibility
+	- F3 				
+	- F4 				#Toggle Pannel
+	
 	- F5				#Open Settings
 	- F6				#Open Keyboard Shortcuts
 	- F7	 			#Show Extensions
 	- F8	 			#Show Explorer
+	
+	- F9 				#Toggle Breakpoiont
 	
 	- F10 				#CTAGS:Generate
 	- F11 				#Full Screen
 	- F12			 	#Vim: Toggle Vim Mode
 	
 	- Ctrl+F4 			#Close Current Tab
+	- Ctrl+PgUp			#Previouse Editor
+	- Ctrl+PgDn			#Next Editor
 	- Ctrl+Shift+p 		#Command Palette	
 	- Ctrl+` 			#Terminal
-	- Ctrl+\ 			#Toggle Side Bar Visibility
-	- Ctrl+Shift+\ 		#Toggle Pannel
+	- Ctrl+Shift+\ 		
 	
 	- Ctrl+o			#Go Back
 	- Ctrl+i 			#Go Forward
@@ -69,10 +77,22 @@
 	- Ctrl+, 			#Go Previouse Edit Point
 	- Ctrl+.			#Go Next Edit Point
 	
+	- Ctrl+[			#editor.action.outdentLines & extension.vim.disabled
+	- Ctrl+] 			#editor.action.indentLines  & extension.vim.disabled
 	- Ctrl+/ 			#Toggle Line Comment
+
+	- Tab 				#AutoCompleteConfirmed
+}
 	
-	- Ctrl+shift+o 		#Explorer Outline Focus
-	
+#7 Package-"TortoiseSVN, fantasytyx.tortoise-sv"-KeyMap
+
+alt+s u : "Workspace: SVN Update"
+alt+s c : "Workspace: SVN Commit"
+alt+s l : "Workspace: SVN Log"
+alt+s r : "Workspace: SVN Revert"
+alt+s d : "Workspace: SVN Diff"
+alt+s m : "SVN ... (Select Path)"
+
 
 	
 	
