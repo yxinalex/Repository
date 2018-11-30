@@ -14,6 +14,13 @@
 	- ctagsx, jtanx.ctagsx
 	- TortoiseSVN, fantasytyx.tortoise-sv
 	
+	- Active File Status, sgtsquiggs.vscode-active-file-status
+		* Displays file's relative path to the current workspace.
+		* Displays file's absolute path when outside of current workspace.
+		* No configuration!
+	- Date & Time, rid9.datetime
+		* "C:\Users\alex.yuan\.vscode\extensions\rid9.datetime-1.0.5\package.json" 		//Need to modify manually
+	
 	
 #4 Theme
 	- Material Icon Theme, pkief.material-icon-theme 							//Best
@@ -46,6 +53,25 @@
 		* Original: Consolas, 'Courier New', monospace
 		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
 		* ModifyTo: 'DejaVu Sans Mono'
+		* ModifyTo: 'Source Code Pro'
+		* ModifyTo: 'Lucida Console'
+		* ModifyTo: 'Monaco'
+		
+		* DejaVu Sans Mono 也是一款优秀的免费许可字体，来自 Bitstream Vera
+		* Source Code Pro
+			    = "font_face": "Source Code Pro"
+				= "font_face": "Source Code Pro Black",
+				= "font_face": "Source Code Pro Light",
+				= "font_face": "Source Code Pro ExtraLight",
+				= "font_face": "Source Code Pro Light",
+				= "font_face": "Source Code Pro Medium",	//Windows
+				= "font_face": "Source Code Pro Semibold",
+		* Menlo
+		* Consolas
+		* Monaco
+		* Courier New
+		* Hack 是基于 Bitstream Vera 和 DejaVu 项目的开源字
+		
 	- VSCode 默认单击文件是预览, 双击文件是用一个新的Tab打开。如果想关掉预览模式，单击打开文件，在设置里加入below, 这样单击文件就是直接用新Tab打开了。
 		* "workbench.editor.enablePreview": false
 		* Or find Settings-> Workbench -> Breadcrumbs -> Enable Preview
