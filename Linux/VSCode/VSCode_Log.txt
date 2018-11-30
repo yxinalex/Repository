@@ -1,0 +1,177 @@
+VSCode for Linux
+----------------------------------------------------------
+
+#1 Download
+	- https://code.visualstudio.com/
+
+#2 Install
+    - Office Installation on Linux 
+        * https://code.visualstudio.com/docs/setup/linux 
+	- Solution-1
+	    * download: code_1.29.1-1542309157_amd64.deb
+	    * $sudo dpkg -i <file>.deb
+        * $sudo apt-get install -f # Install dependencies
+    - Solution-2
+        * curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+        * sudo apt-get update
+        * sudo apt-get install code # or code-insiders
+
+	- ctags: $sudo apt install ctags
+
+	
+#3 Package
+	- C/C++, ms-vscode.cpptools
+	- Vim, vscodevim.vim
+	- ctags, hcyang.ctags
+	- ctagsx, jtanx.ctagsx
+	
+	- Active File Status, sgtsquiggs.vscode-active-file-status
+		* Displays file's relative path to the current workspace.
+		* Displays file's absolute path when outside of current workspace.
+		* No configuration!
+	- Date & Time, rid9.datetime
+		* "C:\Users\alex.yuan\.vscode\extensions\rid9.datetime-1.0.5\package.json" 		//Need to modify manually
+	
+	
+#4 Theme
+	- Material Icon Theme, pkief.material-icon-theme 							//Best
+	- Material Theme, equinusocio.vsc-material-theme 							//Better
+	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons 		//Normal
+	- Seti (improved), therobut.theme-setim 									//Disabled
+	- seti-icons, qinjia.seti-icons												//Disabled
+	- vscode-icons, robertohuertasm.vscode-icons 								//Disabled
+	- Linux Themes for VS Code, solarliner.linux-themes							//Disabled
+	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
+
+	
+	- Monokai																	//Classic
+	- Monokai++, dcasella.monokai-plusplus										//Better
+	- Dark+ Material, vangware.dark-plus-materia								//Better
+	- Seti-theme, tsumina.seti-them												//Normal
+	- Panda Theme, tinkertrain.theme-panda										//Less
+	- Monokai Seti, adityavm.vscode-monokai-seti								//Disabled
+	- Theme - Seti-Monokai, smukkekim.theme-setimonokai							//Disabled
+	- Fantastic (Ayu, Darcula, Gruvbox, Material, Monokai, Slime, Oceanic, One), sldobri.dail 	//Disabled
+	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
+	- Atom One Dark Syntax Theme, andischerer.theme-atom-one-dar 				//Disabled
+	- Atom One Dark Theme, akamud.vscode-theme-onedark 							//Disabled
+	- Material Neutral Theme, bernardodsanderson.theme-material-neutral			//Disabled
+	- Spirited Away Color Theme, maxfieldwalker.vscode-color-theme-spirited-away//Disabled
+	
+	- Monokai Theme, gerane.theme-monokai
+	- Monokai Pro, monokai.theme-monokai-pro-vscode
+	
+#5 Configuration
+	- Font Size: 12
+	- Font Family:
+		* Original: Consolas, 'Courier New', monospace
+		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
+		* ModifyTo: 'DejaVu Sans Mono'
+		* ModifyTo: 'Source Code Pro'
+		* ModifyTo: 'Lucida Console'
+		* ModifyTo: 'Monaco'
+		
+		* DejaVu Sans Mono 也是一款优秀的免费许可字体，来自 Bitstream Vera
+		* Source Code Pro
+			    = "font_face": "Source Code Pro"
+				= "font_face": "Source Code Pro Black",
+				= "font_face": "Source Code Pro Light",
+				= "font_face": "Source Code Pro ExtraLight",
+				= "font_face": "Source Code Pro Light",
+				= "font_face": "Source Code Pro Medium",	//Windows
+				= "font_face": "Source Code Pro Semibold",
+		* Menlo
+		* Consolas
+		* Monaco
+		* Courier New
+		* Hack 是基于 Bitstream Vera 和 DejaVu 项目的开源字
+		
+	- VSCode 默认单击文件是预览, 双击文件是用一个新的Tab打开。如果想关掉预览模式，单击打开文件，在设置里加入below, 这样单击文件就是直接用新Tab打开了。
+		* "workbench.editor.enablePreview": false
+		* Or find Settings-> Workbench -> Breadcrumbs -> Enable Preview
+
+	- Settings: Place your settings here to overwrite the Default Settings.
+		* "Workspace Settings" in "..\workspace_folder\.vscode\settings.json"
+		* "User Settings" in "C:\Users\alex.yuan\AppData\Roaming\Code\User\settings.json"
+			{
+				"editor.fontSize": 12,
+				"editor.fontFamily": "'DejaVu Sans Mono'",
+				"workbench.statusBar.feedback.visible": false,
+				"workbench.activityBar.visible": false,
+				"window.menuBarVisibility": "default",
+				"search.location": "panel",
+				"vim.disableExtension": false,
+				"editor.renderControlCharacters": false,
+				"editor.renderWhitespace": "none",
+				"explorer.confirmDelete": false,
+				"window.zoomLevel": 0,
+				"workbench.iconTheme": "vscode-simpler-icons",
+				"workbench.colorTheme": "Monokai",
+				"workbench.editor.enablePreview": false,
+				"workbench.sideBar.location": "left"
+			}
+		
+		
+#6 KeyMap
+	- F1				#Command Palette
+	- F2				#Toggle Side Bar Visibility
+	- F3 				
+	- F4 				#search.action.focusNextSearchResult
+	- F4+Shift 			#search.action.focusPreviousSearchResult
+	
+	- F5				#Open Settings
+	- F6				#Open Keyboard Shortcuts
+	- F7	 			#Show Extensions
+	- F8	 			#Show Explorer
+	
+	- F9 				#Toggle Breakpoiont
+	
+	- F10 				#CTAGS:Generate
+	- F11 				#Full Screen
+	- F12			 	#Vim: Toggle Vim Mode
+	
+	- Ctrl+F4 			#Close Current Tab
+	- Ctrl+PgUp			#Previouse Editor
+	- Ctrl+PgDn			#Next Editor
+	- Ctrl+Shift+p 		#Command Palette	
+	- Ctrl+p 			#Quick Open File
+	- Ctrl+` 			#Terminal
+	- Ctrl+Alt+\		#workbench.action.toggleActivityBarVisibility
+	- Ctrl+\ 			#Toggle Panel
+		
+	- Ctrl+o			#Go Back
+	- Ctrl+i 			#Go Forward
+	- Ctrl+Shift+k 		#Go Declaration,                //Another Map: extension.findCTagsPrompt(Maybe)
+	- Ctrl+k 			#extension.findCTags
+	- Ctrl+j 			#extension.ctagsJumpBack
+	- Ctrl+g			#Go line
+	- Ctrl+l 			#Go Symbol in Workspace
+	- Ctrl+;			#Go Symbol in File
+	- Ctrl+'			#C_Cpp.Navigate
+	- Alt+o 			#C_Cpp.SwitchHeaderSource
+
+	- Ctrl+, 			#Go Previouse Edit Point
+	- Ctrl+.			#Go Next Edit Point
+	
+	- Ctrl+[			#editor.action.outdentLines,    //when extension.vim.disabled
+	- Ctrl+] 			#editor.action.indentLines,     //when extension.vim.disabled
+	- Ctrl+/ 			#Toggle Line Comment
+
+	- Tab 				#AutoCompleteConfirmed
+}
+	
+#7 Package-"TortoiseSVN, fantasytyx.tortoise-sv"-KeyMap
+
+alt+s u : "Workspace: SVN Update"
+alt+s c : "Workspace: SVN Commit"
+alt+s l : "Workspace: SVN Log"
+alt+s r : "Workspace: SVN Revert"
+alt+s d : "Workspace: SVN Diff"
+alt+s m : "SVN ... (Select Path)"
+
+
+
+
+	
+	
+	
