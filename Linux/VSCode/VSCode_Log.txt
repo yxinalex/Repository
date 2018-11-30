@@ -30,7 +30,7 @@ VSCode for Linux
 		* Displays file's absolute path when outside of current workspace.
 		* No configuration!
 	- Date & Time, rid9.datetime
-		* "C:\Users\alex.yuan\.vscode\extensions\rid9.datetime-1.0.5\package.json" 		//Need to modify manually
+		* "~\.vscode\extensions\rid9.datetime-1.0.5\package.json" 		//Need to modify manually
 	
 	
 #4 Theme
