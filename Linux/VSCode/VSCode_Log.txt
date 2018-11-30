@@ -60,6 +60,12 @@ VSCode for Linux
 	
 	- Monokai Theme, gerane.theme-monokai
 	- Monokai Pro, monokai.theme-monokai-pro-vscode
+	- Sublime Material Theme, jprestidge.theme-material-theme                   //Disabled
+	- Material Theme, equinusocio.vsc-material-theme
+	- Brogrammer Theme, gerane.theme-brogrammer
+	
+	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer
+	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2
 	
 #5 Configuration
 	- Font Size: 12
