@@ -16,17 +16,29 @@
 	
 	
 #4 Theme
-	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons
-	- vscode-icons, robertohuertasm.vscode-icons
-	- Linux Themes for VS Code, solarliner.linux-themes
-	- Atom Material Theme, tobiasalthoff.atom-material-theme
+	- Material Icon Theme, pkief.material-icon-theme 							//Best
+	- Material Theme, equinusocio.vsc-material-theme 							//Better
+	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons 		//Normal
+	- Seti (improved), therobut.theme-setim 									//Disabled
+	- seti-icons, qinjia.seti-icons												//Disabled
+	- vscode-icons, robertohuertasm.vscode-icons 								//Disabled
+	- Linux Themes for VS Code, solarliner.linux-themes							//Disabled
+	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
+
 	
-	- Monokai
-	- Spirited Away Color Theme, maxfieldwalker.vscode-color-theme-spirited-away
-	- Atom One Dark Theme, akamud.vscode-theme-onedark
-	- Atom Material Theme, tobiasalthoff.atom-material-theme
-	- Monokai++, dcasella.monokai-plusplus
-	- Panda Theme, tinkertrain.theme-panda
+	- Monokai																	//Classic
+	- Monokai++, dcasella.monokai-plusplus										//Better
+	- Dark+ Material, vangware.dark-plus-materia								//Better
+	- Seti-theme, tsumina.seti-them												//Normal
+	- Panda Theme, tinkertrain.theme-panda										//Less
+	- Monokai Seti, adityavm.vscode-monokai-seti								//Disabled
+	- Theme - Seti-Monokai, smukkekim.theme-setimonokai							//Disabled
+	- Fantastic (Ayu, Darcula, Gruvbox, Material, Monokai, Slime, Oceanic, One), sldobri.dail 	//Disabled
+	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
+	- Atom One Dark Syntax Theme, andischerer.theme-atom-one-dar 				//Disabled
+	- Atom One Dark Theme, akamud.vscode-theme-onedark 							//Disabled
+	- Material Neutral Theme, bernardodsanderson.theme-material-neutral			//Disabled
+	- Spirited Away Color Theme, maxfieldwalker.vscode-color-theme-spirited-away//Disabled
 	
 #5 Configuration
 	- Font Size: 12
@@ -64,7 +76,8 @@
 	- F1				#Command Palette
 	- F2				#Toggle Side Bar Visibility
 	- F3 				
-	- F4 				#Toggle Pannel
+	- F4 				#search.action.focusNextSearchResult
+	- F4+Shift 			#search.action.focusPreviousSearchResult
 	
 	- F5				#Open Settings
 	- F6				#Open Keyboard Shortcuts
@@ -83,7 +96,9 @@
 	- Ctrl+Shift+p 		#Command Palette	
 	- Ctrl+p 			#Quick Open File
 	- Ctrl+` 			#Terminal
-	
+	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
+	- Ctrl+\ 			#Toggle Pannel
+		
 	- Ctrl+o			#Go Back
 	- Ctrl+i 			#Go Forward
 	- Ctrl+Shift+k 		#Go Declaration
