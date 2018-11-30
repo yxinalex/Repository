@@ -47,6 +47,9 @@
 	- Material Neutral Theme, bernardodsanderson.theme-material-neutral			//Disabled
 	- Spirited Away Color Theme, maxfieldwalker.vscode-color-theme-spirited-away//Disabled
 	
+	- Monokai Theme, gerane.theme-monokai
+	- Monokai Pro, monokai.theme-monokai-pro-vscode
+	
 #5 Configuration
 	- Font Size: 12
 	- Font Family:
@@ -122,25 +125,25 @@
 	- Ctrl+Shift+p 		#Command Palette	
 	- Ctrl+p 			#Quick Open File
 	- Ctrl+` 			#Terminal
-	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
-	- Ctrl+\ 			#Toggle Pannel
+	- Ctrl+Alt+\		#workbench.action.toggleActivityBarVisibility
+	- Ctrl+\ 			#Toggle Panel
 		
 	- Ctrl+o			#Go Back
 	- Ctrl+i 			#Go Forward
-	- Ctrl+Shift+k 		#Go Declaration
+	- Ctrl+Shift+k 		#Go Declaration,                //Another Map: extension.findCTagsPrompt(Maybe)
 	- Ctrl+k 			#extension.findCTags
 	- Ctrl+j 			#extension.ctagsJumpBack
 	- Ctrl+g			#Go line
 	- Ctrl+l 			#Go Symbol in Workspace
 	- Ctrl+;			#Go Symbol in File
-	- Ctrl+'			#C/C++ Navigate
-	- Alt+o 			#Swticher Header/Source
+	- Ctrl+'			#C_Cpp.Navigate
+	- Alt+o 			#C_Cpp.SwitchHeaderSource
 
 	- Ctrl+, 			#Go Previouse Edit Point
 	- Ctrl+.			#Go Next Edit Point
 	
-	- Ctrl+[			#editor.action.outdentLines & extension.vim.disabled
-	- Ctrl+] 			#editor.action.indentLines  & extension.vim.disabled
+	- Ctrl+[			#editor.action.outdentLines,    //when extension.vim.disabled
+	- Ctrl+] 			#editor.action.indentLines,     //when extension.vim.disabled
 	- Ctrl+/ 			#Toggle Line Comment
 
 	- Tab 				#AutoCompleteConfirmed
