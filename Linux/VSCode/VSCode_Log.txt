@@ -1,5 +1,6 @@
-VSCode for Linux
-----------------------------------------------------------
+-------------------------------------------------------------------------------------
+|								VSCode for Linux									|
+-------------------------------------------------------------------------------------
 
 #1 Download
 	- https://code.visualstudio.com/
@@ -32,8 +33,11 @@ VSCode for Linux
 	- Date & Time, rid9.datetime
 		* "~\.vscode\extensions\rid9.datetime-1.0.5\package.json" 		//Need to modify manually
 	
+	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer
+	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2
 	
-#4 Theme
+#4 Theme&Color
+	# Only Theme (Primary: Material Icon Theme)
 	- Material Icon Theme, pkief.material-icon-theme 							//Best
 	- Material Theme, equinusocio.vsc-material-theme 							//Better
 	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons 		//Normal
@@ -43,36 +47,38 @@ VSCode for Linux
 	- Linux Themes for VS Code, solarliner.linux-themes							//Disabled
 	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
 
-	
+	# Only Color (Primary: One Dark Pro)
 	- Monokai																	//Classic
-	- Monokai++, dcasella.monokai-plusplus										//Better
-	- Dark+ Material, vangware.dark-plus-materia								//Better
-	- Seti-theme, tsumina.seti-them												//Normal
-	- Panda Theme, tinkertrain.theme-panda										//Less
+	- Dark+ Material, vangware.dark-plus-materia								//Best, 	Dark Background
+	- Monokai++, dcasella.monokai-plusplus										//Best, 	Dark Background
+	- Seti-theme, tsumina.seti-them												//Normal, 	Dark Background
+	- One Dark Pro, zhuangtongfa.material-them									//Better, 	Gray Background		//One Dark Pro is better than Atom One Dark due to the "Selection Color"
+	- Atom One Dark Theme, akamud.vscode-theme-onedark 							//Normal,	Gray Background
+	- Atom One Dark Syntax Theme, andischerer.theme-atom-one-dar 				//Normal,	Gray Background
+	- Panda Theme, tinkertrain.theme-panda										//Less,		Gray Background
+	- One Monokai Theme, azemoh.one-monokai										//Less,		Gray Background
+	- Brogrammer Theme, gerane.theme-brogrammer									//Disabled
 	- Monokai Seti, adityavm.vscode-monokai-seti								//Disabled
 	- Theme - Seti-Monokai, smukkekim.theme-setimonokai							//Disabled
-	- Fantastic (Ayu, Darcula, Gruvbox, Material, Monokai, Slime, Oceanic, One), sldobri.dail 	//Disabled
-	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
-	- Atom One Dark Syntax Theme, andischerer.theme-atom-one-dar 				//Disabled
-	- Atom One Dark Theme, akamud.vscode-theme-onedark 							//Disabled
 	- Material Neutral Theme, bernardodsanderson.theme-material-neutral			//Disabled
 	- Spirited Away Color Theme, maxfieldwalker.vscode-color-theme-spirited-away//Disabled
-	
+	- Theme Bear, dahong.theme-bear												//Disabled
+	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
+
 	- Monokai Theme, gerane.theme-monokai
-	- Monokai Pro, monokai.theme-monokai-pro-vscode
 	- Sublime Material Theme, jprestidge.theme-material-theme                   //Disabled
 	- Material Theme, equinusocio.vsc-material-theme
-	- Brogrammer Theme, gerane.theme-brogrammer
 	
-	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer
-	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2
+	# Both Theme&Color
+	- Monokai Pro, monokai.theme-monokai-pro-vscode								//Best
+	
 	
 #5 Configuration
 	- Font Size: 12
 	- Font Family:
 		* Original: Consolas, 'Courier New', monospace
 		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
-		* ModifyTo: 'DejaVu Sans Mono'
+		* ModifyTo: 'DejaVu Sans Mono' 			//Primary
 		* ModifyTo: 'Source Code Pro'
 		* ModifyTo: 'Lucida Console'
 		* ModifyTo: 'Monaco'
