@@ -1,0 +1,140 @@
+VIM 配色基本知识
+2017年02月06日 23:39:35 法海你懂不 阅读数：2078 标签： vim 配色 更多
+个人分类： Linux
+版权声明：本文为博主原创文章，未经博主允许不得转载。 https://blog.csdn.net/u013595419/article/details/54898490
+======================================================================================================================
+
+#基础知识
+
+在vim中，主题也是以插件形式存在的。其中系统自带的主题，存放在$VIMRUNTIME/colors文件夹下，以*.vim命名。（注：查看$VIMRUNTIME请在vim中执行:echo $VIMRUNTIME）
+用户自定义的主题一般不放在系统目录下，而是放在~/.vim/colors目录下，这样不会干扰到其他用户，同时也方便备份自己的vim配置。
+更换vim主题的命令为：
+:colorscheme 主题插件名称  
+
+但是这样只能临时改变vim主题，退出后又会恢复原样，如果想永久改变，请在~/.vimrc中添加：
+colorscheme 主题插件名称 
+
+
+
+#准备工作
+
+开启256色支持
+
+set t_Co=256 
+
+
+开启语法高亮支持
+
+syntax enable  
+syntax on
+
+
+#查看Vim自带的配色
+$cd  /usr/share/vim/vim74/colors/
+$ls
+这时可以看到系统中已有的配色方案（扩展名为 .vim 的文件）
+
+
+#定制主题
+
+##主题色调
+
+在配置其他属性前，首先要配置主题整体的色调，只有两个选择：dark和light（暗色调和亮色调）。对于经常阅读和编写代码的程序员来说，暗色调是更好的选择：
+
+set background=dark
+
+
+##基础属性
+
+由于vim可以在黑白终端、彩色终端、GUI界面下运行，所以需要对其分贝进行配置，下面给出一个简要说明
+terminal 	含义
+term 	黑白终端的属性
+cterm 	彩色终端的属性
+ctermfg 	彩色终端前景色
+ctermbg 	彩色终端背景色
+gui 	GUI属性
+guifg 	GUI前景色
+guibg 	GUI背景色
+
+对于黑白终端，我们没有配置的必要，因此主要的配置工作集中在彩色终端与GUI界面上，又由于彩色终端与GUI界面的配置只是关键字不同，因此这里只选取彩色终端进行说明。
+由于不是所有终端都支持256色，因此使用一些安全色会使我们的主题更有移植性，而GUI可以支持所有颜色，不在考虑范围之内，vim文档给出的安全色如下：
+number 	颜色
+0 	Black
+1 	DarkBlue
+2 	DarkGreen
+3 	DarkCyan
+4 	DarkRed
+5 	DarkMagenta
+6 	Brown, DarkYellow
+7 	LightGray, LightGrey, Gray, Grey
+8 	DarkGray, DarkGrey
+9 	Blue, LightBlue
+10 	Green, LightGreen
+11 	Cyan, LightCyan
+12 	Red, LightRed
+13 	Magenta, LightMagenta
+14 	Yellow, LightYellow
+15 	White
+
+
+##配色语法
+
+hi  Type    ctermfg=LightYellow     ctermbg=Black   cterm=bold 
+其中，hi是highlight命令的缩写，用于高亮配置；Type是要配色的元素名称；参数采用的是Key=Value的形式。
+
+
+##元素列表
+
+###状态栏提示信息
+Key 	        含义
+StatusLine 	    状态栏
+StatusLineNC 	非当前窗口的状态栏
+Error 	        错误
+ErrorMsg 	错误信息
+WarningMsg 	警告信息
+ModeMsg 	当前模式
+MoreMsg 	其他文本
+Question 	询问用户
+
+###文本搜索
+Key 	    含义
+IncSearch 	增量搜索时匹配的文本符串
+Search 	    匹配的文本串
+
+###弹出菜单
+Key 	    含义
+Pmenu 	    弹出菜单
+PmenuSel 	菜单当前选择项
+
+
+###窗体边框相关
+Key 	        含义
+VertSplit 	    垂直分割窗口的边框
+LineNr 	        行号
+Cursor 	        光标所在字符
+CursorLine 	    光标所在行
+ColorColumn 	光标所在列
+ColorColumn 	标尺
+NonText 	    窗口尾部的~和@，以及文本里实际不显示的字符
+
+
+###diff模式
+Key 	    含义
+DiffAdd 	diff模式增加的行
+DiffChange 	diff模式改变的行
+DiffDelete 	diff模式删除的行
+DiffText 	diff模式插入文本
+
+
+###C/C++语法
+Key 	    含义
+Comment 	注释
+PreProc 	预处理
+Type 	    数据类型
+Constant 	常量
+Statement 	控制语句
+Special 	字符串中的中的特殊字符
+String 	    字符串
+cCppString 	Cpp字符串
+Number 	    数字
+Todo 	    TODO、HACK、FIXME等标签
