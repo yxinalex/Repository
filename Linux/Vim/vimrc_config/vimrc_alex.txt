@@ -1337,7 +1337,7 @@ endfunction
 " ##################################################################################
 " NOTES_10:
 " :colorscheme molokai 
-" set background=dark
+set background=dark
 set t_Co=256 
 
 syntax enable
@@ -1410,10 +1410,10 @@ hi PreCondit         ctermfg=197	       cterm=none
  hi DiffText   cterm=none ctermfg=10    ctermbg=88 gui=none guifg=bg guibg=Red
 
 "-------------------------------------------------------
-" Highlith Serach 
+" Highlight Serach 
 hi IncSearch    cterm=none ctermbg=red    ctermfg=white  
 hi Search       cterm=none ctermbg=green  ctermfg=black
-hi MatchParen   cterm=none ctermbg=green  ctermfg=black
+" hi MatchParen   cterm=none ctermbg=green  ctermfg=black
 
 "-------------------------------------------------------
 " Highlight Others
