@@ -123,6 +123,11 @@
 				"workbench.sideBar.location": "left"
 			}
 		
+	- How to disable crash reporting
+		* If you don't wish to send crash data to Microsoft, you can set the telemetry.enableCrashReporter setting to false.
+			= From File > Preferences > Settings (macOS: Code > Preferences > Settings), search for telemetry.enableCrashReporter and uncheck the setting.
+		* If you use the JSON editor for your settings, add the following line:
+			=  "telemetry.enableCrashReporter": false
 		
 #6 KeyMap
 	- F1				#Command Palette
