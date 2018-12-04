@@ -178,6 +178,23 @@ Create by alex on 2018.05.07
   - $ git tag                   # 列出所有tag 
   - $ git tag [tag]             # 新建一个tag在当前commit 
   - $ git tag [tag] [commit]    # 新建一个tag在指定commit 
+  - $ git tag [tag] -m [message] [commit] #新建一个tag在指定commit, 并带有注释message
+  
+  - $ git tag -d [tag] 			# Delete one tag
+  
+  - $ git push origin [tag]  	# 推送Tag到远程
+  - $ git push origin --tags 	# 通过--tags 参数来推送所有本地的Tag
+
+  ## 删除远程Tag. 
+  - $ git tag -d <Tag 名字>						# 当本地Tag已经Push到远程代码仓库后，再要删除这个Tag,就必须删除本地Tag.
+  - $ git push origin :refs/tags/<Tag 名字> 	# 删除本地Tag后，再重新Push到远程的代码仓库。
+  
+  
+NOTES: 
+The real difference between a tag and a branch is that the branch moves with the Commit, but the tag does not.
+As described in the section "misunderstanding branches", when Git advances a Commit, the branch it is in moves forward with it. But once the tag is posted, no matter how committed it is, the tag stays where it was posted. So you can think of branches as moving labels.
+There is a famous line in the movie cape no.7: "stay, or I will go with you", which is used in the concept of "stay is the label, and go with you is the branch".
+
 
 # 9. Check
   - $ git status                # 显示有变更的文件 
