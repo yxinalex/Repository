@@ -141,13 +141,13 @@
 	- F11 				#Full Screen
 	- F12			 	#Vim: Toggle Vim Mode
 	
-	- Ctrl+F4 			#Close Current Tab
+	- Ctrl+F4 			#workbench.action.closeActiveEditor
 	- Ctrl+PgUp			#Previouse Editor
 	- Ctrl+PgDn			#Next Editor
 	- Ctrl+Shift+p 		#Command Palette	
 	- Ctrl+p 			#Quick Open File
 	- Ctrl+` 			#Terminal
-	- Ctrl+Alt+\		#workbench.action.toggleActivityBarVisibility
+	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
 	- Ctrl+\ 			#Toggle Panel
 		
 	- Ctrl+o			#Go Back
