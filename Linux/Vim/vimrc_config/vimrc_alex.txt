@@ -212,22 +212,22 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 "
 " :help airline-themes.txt
 " :AirlineTheme <theme>
-let g:airline_theme='alexdark'
+" let g:airline_theme='alexdark'        " Classic
 " let g:airline_theme='alexdarkfull'
-" let g:airline_theme='dark' 
+" let g:airline_theme='dark'            " Classic 
 " let g:airline_theme='badwolf'
-" let g:airline_theme='powerlineish' 
+" let g:airline_theme='powerlineish'    " Favorite-2 
 " let g:airline_theme='hybridline' 
-" let g:airline_theme='tomorrow' 
-" let g:airline_theme='kalisi' 
-" let g:airline_theme='simple'
+" let g:airline_theme='tomorrow'        " Favorite-1  
+" let g:airline_theme='kalisi'          " Favorite-1  
+" let g:airline_theme='simple'          " Favorite-2 
 " 
-" let g:airline_theme='murmur' 
+" let g:airline_theme='murmur'          " Favorite-3 
 " let g:airline_theme='serene' 
 " let g:airline_theme='zenburn' 
 " let g:airline_theme='violet' 
 "
-" let g:airline_theme='cool' 
+let g:airline_theme='cool'            " Favorite-4 
 " let g:airline_theme='papercolor' 
 " let g:airline_theme='soda' 
 " let g:airline_theme='understated' 
