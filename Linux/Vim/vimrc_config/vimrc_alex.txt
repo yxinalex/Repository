@@ -769,6 +769,7 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " i, I, a, A, o, O, c, C, x, X, r, R, s, S, v, V, <C-v>
 " dd, D, yy, Y, cc, C
 " 3dd, 3yy, 3cc
+" (n)s, (n)S
 " p, P
 "
 " vf(char)y         " Select from the current curson to (char), copy it
@@ -799,7 +800,7 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 "   .: the current line
 "   %: all of lines
 "
-" dh, dj, dk, dl
+" d(n)h, d(n)j, d(n)k, d(n)l
 " diw, di{, di}, di(, di), di<, di>, di', di
 " daw, da{, da}, da(, da), da<, da>, da', da
 " d3w, d3e, d3b, dh, dj, dk, dl, da, ds, dp, d$, d^, d0, dgg, dG, df'*'
@@ -807,7 +808,7 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " :11,$d        " Delete 11 ~ all of behind 11 line
 " :1,$d         " Delete all lines
 "
-" yh, yj, yk, yl
+" y(n)h, y(n)j, y(n)k, y(n)l
 " yiw, yi{, di}, yi(, yi), yi<, yi>, yi', yi
 " yaw, ya{, da}, ya(, ya), ya<, ya>, ya', ya
 " y3w, y3e, y3b, yh, yj, yk, yl, ya, ys, yp, y$, y^, y0, ygg, yG, yf'*'
@@ -815,12 +816,12 @@ imap <silent><Leader>ss <Esc>:w!<CR>i
 " :11,$y        " yanked 11 ~ all of behind 11 line
 " :1,$y         " yanked all lines
 "
-" ch, cj, ck, cl
+" c(n)h, c(n)j, c(n)k, c(n)l
 " ciw, ci{, ci}, ci(, ci), ci<, ci>, ci', ci
 " caw, ca{, ca}, ca(, ca), ca<, ca>, ca', ca
 " c3w, c3e, c3b, ch, cj, ck, cl, ca, cs, cp, c$, c^, c0, cgg, cG, cf'*'
 "
-" vh, vj, vk, vl 
+" v(n)h, v(n)j, v(n)k, v(n)l 
 " viw, vi{, vi}, vi(, vi), vi<, vi>, vi', vi
 " vaw, va{, va}, va(, va), va<, va>, va', va
 " v3w, v3e, v3b, vh, vj, vk, vl, va, vs, vp, v$, v^, v0, vgg, vG, vf'*'
