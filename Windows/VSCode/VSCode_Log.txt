@@ -16,7 +16,8 @@
 	- Vim, vscodevim.vim
 	- ctags, hcyang.ctags
 	- ctagsx, jtanx.ctagsx
-	- TortoiseSVN, fantasytyx.tortoise-sv
+	- Project Manager, alefragnani.project-manager
+	- TortoiseSVN, fantasytyx.tortoise-svn
 	
 	- Active File Status, sgtsquiggs.vscode-active-file-status
 		* Displays file's relative path to the current workspace.
