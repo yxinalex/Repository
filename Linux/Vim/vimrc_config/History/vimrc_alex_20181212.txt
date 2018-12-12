@@ -715,10 +715,15 @@ nmap <C-Pageup> :tabn<CR>
 nmap <C-Pagedown> :tabp<CR>
 
 " resize current buffer by +/- 5 
-nnoremap <silent><Leader>- :resize -5<cr>
-nnoremap <silent><Leader>= :resize +5<cr>
-nnoremap <silent><Leader>[ :vertical resize -5<cr>
-nnoremap <silent><Leader>] :vertical resize +5<cr>
+" nnoremap <silent><Leader>- :resize -5<cr>
+" nnoremap <silent><Leader>= :resize +5<cr>
+" nnoremap <silent><Leader>[ :vertical resize -5<cr>
+" nnoremap <silent><Leader>] :vertical resize +5<cr>
+
+nmap <silent>z- :resize -5<cr>
+nmap <silent>z= :resize +5<cr>
+nmap <silent>z[ :vertical resize -5<cr>
+nmap <silent>z] :vertical resize +5<cr>
 
 " nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR> 				" increase the window horizontal size by a factor of 1.5
 " nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>					" decrease the window horizontal size by 0.67
@@ -1186,12 +1191,17 @@ set sessionoptions-=winsize
 " :resize 10
 " :vertical resize 10
 " :res 10
-" :vertical res 10
+" :vert res 10
 
 " :resize +5
 " :vertical resize +5
 " :res +5
-" :vertical res +5
+" :vert res +5
+
+" :resize -5
+" :vertical resize -5
+" :res -5
+" :vert res +5
 
 " :10winc-			" Horizontal splits, decrease
 " :10winc+			" Horizontal splits, increase
