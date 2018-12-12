@@ -714,6 +714,17 @@ nmap <C-End> :tablast<CR>
 nmap <C-Pageup> :tabn<CR>
 nmap <C-Pagedown> :tabp<CR>
 
+" resize current buffer by +/- 5 
+nnoremap <silent><Leader>- :resize -5<cr>
+nnoremap <silent><Leader>= :resize +5<cr>
+nnoremap <silent><Leader>[ :vertical resize -5<cr>
+nnoremap <silent><Leader>] :vertical resize +5<cr>
+
+" nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR> 				" increase the window horizontal size by a factor of 1.5
+" nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>					" decrease the window horizontal size by 0.67
+" nnoremap <silent> <Leader>0 :exe "vertical resize " . (winwidth(0) * 3/2)<CR>			" increase the window vertical   size by a factor of 1.5
+" nnoremap <silent> <Leader>9 :exe "vertical resize " . (winwidth(0) * 2/3)<CR>			" decrease the window vertical   size by 0.67
+
 nmap <C-z> u
 nmap <silent><Leader>ss :w!<CR>
 nmap <silent><Leader>sa :wa!<CR>
@@ -738,9 +749,10 @@ nmap <silent><Leader>po :source ./proj.vim<CR> :rviminfo ./proj.viminfo<CR>
 " imap <C-a> <Esc>ggvG
 
 " Required vim system clipboard support below
-nmap <Leader>v "+p
 nmap <Leader>w "+yiw
-nmap <Leader>x "+diw
+nmap <Leader>p "+p
+nmap <Leader>y "+y
+nmap <Leader>d "+d
 " nmap <C-x> "+dd 		
 " nmap <C-c> "+yy 		
 " nmap <C-v> "+p 		
@@ -1056,7 +1068,8 @@ set nowrap
 " :X password    " Encrypt the current file
 " :set key=password   " clear the password
 "
-"
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Session & Viminfo
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1093,7 +1106,7 @@ set sessionoptions-=winsize
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Buffers & Tab & Window
+" Buffers & Tab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -u   Out of buffer list
 " -%   The current buffer
@@ -1131,19 +1144,108 @@ set sessionoptions-=winsize
 " :tabn
 " :tabp
 "
+" :new
+" :quite
+" :close
+" :only
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Window & Resize & Horizontal splits &　Vertical splits
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" < C+w+n >			" New create blank window
+" < C+w+s >			" Horizontal Window
+" < C+w+v >			" Vertical   Window
+" < C+w+c >			" Close the current window
+" < C+w+o >			" Close all others windows
+" < C+w+R >			" rotate windows upward
+" < C+w+r >			" rotate windows downward
+" < C+w+= >			" Make all windows to be same width
+" < C+w+1_>			" Window Minimum
+" < C+w+_ >			" Window Maximum
+" < C+w+| >			" Window Minimum to Right
+" < C+w+1| >		" Window Minimum to Left
+" < C+w+^ >			" New Buffer in Window
+" < C+w+r >			" Move window
+" < C+w+x >			" windows exchanges between Two Windows
+" < C+w+H >			" Two landscape to two vertical screen
+" < C+w+K >			" Two vertical to two landscape screen
+
+" :sp /path/name_file.txt
+" :vs /path/name_file.txt
+" :vsp /path/name_file.txt
 
 " :split
 " :vsplit
 " :sp
 " :vs
 " :vsp
-" :new
-" :quite
-" :close
-" :only
-"
+
+" :resize 10
+" :vertical resize 10
+" :res 10
+" :vertical res 10
+
 " :resize +5
 " :vertical resize +5
+" :res +5
+" :vertical res +5
+
+" :10winc-			" Horizontal splits, decrease
+" :10winc+			" Horizontal splits, increase
+" :10winc -			" Horizontal splits, decrease
+" :10winc +			" Horizontal splits, increase
+
+" :10winc<			" Vertical   splits, decrease
+" :10winc>			" Vertical   splits, increase
+" :10winc <			" Vertical   splits, decrease
+" :10winc >			" Vertical   splits, increase
+
+" 10<CTRL>+w -		" Horizontal splits, decrease
+" 10<CTRL>+w +		" Horizontal splits, increase
+" 10<CTRL>+w <		" Vertical   splits, decrease
+" 10<CTRL>+w >		" Vertical   splits, increase
+
+" <c-w>=, To resize all windows to equal dimensions based on their splits, you can use Ctrl-w =
+" <c-w>_, To increase a window to its maximum height, use Ctrl-w _
+" <c-w>|, To increase a window to its maximum width, use Ctrl-w |
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Window Quickfix
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :help quickfix
+
+" :cc     	" Display details error information
+" :cp     	" Jump the previous error 
+" :cn     	" Jump the next error
+" :cl       " List all of errors 
+" :cw       " If it exist error list, then open quickfix
+" :copen 	" open quickfix
+" :copen 10 " open quickfix with 10 lines as hight
+" :cclose 	" close quickfix
+" :col      " Jump the previous old error list
+" :cnew  	" Jump the next new error list
+
+" :botright cwindow
+" :botright copen
+" :topleft copen
+" :vertical topleft copen
+
+nnoremap <leader>q :call QuickfixToggle()<cr>
+let g:quickfix_is_open = 0
+function! QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+    else
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Register
@@ -1287,7 +1389,7 @@ set wrapscan            " Search cycle (from tail to head, or head to tail) in t
 "
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vimdiff
+" vimdiff, diff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " $vimdiff  FILE_LEFT  FILE_RIGHT
 " $vim -d  FILE_LEFT  FILE_RIGHT
@@ -1306,7 +1408,9 @@ set wrapscan            " Search cycle (from tail to head, or head to tail) in t
 " 
 " :diffupdate
 " :diffget
+" :do
 " :diffput
+" :dp
 " :1,100 diffput
 " :1,100 diffget
 " :1,100 diffget 3  "Specify range line 1~100, buffer ID-3
@@ -1318,10 +1422,11 @@ set wrapscan            " Search cycle (from tail to head, or head to tail) in t
 "
 " zo    "(folding open)
 " zc    "(folding close)
-" [c    "next change
-" ]c    "previous change
+" [c    "next change, 3[c, (num)[c
+" ]c    "previous change, 3]c, (num)]c
 " do    "do get
 " dp    "do put
+" :diffupdate
 " u, <ESC>
 
 set diffopt+=iwhite
