@@ -125,9 +125,21 @@
 #6 KeyMap
 	- F1				#Command Palette
 	- F2				#Toggle Side Bar Visibility
-	- F3 				#editor.action.nextMatchFindAction, workbench.action.terminal.findNextTerminalFocus, workbench.action.terminal.findNext
-	- F3+Shift 			#editor.action.previousMatchFindAction, workbench.action.terminal.findPreviousTerminalFocus, workbench.action.terminal.findPrevious
+	
+	- F3				#	workbench.action.terminal.findNext						(Command: Find Next)
+						#	workbench.action.terminal.findNextTerminalFocus, 		(Command: Find Next)
+						#	editor.action.nextMatchFindAction,						(Command: Find Next)
+						#	editor.action.nextSelectionMatchFindAction,				(Command: Find Next Selection)
+						#	editor.action.wordHighlight.next,						(Command: Go To Next Symbol Highlight)
+
+	- F3+Shift 			#	workbench.action.terminal.findPrevious,					(Command: Find Previouse)
+						#	workbench.action.terminal.findPreviousTerminalFocus, 	(Command: Find Previouse)
+						#	editor.action.previousMatchFindAction, 					(Command: Find Previouse)
+						#	editor.action.previousSelectionMatchFindAction,			(Command: Find Previouse Selection)
+						#	editor.action.wordHighlight.prev, 						(Command: Go To Previouse Symbol Highlight)
+						
 	- Shift+Esc			#closeFindWidget, workbench.action.terminal.hideFindWidget		//Also it includes other "XX-close"
+	
 	- F4 				#search.action.focusNextSearchResult
 	- F4+Shift 			#search.action.focusPreviousSearchResult
 	
