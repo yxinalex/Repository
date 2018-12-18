@@ -14,6 +14,67 @@
 #3 Package
 	- C/C++, ms-vscode.cpptools
 	- Vim, vscodevim.vim
+		* Enter Setting: "Settings->Extensions->Vim Configuration"
+		* Some Settings Favorite:
+			= "Status Bar Color Control":Enabled
+			= "Status Bar Colors", Insert:#5f0000, Normal:#005f5f, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Default)
+			= "Status Bar Colors", Insert:#5f0000, Normal:#005f5f, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Default)
+			= "HLSearch":Enabled, "Ignorecase":Enabled, "Insearch":Enabled
+			= "Search Highlight Color":rgba(150, 150, 255, 0.3)
+			= "Use System Clipboard":Enabled
+			= Normal Mode Key Bindings Non Recursive
+				"vim.useSystemClipboard": true,
+				"vim.normalModeKeyBindingsNonRecursive": 
+				[
+					{
+						"before": ["J"],
+						"after": ["6", "<C-e>"]
+					},
+					{
+						"before": ["K"],
+						"after": ["6", "<C-y>"]
+					},
+					{
+						"before": ["<Leader>", "w"],
+						"after": ["y", "i", "w"]
+					},
+					
+			        {
+						"before": ["<Leader>", "s", "s"],
+						"commands": [":w!"]
+					},
+					{
+						"before": ["<Leader>", "s", "a"],
+						"commands": [":wa!"]
+					},
+					
+					{
+						"before": ["<Leader>", "f", "t"],
+						"commands": ["workbench.action.gotoSymbol"]
+					},
+					{
+						"before": ["<Leader>", "f", "a", "t"],
+						"commands": ["workbench.action.showAllSymbols"]
+					},
+					{
+						"before": ["<Leader>", "f", "f"],
+						"commands": ["workbench.action.quickOpen"]
+					},
+				]
+			
+			= Visual Mode Key Bindings Non Recursive
+				"vim.visualModeKeyBindingsNonRecursive": 
+				[
+					{
+						"before": [">"],
+						"commands": ["editor.action.indentLines"]
+					},
+					{
+						"before": ["<"],
+						"commands": ["editor.action.outdentLines"]
+					},
+				]
+			
 	- ctags, hcyang.ctags
 	- ctagsx, jtanx.ctagsx
 	- Project Manager, alefragnani.project-manager
@@ -24,7 +85,8 @@
 		* Displays file's absolute path when outside of current workspace.
 		* No configuration!
 	- Date & Time, rid9.datetime
-		* "C:\Users\alex.yuan\.vscode\extensions\rid9.datetime-1.0.5\package.json" 		//Need to modify manually
+		* Manual modify: "C:\Users\alex.yuan\.vscode\extensions\rid9.datetime-1.0.5\package.json" 
+		* Enter Setting: "Settings->Extensions->Data & Time Configuration"
 	
 	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer
 	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2
@@ -158,7 +220,7 @@
 	- Ctrl+PgUp			#Previouse Editor
 	- Ctrl+PgDn			#Next Editor
 	- Ctrl+Shift+p 		#Command Palette	
-	- Ctrl+p 			#Quick Open File
+	- Ctrl+p 			#Quick Open File(workbench.action.quickOpen)
 	- Ctrl+` 			#Terminal
 	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
 	- Ctrl+\ 			#Toggle Panel
@@ -169,16 +231,16 @@
 	- Ctrl+k 			#extension.findCTags
 	- Ctrl+j 			#extension.ctagsJumpBack
 	- Ctrl+g			#Go line
-	- Ctrl+l 			#Go Symbol in Workspace
-	- Ctrl+;			#Go Symbol in File
+	- Ctrl+l 			#Go Symbol in Workspace(workbench.action.showAllSymbols)
+	- Ctrl+;			#Go Symbol in File(workbench.action.gotoSymbol)
 	- Ctrl+'			#C_Cpp.Navigate
 	- Alt+o 			#C_Cpp.SwitchHeaderSource
 
 	- Ctrl+, 			#Go Previouse Edit Point
 	- Ctrl+.			#Go Next Edit Point
 	
-	- Ctrl+[			#editor.action.outdentLines,    //when extension.vim.disabled
-	- Ctrl+] 			#editor.action.indentLines,     //when extension.vim.disabled
+	- Ctrl+[			#editor.action.outdentLines,    //when extension.vim.disabled, "<<" in vim mode.
+	- Ctrl+] 			#editor.action.indentLines,     //when extension.vim.disabled, ">>" in vim mode.
 	- Ctrl+/ 			#Toggle Line Comment
 
 	- Tab 				#AutoCompleteConfirmed
