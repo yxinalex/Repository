@@ -1455,7 +1455,7 @@ set wrapscan            " Search cycle (from tail to head, or head to tail) in t
 " :diffupdate
 " u, <ESC>
 
-set diffopt+=iwhite
+" set diffopt+=iwhite
 
 set diffexpr=CustomizedDiff()
 function CustomizedDiff()
