@@ -26,8 +26,10 @@
 		* Enter Setting: "Settings->Extensions->Vim Configuration"
 		* Some Settings Favorite:
 			= "Status Bar Color Control":Enabled
+				"vim.statusBarColorControl": true,
 			= "Status Bar Colors", Insert:#5f0000, Normal:#005f5f, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Default)
 			= "Status Bar Colors", Insert:#5f0000, Normal:#006699, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Favorite)
+				"vim.statusBarColors.normal": "#006699",
 			= "HLSearch":Enabled, "Ignorecase":Enabled, "Insearch":Enabled
 			= "Search Highlight Color":rgba(150, 150, 255, 0.3)
 			= "Use System Clipboard":Enabled
@@ -69,6 +71,15 @@
 						"before": ["<Leader>", "f", "f"],
 						"commands": ["workbench.action.quickOpen"]
 					},
+					{
+						"before": ["<tab>"],
+						"commands": ["workbench.action.nextEditor"]
+					},
+					{
+						"before": ["<Leader>", "<tab>"],
+						"commands": ["workbench.action.previousEditor"]
+					},
+					
 				]
 			
 			= Visual Mode Key Bindings Non Recursive
@@ -224,8 +235,8 @@
 	- F12			 	#Vim: Toggle Vim Mode
 	
 	- Ctrl+F4 			#workbench.action.closeActiveEditor
-	- Ctrl+PgUp			#Previouse Editor
-	- Ctrl+PgDn			#Next Editor
+	- Ctrl+PgUp			#Open Previouse Editor(workbench.action.previousEditor)
+	- Ctrl+PgDn			#Open Next Editor(workbench.action.nextEditor)
 	- Ctrl+Shift+p 		#Command Palette	
 	- Ctrl+p 			#Quick Open File(workbench.action.quickOpen)
 	- Ctrl+` 			#Terminal
