@@ -18,7 +18,7 @@
 		* Some Settings Favorite:
 			= "Status Bar Color Control":Enabled
 			= "Status Bar Colors", Insert:#5f0000, Normal:#005f5f, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Default)
-			= "Status Bar Colors", Insert:#5f0000, Normal:#005f5f, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Default)
+			= "Status Bar Colors", Insert:#5f0000, Normal:#006699, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Favorite)
 			= "HLSearch":Enabled, "Ignorecase":Enabled, "Insearch":Enabled
 			= "Search Highlight Color":rgba(150, 150, 255, 0.3)
 			= "Use System Clipboard":Enabled
