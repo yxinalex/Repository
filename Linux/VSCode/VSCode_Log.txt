@@ -72,6 +72,10 @@
 						"commands": ["workbench.action.quickOpen"]
 					},
 					{
+						"before": ["<Leader>", "g"],
+						"commands": ["workbench.action.findInFiles"]
+					},
+					{
 						"before": ["<tab>"],
 						"commands": ["workbench.action.nextEditor"]
 					},
@@ -241,7 +245,8 @@
 	- Ctrl+p 			#Quick Open File(workbench.action.quickOpen)
 	- Ctrl+` 			#Terminal
 	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
-	- Ctrl+\ 			#Toggle Panel
+	- Ctrl+\ 			#Toggle Panel(workbench.action.togglePanel)
+	- Ctrl+Shift+f 		#Find in Files(workbench.action.findInFiles)
 		
 	- Ctrl+o			#Go Back
 	- Ctrl+i 			#Go Forward
