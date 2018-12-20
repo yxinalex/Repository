@@ -32,7 +32,7 @@
 				"vim.statusBarColors.normal": "#006699",
 			= "HLSearch":Enabled, "Ignorecase":Enabled, "Insearch":Enabled
 			= "Search Highlight Color":rgba(150, 150, 255, 0.3)
-			= "Use System Clipboard":Enabled
+			= "Use System Clipboard":Enabled. (using below <leader>w/y/d/c/p/P key plesae Disabled)
 			= Normal Mode Key Bindings Non Recursive
 				"vim.useSystemClipboard": true,
 				"vim.normalModeKeyBindingsNonRecursive": 
@@ -45,7 +45,12 @@
 					
 					{"before": ["J"],					"after": ["6", "<C-e>"]},
 					{"before": ["K"],					"after": ["6", "<C-y>"]},
-					{"before": ["<Leader>", "w"],		"after": ["y", "i", "w"]},
+					{"before": ["<Leader>", "w"],		"after": ["\"", "+", "y", "i", "w"]},
+					{"before": ["<Leader>", "y"],		"after": ["\"", "+", "y"]},
+					{"before": ["<Leader>", "d"],		"after": ["\"", "+", "d"]},
+					{"before": ["<Leader>", "c"],		"after": ["\"", "+", "c"]},
+					{"before": ["<Leader>", "p"],		"after": ["\"", "+", "p"]},
+					{"before": ["<Leader>", "P"],		"after": ["\"", "+", "P"]},
 					
 			        {"before": ["<Leader>", "s", "s"],			"commands": [":w!"]},
 					{"before": ["<Leader>", "s", "a"],			"commands": [":wa!"]},
@@ -64,6 +69,8 @@
 				[
 					{"before": [">"],							"commands": ["editor.action.indentLines"]},
 					{"before": ["<"],							"commands": ["editor.action.outdentLines"]},
+					
+					{"before": ["<Leader>", "g"],				"commands": ["workbench.action.findInFiles"]},
 				]
 			
 	- ctags, hcyang.ctags
