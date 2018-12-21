@@ -66,6 +66,9 @@
 			
 	- ctags, hcyang.ctags
 	- ctagsx, jtanx.ctagsx
+		* Manual running below commands to generate the "tags" file.
+		* "ctags --tag-relative --extra=f -R"
+		* "ctags -R --fields=+iaS --extra=+q *"
 	- Project Manager, alefragnani.project-manager
 	- TortoiseSVN, fantasytyx.tortoise-svn
 	
@@ -146,6 +149,12 @@
 		* "workbench.editor.enablePreview": false
 		* Or find Settings-> Workbench -> Breadcrumbs -> Enable Preview
 
+	- Terminal › External: Windows Exec
+		* C:\Windows\System32\cmd.exe (Default)
+		* C:\cmder\Cmder.exe
+	- Terminal › Integrated › Shell: Windows
+		* C:\Windows\System32\cmd.exe (Default)
+		
 	- Settings: Place your settings here to overwrite the Default Settings.
 		* "Workspace Settings" in "..\workspace_folder\.vscode\settings.json"
 		* "User Settings" in "C:\Users\alex.yuan\AppData\Roaming\Code\User\settings.json"
