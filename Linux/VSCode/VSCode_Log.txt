@@ -240,8 +240,8 @@
 	- Ctrl+] 			#editor.action.indentLines,     //when extension.vim.disabled, ">>" in vim mode.
 	- Ctrl+/ 			#Toggle Line Comment
 
-	- Ctrl+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)
-	- Ctrl+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)
+	- Alt+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)
+	- Alt+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)
 	
 	- Tab 				#AutoCompleteConfirmed
 }
