@@ -781,15 +781,12 @@ vmap <C-c> "+y
 vmap <C-x> "+d
 vmap <C-z> <Esc>uv
 vmap <C-a> <Esc>ggvG
-
-imap <C-v> <Esc>"+pi
-imap <C-c> "+y
-imap <C-x> "+d
-imap <C-z> <Esc>ui
-imap <C-a> <Esc>ggvG
-
 vmap <silent><Leader>ss <Esc>:w!<CR>v
-imap <silent><Leader>ss <Esc>:w!<CR>i
+
+" imap <C-v> <Esc>"+pi
+" imap <C-z> <Esc>ui
+" imap <C-a> <Esc>ggvG
+" imap <silent><Leader>ss <Esc>:w!<CR>i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
