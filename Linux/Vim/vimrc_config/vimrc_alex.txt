@@ -773,6 +773,7 @@ nmap <Leader><Leader> "+
 " nmap <C-v> "+p 		
 nmap <C-a> ggvG
 
+vmap <Leader><Leader> "+
 vmap <C-v> "+p
 vmap <C-c> "+y
 vmap <C-x> "+d
