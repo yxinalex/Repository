@@ -71,6 +71,9 @@
 					{"before": [">"],							"commands": ["editor.action.indentLines"]},
 					{"before": ["<"],							"commands": ["editor.action.outdentLines"]},
 					
+					{"before": ["<Leader>", "<Leader>"],		"after": ["\"", "+"]},
+					{"before": ["<Leader>", "w"],		    	"after": ["\"", "+", "y", "i", "w"]},
+					
 					{"before": ["<Leader>", "g"],				"commands": ["workbench.action.findInFiles"]},
 				]
 			
