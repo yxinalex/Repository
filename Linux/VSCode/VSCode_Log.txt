@@ -76,6 +76,9 @@
 			
 	- ctags, hcyang.ctags
 	- ctagsx, jtanx.ctagsx
+		* Manual running below commands to generate the "tags" file.
+		* "ctags --tag-relative --extra=f -R"
+		* "ctags -R --fields=+iaS --extra=+q *"
 	
 	- Active File Status, sgtsquiggs.vscode-active-file-status
 		* Displays file's relative path to the current workspace.
@@ -130,7 +133,7 @@
 	- Font Family:
 		* Original: Consolas, 'Courier New', monospace
 		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
-		* ModifyTo: 'DejaVu Sans Mono' 			//Primary
+		* ModifyTo: 'DejaVu Sans Mono' 			//Linux Primary
 		* ModifyTo: 'Source Code Pro'
 		* ModifyTo: 'Lucida Console'
 		* ModifyTo: 'Monaco'
