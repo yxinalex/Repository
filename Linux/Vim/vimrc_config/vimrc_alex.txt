@@ -597,7 +597,9 @@ nmap <F3> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""
 " NOTES_07:
 " nmap <F5> :!ctags -R --fields=+iaS --extra=+q *<CR>
-nmap <silent><F10> :!ctags -R<CR><CR>
+" nmap <F5> :!ctags -R --tag-relative --fields=+iaS --extra=+qf *<CR>
+" nmap <silent><F10> :!ctags -R<CR><CR>
+nmap <silent><F10> :!ctags -R --tag-relative --fields=+iaS --extra=+qf *<CR><CR>
 " nmap <Leader>d <C-]> 
 nmap <C-k> <C-]>
 nmap <C-j> <C-t>

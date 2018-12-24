@@ -73,6 +73,7 @@
 		* Manual running below commands to generate the "tags" file.
 		* "ctags --tag-relative --extra=f -R"
 		* "ctags -R --fields=+iaS --extra=+q *"
+		* "ctags -R --tag-relative --fields=+iaS --extra=+qf *"
 	- Project Manager, alefragnani.project-manager
 	- TortoiseSVN, fantasytyx.tortoise-svn
 	
