@@ -692,8 +692,8 @@ nmap gl <C-w>l
 nmap gw <C-w>w
 nmap gp <C-w>p
 
-nmap <S-j> 5<C-e>
-nmap <S-k> 5<C-y>
+nmap <S-j> 10<C-e>
+nmap <S-k> 10<C-y>
 
 nmap <Tab> :bn<CR>
 nmap <S-Tab> :bp<CR>
