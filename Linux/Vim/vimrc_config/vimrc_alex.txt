@@ -1330,8 +1330,8 @@ endfunction
 set incsearch           " do incremental searching 
 " set noincsearch       " No incremental searching
 
-set ic                  " set ignorecase
-" set noic              " set noignorecase
+" set ic                  " set ignorecase
+set noic              " set noignorecase
 
 set hlsearch            " Hightlight search result
 " set nohlsearch        " No Hightlight
