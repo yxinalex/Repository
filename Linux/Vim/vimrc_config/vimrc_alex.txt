@@ -29,6 +29,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle  
 
+Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'  
@@ -84,6 +85,20 @@ filetype plugin indent on     " required!
 " :BundleClean
 " :BundleClean!
 " :h vundle Get more details and wiki and FAQ
+
+
+
+
+" ##################################################################################
+" 				startify
+" ##################################################################################
+" :h startify
+" :h startify-faq
+"
+" :SLoad       load a session    |startify-:SLoad|
+" :SSave[!]    save a session    |startify-:SSave|
+" :SDelete[!]  delete a session  |startify-:SDelete|
+" :SClose      close a session   |startify-:SClose|
 
 
 " ##################################################################################
@@ -1080,9 +1095,12 @@ set nowrap
 " :vsp /path/name_file.txt
 "
 "
-" $vim -x file     " Edit one encrypt file 
-" :X password    " Encrypt the current file
-" :set key=password   " clear the password
+" $vim -x file       " Edit one encrypt file 
+" :X password        " Encrypt the current file
+" :set key=password  " clear the password
+"
+"
+" q:                 " Show vim command history 
 "
 
 
