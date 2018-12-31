@@ -95,10 +95,15 @@ filetype plugin indent on     " required!
 " :h startify
 " :h startify-faq
 "
+" :Startify
 " :SLoad       load a session    |startify-:SLoad|
 " :SSave[!]    save a session    |startify-:SSave|
 " :SDelete[!]  delete a session  |startify-:SDelete|
 " :SClose      close a session   |startify-:SClose|
+
+" let g:startify_session_dir = '~/.vim/session'
+" let g:startify_session_dir = './.vim/session'
+let g:startify_change_to_dir = 0
 
 
 " ##################################################################################
@@ -1087,6 +1092,8 @@ set nowrap
 " :lcd              "Change the current window working directory of vim
 " :pwd              "Show   the current working directory of vim
 " :set autochdir    "Auto set the current editor file directory as the current working directory
+"
+"
 " :open /current_working_directory/file  "open file which is in the current working directory or sub working directory
 " NOTES: open command can't use Table key to do smart complete, so perfer to use belows
 " :badd /path/name_file.txt
