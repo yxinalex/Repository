@@ -34,8 +34,11 @@
 					{"before": ["g", "l"],				    "after": ["<C-w>", "l"]},
 					{"before": ["g", "w"],				    "after": ["<C-w>", "w"]},
 					
-					{"before": ["J"],					    "after": ["6", "<C-e>"]},
-					{"before": ["K"],					    "after": ["6", "<C-y>"]},
+				//	{"before": ["J"],					    "after": ["6", "<C-e>"]},
+				//	{"before": ["K"],					    "after": ["6", "<C-y>"]},
+					{"before": ["J"],	    	            "after": ["1", "5", "<C-e>"]},
+					{"before": ["K"],   	                "after": ["1", "5", "<C-y>"]},
+					
 			        {"before": ["<Leader>", "<Leader>"],	"after": ["\"", "+"]},
 			        {"before": ["<Leader>", "w"],		    "after": ["\"", "+", "y", "i", "w"]},
 				//	{"before": ["<Leader>", "y"],		    "after": ["\"", "+", "y"]},
