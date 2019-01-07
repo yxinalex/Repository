@@ -59,6 +59,7 @@
 			        {"before": ["<Leader>", "s", "s"],			"commands": [":w!"]},
 					{"before": ["<Leader>", "s", "a"],			"commands": [":wa!"]},
 					
+					{"before": ["<Leader>", "f", "g"],			"commands": ["C_Cpp.Navigate"]},
 					{"before": ["<Leader>", "f", "t"],			"commands": ["workbench.action.gotoSymbol"]},
 					{"before": ["<Leader>", "f", "a", "t"],		"commands": ["workbench.action.showAllSymbols"]},
 					{"before": ["<Leader>", "f", "f"],			"commands": ["workbench.action.quickOpen"]},
