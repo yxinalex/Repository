@@ -930,6 +930,8 @@ vmap <silent><Leader>ss <Esc>:w!<CR>v
 " g;: Jump the previous Modified place
 " g,: Jump The next Modified place
 "
+"--------------------------------------------------------------------------------------
+"
 " [[: Jump the previous the beginning of function, required the '{' in single line
 " ]]: Jump the next     the beginning of function, required the '{' in single line
 " []: Jump the previous the       end of function, required the '}' in single line
@@ -954,15 +956,16 @@ vmap <silent><Leader>ss <Esc>:w!<CR>v
 " $:  Jump the            end of current line
 " %:  Jump between the mached '()', '{}', '#if-#else-#endif'.
 "
+"--------------------------------------------------------------------------------------
 "
-" ~                             //Switch the Lower&Upper case for the selected block
-" (SelectedBlock)u, (SelectedBlock)U                          //Switch Lowercase or Uppercase for selected in visual mode
-" gUw, gUb, gUe, gU$, gU^       //Switch Uppercase
-" guw, gub, gue, gu$, gu^       //Swtich Lowercase
+" ~                             			//Switch the Lower&Upper case for the selected block
+" (SelectedBlock)u, (SelectedBlock)U        //Switch Lowercase or Uppercase for selected in visual mode
+" gUiw, gUw, gUb, gUe, gU$, gU^, viwU       //Switch Uppercase
+" guiw, guw, gub, gue, gu$, gu^, viwu       //Swtich Lowercase
 
 " <<, >>                "left, right indent
 " (SelectedBlock)=      "Auto indent for block
-
+"
 "--------------------------------------------------------------------------------------
 "
 " Auto Complete 
