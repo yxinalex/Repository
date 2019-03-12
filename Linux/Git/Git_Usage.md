@@ -389,6 +389,7 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
 ## Init Remote Repository
   - $ git clone https://github.com/yxinalex/Repository.git  	#HTTP
   - $ git clone git@github.com:yxinalex/Repository.git 			#SSH
+  - $ git clone git@bitbucket.org:yxinalex/repository.git
   
 ## Look/Add/Remove/Rename Remote
   - $ git remote -v                             # 显示所有远程仓库 
@@ -399,7 +400,8 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git remote origin-old-name origin-new-name 		# Rename the origin name
   
   - Smaple-1:
-  - $ git remote add origin git@github.org:alex/repository.git		# First, create remote connection (When you have local repository)
+  - $ git remote add origin git@github.org:alex/repository.git		# First, create remote connection (When you have local repository)(Please enusere the remote server has already this repository)
+  - $ git remote add origin git@bitbucket.org:yxinalex/repository.git
   - $ git push -u origin master 									# Second, push master to remote origin
   
   - Sample-2:
