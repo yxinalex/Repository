@@ -1,4 +1,35 @@
 ###############################################################
+#2018.03.13
+
+#Installer PDF Reader
+$ sudo apt-get install okular
+
+###############################################################
+#2018.03.11
+
+#WiFi On/Off
+$ sudo iwconfig                 #查看所有无线网络，一般是wlan0
+$ sudo ip link set wlan0 up     #启动无线网卡接口服务
+$ sudo iwlist scanning | more   #扫描无线网络，默认使用所有网卡搜索
+
+
+$ sudo iwlist wlan0 scan | more #使用特定网卡搜索网络
+$ sudo iwlist eth0 scan
+
+$ iwconfig wlan0 essid "MyHome"                     #连接到特定网络
+$ iwconfig wlan0 essid "MyHome" key 0123-4567-89    #如果网络是加密的，密码是0123456789，那么就输入命令
+$ iwconfig wlan0                                    #如果正常的话，输入
+
+$ ifconfig wlan0 up                                 #启用无线网卡
+
+$ dhclient wlan0                                    #如果是用DHCP获取IP的，那么用dhclient或dhcpcd获取ip
+$ dhcpcd wlan0
+
+
+
+
+
+###############################################################
 #2017.5.09
 
 #Install git
