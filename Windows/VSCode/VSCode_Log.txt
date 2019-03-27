@@ -80,6 +80,7 @@
 		* "ctags -R --tag-relative --fields=+iaS --extra=+qf *"
 	- Project Manager, alefragnani.project-manager
 	- TortoiseSVN, fantasytyx.tortoise-svn
+	- PlatformIO IDE, platformio.platformio-ide
 	
 	- Active File Status, sgtsquiggs.vscode-active-file-status
 		* Displays file's relative path to the current workspace.
