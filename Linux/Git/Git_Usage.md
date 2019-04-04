@@ -397,7 +397,7 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git remote show [remote]                  # 显示某个远程仓库的信息 
   - $ git remote add [shortname] [url]          # 增加一个新的远程仓库，并命名 
   - $ git remote remove [shortname_origin]      # Remove one remote repository
-  - $ git remote origin-old-name origin-new-name 		# Rename the origin name
+  - $ git remote rename origin-old-name origin-new-name 		# Rename the origin name
   
   - Smaple-1:
   - $ git remote add origin git@github.org:alex/repository.git		# First, create remote connection (When you have local repository)(Please enusere the remote server has already this repository)
