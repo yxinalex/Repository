@@ -6,11 +6,52 @@
 #2 Install
 	- GitBase installer with including vim 
 
-#3 Vim Configuration
+#3 Install Vundle on Windows
+	- Path, Please "$cd ~" in Git Base to find where the "$HOME/User/" path, such as it is usually "C:\Users\alex.yuan" in windows.
+    - Vim Path Create: $cd C:\Users\alex.yuan\vimfiles, then run below git command and configuration.
+		= git clone https://github.com/VundleVim/Vundle.vim.git 
+		= 在vim启动设定文件.vimrc添加 bundle的配置
+	- C:\Users\alex.yuan\.vim\bundle\vim-airline-themes\plugin
+	
+```C
+" set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$HOME/vimfiles/Vundle.vim/
+" set rtp+=$VIM\vimfiles\bundle\Vundle.vim\
+" set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
+
+" Plugin/Bundle ##### Install Start #####
+" call vundle#begin('$HOME/vimfiles/bundle/Vundle.vim/')
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'	" let Vundle manage Vundle  
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'  
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'rking/ag.vim'
+Plugin 'tomasr/molokai'
+Plugin 'fcevado/molokai_dark'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Yggdroot/LeaderF'
+
+call vundle#end()    
+filetype plugin indent on     " required!  
+" Plugin/Bundle ##### Install End ######
+```
+
+在Github vim-scripts 用户下的repos,只需要写出repos名称
+在Github其他用户下的repos, 需要写出”用户名/repos名”
+不在Github上的插件，需要写出git全路径
+
+#4 Vim Configuration
 	- Path, Please "$cd ~" in Git Base to find where the "$HOME/User/" path, such as it is usually "C:\Users\alex.yuan" in windows.
 	- find belows: 
 		* Git: ".gitconfig", ".bash_history"
 		* SSH: ".ssh"
-		* Vim:".vim", ".vimrc", ".viminfo"
+		* Vim: ".vim", ".vimrc", ".viminfo"
 		
 		
