@@ -16,6 +16,9 @@
 	
 #4 Git Configuration
 	- Path, Please "$cd ~" in Git Base to find where the "$HOME/User/" path, such as it is usually "C:\Users\alex.yuan" in windows.
+	- Font Configuration:
+		= "DejaVu Sans Mono, Bold, 8pt"
+		= "Source Code Pro, Bold, 9pt"
 	- find belows: 
 		* Git: ".gitconfig", ".bash_history"
 		* SSH: ".ssh"
