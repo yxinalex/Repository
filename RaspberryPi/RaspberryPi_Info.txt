@@ -5,4 +5,76 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 #Install
 
+#Configuration
+----------------------------------------------------------------------
 
+##安装系统后，默认SSH登录以及连接指定WiFi
+### 1. 开启ssh连接.
+======================================================================
+由于树莓派系统开始时默认是不开启ssh连接的，没有开启ssh就无法连接电脑，后续的操作也就无从谈起。所以首先要先开启树莓派的ssh连接，由于没有显示器，所以只能一开始在烧入系统的内存卡中进行设置。内存卡在将系统烧入后无法被电脑识别，但在内存卡中还留有一boot分区可以被电脑识别到。在电脑上打开此boot分区，在里面新建一个ssh的空文件，系统在启动的时候就可以识别出来，从而在开机的时候就开启ssh连接。
+
+
+### 2. 设置wifi上网
+======================================================================
+当你没有网线的时候，就算开启了ssh连接，由于无法与电脑处于同一局域网，此时电脑也无法通过ssh连接树莓派，此时就需要在树莓派开启的时候先连接上wifi。同样的，首先在内存卡中的boot分区中新建一个wpa_supplicant.conf的文件，并在里面写上树莓派的wifi配置命令。配置如下：
+
+vim /etc/wpa_supplicant/wpa_supplicant.conf
+
+country=CN
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network= 
+{ 
+    ssid="4GtoWiFi" 
+    psk="password" 
+    key_mgmt=WPA-PSK 
+    priority=1 
+}
+
+network={
+    ssid="company"
+    psk="password"
+    priority=2
+}
+
+network={
+    ssid="home"
+    psk="password"
+    priority=3
+}
+
+
+### 3. 查看树莓派对应ip并通过ssh连接
+======================================================================
+之后就可以将内存卡插入树莓派中连接电源开启树莓派了，利用Advanced IP Scanner可以在电脑上查看树莓派的IP地址。查找到树莓派ip地址之后，在电脑上利用putty通过ssh来连接树莓派。
+树莓派的ssh默认登陆名称是：pi
+登陆密码是:raspberry 
+
+
+### 4. 树梅派远程登录
+
+Putty(SSH): 默认用户为pi,密码为raspberry登录
+
+mstsc (Windows自带的远程桌面连接) 
+打开方式：win+r->mstsc 或直接搜索 
+之前需要在树莓派上安装xrdp
+sudo apt-get install xdrp;
+然后打开win上的mstsc，输入树莓派ip地址，连接后确认用户和密码。默认用户为pi,密码为raspberry登录
+
+VNC
+优点是支持多平台，iOS、Mac、Linux、Android等都有客户端，远程玩我的世界minecraft不会黑屏。
+树莓派Raspbian(201609之后的系统)均已经内置realvnc-vnc-server，直接打开使用就可以了，无需再安装tightvncserver等，而tightvncserver与realvnc-vnc-server也有冲突。同时也内置了vnc-viewer，即可以远程其他RealVNC设备。
+注意点：打开Desktop OpenGL Full KMS后会远程黑屏，建议使用Fake KMS。
+打开方法：
+sudo raspi-config
+选择Interfacing Option，选择P3 VNC，选择Yes <Enable>
+电脑和手机上安装VNC-Viewer，输入树莓派ip地址，验证密码。
+输入树莓派ip地址后回车
+
+
+
+
+#Others
+----------------------------------------------------------------------
+
+http://bbs.eeworld.com.cn/thread-503614-1-1.html?_t=t
