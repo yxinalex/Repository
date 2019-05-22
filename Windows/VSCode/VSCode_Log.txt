@@ -18,8 +18,8 @@
 		* Some Settings Favorite:
 			= "Status Bar Color Control":Enabled
 				"vim.statusBarColorControl": true,
-			= "Status Bar Colors", Insert:#5f0000, Normal:#005f5f, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Default)
-			= "Status Bar Colors", Insert:#5f0000, Normal:#006699, Replace:#00000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Favorite)
+			= "Status Bar Colors", Insert:#5f0000, Normal:#005f5f, Replace:#000000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Default)
+			= "Status Bar Colors", Insert:#5f0000, Normal:#006699, Replace:#000000, Visual:#5f00af, VisualBlock:#86592d", VisualLine:#005f5f". (Favorite)
 				"vim.statusBarColors.normal": "#006699",
 			= "HLSearch":Enabled, "Ignorecase":Enabled, "Insearch":Enabled
 			= "Search Highlight Color":rgba(150, 150, 255, 0.3)
@@ -96,6 +96,8 @@
 #4 Theme&Color
 	# Only Theme (Primary: Material Icon Theme)
 	- Material Icon Theme, pkief.material-icon-theme 							//Best
+		= Material Icons: Activate Icon Theme
+		= Material Icons: Change Folder Theme -> Specific
 	- Material Theme, equinusocio.vsc-material-theme 							//Better
 	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons 		//Normal
 	- Seti (improved), therobut.theme-setim 									//Disabled
@@ -193,8 +195,10 @@
 			=  "telemetry.enableCrashReporter": false
 		
 #6 KeyMap
-	- F1				#Command Palette
-	- F2				#Toggle Side Bar Visibility
+	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
+
+	- F1				#workbench.action.showCommands
+	- F2				#workbench.action.toggleSidebarVisibility
 	
 	- F3				#	workbench.action.terminal.findNext						(Command: Find Next)
 						#	workbench.action.terminal.findNextTerminalFocus, 		(Command: Find Next)
@@ -213,39 +217,44 @@
 	- F4 				#search.action.focusNextSearchResult
 	- F4+Shift 			#search.action.focusPreviousSearchResult
 	
-	- F5				#Open Settings
-	- F6				#Open Keyboard Shortcuts
-	- F7	 			#Show Extensions
-	- F8	 			#Show Explorer
+	- F5				#workbench.action.openSettings
+	- F6				#workbench.action.openGlobalKeybindings
+	- F7	 			#workbench.view.extensions
+	- F8	 			#workbench.view.explorer
 	
 	- F9 				#Toggle Breakpoiont
 	
 	- F10 				#CTAGS:Generate
-	- F11 				#Full Screen
-	- F12			 	#Vim: Toggle Vim Mode
+	- F11 				#workbench.action.toggleFullScreen
+	- F12			 	#toggleVim, Vim:Toggle Vim Mode
 	
 	- Ctrl+F4 			#workbench.action.closeActiveEditor
 	- Ctrl+PgUp			#Open Previouse Editor(workbench.action.previousEditor)
 	- Ctrl+PgDn			#Open Next Editor(workbench.action.nextEditor)
-	- Ctrl+Shift+p 		#Command Palette	
+	- Ctrl+Shift+p 		#workbench.action.showCommandsm, Show All Command	
 	- Ctrl+p 			#Quick Open File(workbench.action.quickOpen)
-	- Ctrl+` 			#Terminal
+	- Ctrl+` 			#workbench.action.terminal.new
 	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
-	- Ctrl+\ 			#Toggle Panel(workbench.action.togglePanel)
+	- Ctrl+\ 			#View: Toggle Panel(workbench.action.togglePanel)
 	- Ctrl+Shift+f 		#Find in Files(workbench.action.findInFiles)
 		
-	- Ctrl+o			#Go Back
-	- Ctrl+i 			#Go Forward
-	- Ctrl+Shift+k 		#Go Declaration,                //Another Map: extension.findCTagsPrompt(Maybe)
+	- Ctrl+o			#Go Back, workbench.action.navigateBack
+	- Ctrl+i 			#Go Forward, workbench.action.navigateForward
+	- Ctrl+Shift+k 		#Go Declaration,               //Another Map: extension.findCTagsPrompt(Maybe)
+						= editor.action.goToDeclaration
+						= editor.action.revealDeclaration
+						= C_Cpp.GoToDeclaration
+						= C_Cpp.GoToDeclaration
+	- Ctrl+t 			#extension.findCTagsPrompt
 	- Ctrl+k 			#extension.findCTags
 	- Ctrl+j 			#extension.ctagsJumpBack
-	- Ctrl+g			#Go line
+	- Ctrl+g			#Go line, workbench.action.gotoLine
 	- Ctrl+l 			#Go Symbol in Workspace(workbench.action.showAllSymbols)
 	- Ctrl+;			#Go Symbol in File(workbench.action.gotoSymbol)
 	- Ctrl+'			#C_Cpp.Navigate
 	- Alt+o 			#C_Cpp.SwitchHeaderSource
 
-	- Ctrl+, 			#Go Previouse Edit Point
+	- Ctrl+, 			#Go Previouse Edit Point, 
 	- Ctrl+.			#Go Next Edit Point
 	
 	- Ctrl+[			#editor.action.outdentLines,    //when extension.vim.disabled, "<<" in vim mode.
