@@ -135,11 +135,13 @@
 #5 Configuration
 	- Font Size: 12
 	- Font Family:
-		* Original: Consolas, 'Courier New', monospace
+		* Original: Consolas, 'Courier New', monospace  
+		* ModifyTo: Consolas                            //Font size 13, Windows 10 Primary
 		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
 		* ModifyTo: 'DejaVu Sans Mono'
 		* ModifyTo: 'Source Code Pro'
-		* ModifyTo: 'Lucida Console'		//Windows Primary
+		* ModifyTo: 'Lucida Console'		
+        * ModifyTo: Consolas, 'Calibri', monospace    
 		* ModifyTo: 'Monaco'
 		
 		* DejaVu Sans Mono 也是一款优秀的免费许可字体，来自 Bitstream Vera
