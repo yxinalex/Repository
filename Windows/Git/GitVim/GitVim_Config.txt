@@ -8,15 +8,15 @@
 
 #3 Install Vundle on Windows
 	- Path, Please "$cd ~" in Git Base to find where the "$HOME/User/" path, such as it is usually "C:\Users\alex.yuan" in windows.
-    - Vim Path Create: $cd C:\Users\alex.yuan\vimfiles, then run below git command and configuration.
+	- Vim Path Create: "$cd C:\Users\alex.yuan\" or "$cd ~", then run below git command and configuration.
 		= git clone https://github.com/VundleVim/Vundle.vim.git 
 		= 在vim启动设定文件.vimrc添加 bundle的配置
 	- C:\Users\alex.yuan\.vim\bundle\vim-airline-themes\plugin
 	
 ```C
 " set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=$HOME/vimfiles/Vundle.vim/
-" set rtp+=$VIM\vimfiles\bundle\Vundle.vim\
+set rtp+=$HOME/Vundle.vim/
+" set rtp+=$VIM\\bundle\Vundle.vim\
 " set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
 
 " Plugin/Bundle ##### Install Start #####
