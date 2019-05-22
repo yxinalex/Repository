@@ -19,7 +19,7 @@
 	- Font Configuration:
 		= "DejaVu Sans Mono, Bold, 8pt"
 		= "Source Code Pro, Bold, 9pt"
-		= "Consolas"
+		= "Consolas"			//Windows 10 Primary
 		= "Lucida Console"
 	- find belows: 
 		* Git: ".gitconfig", ".bash_history"
