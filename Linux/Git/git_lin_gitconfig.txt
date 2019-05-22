@@ -1,0 +1,21 @@
+[user]
+	name = axlin01
+	email = yxinsiva@163.com
+[core]
+	editor = vim
+	excludesfile = /home/alex/.gitignore
+[color]
+	ui = auto
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = true
+[alias]
+	d = difftool
+	glog = log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(bold blue)<%cn>%Creset -%C(yellow)%d%Creset %s' --abbrev-commit
+[merge]
+	tool = vimdiff
+	keepbackup = true
+[gui]
+	historybrowser = git dag
+	editor = vim
