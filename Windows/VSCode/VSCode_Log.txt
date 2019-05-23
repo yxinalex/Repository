@@ -235,7 +235,8 @@
 	- Ctrl+PgDn			#Open Next Editor(workbench.action.nextEditor)
 	- Ctrl+Shift+p 		#workbench.action.showCommandsm, Show All Command	
 	- Ctrl+p 			#Quick Open File(workbench.action.quickOpen)
-	- Ctrl+` 			#workbench.action.terminal.new
+	- Ctrl+Shift+`		#workbench.action.terminal.new, Create New Integrated Terminal
+	- Ctrl+` 			#workbench.action.terminal.toggleTerminal, Toggle Integrated Terminal
 	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
 	- Ctrl+\ 			#View: Toggle Panel(workbench.action.togglePanel)
 	- Ctrl+Shift+f 		#Find in Files(workbench.action.findInFiles)
