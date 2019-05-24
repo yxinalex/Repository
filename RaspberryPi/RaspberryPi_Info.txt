@@ -25,8 +25,8 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 network= 
 { 
-    ssid="4GtoWiFi" 
-    psk="password" 
+    ssid="Pi" 
+    psk="Raspberry" 
     key_mgmt=WPA-PSK 
     priority=1 
 }
@@ -34,12 +34,14 @@ network=
 network={
     ssid="company"
     psk="password"
+    key_mgmt=WPA-PSK 
     priority=2
 }
 
 network={
     ssid="home"
     psk="password"
+    key_mgmt=WPA-PSK
     priority=3
 }
 
