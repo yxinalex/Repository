@@ -18,6 +18,8 @@ sudo ifdown wlan0
 sudo ifup wlan0     
 wpa_cli status      
 
+sudo nano /etc/dhcpcd.conf
+sudo nano /etc/network/interfaces        //Set Static IP or Dynamic IP
 
     
 sudo apt-get update
