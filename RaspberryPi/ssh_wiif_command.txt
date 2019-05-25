@@ -1,0 +1,13 @@
+1. Commands
+
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+reboot
+iwconfig
+ifconfig wlan0
+sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i wlan0
+
+
+    
+sudo apt-get update
+sudo apt-get install xrdp           //"Windows+R" keys to run "mstsc"
+sudo apt-get install vim
