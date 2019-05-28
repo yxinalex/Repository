@@ -25,3 +25,5 @@
 		* Git: ".gitconfig", ".bash_history"
 		* SSH: ".ssh"
 		* Vim:".vim", ".vimrc", ".viminfo"
+    - Color Scheme Designer
+        = http://ciembor.github.io/4bit/

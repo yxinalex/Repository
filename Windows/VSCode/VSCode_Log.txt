@@ -98,6 +98,7 @@
 	- Material Icon Theme, pkief.material-icon-theme 							//Best
 		= Material Icons: Activate Icon Theme
 		= Material Icons: Change Folder Theme -> Specific
+		= Material Icons: Change Folder Color -> Blue
 	- Material Theme, equinusocio.vsc-material-theme 							//Better
 	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons 		//Normal
 	- Seti (improved), therobut.theme-setim 									//Disabled
