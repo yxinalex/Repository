@@ -40,7 +40,8 @@ Create by alex on 2018.05.07
   - $ git config --global alias.glog "log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(bold blue)<%cn>%Creset -%C(yellow)%d%Creset %s' --abbrev-commit"
   - $ git config --global alias.glog "log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(bold blue)<%cn>%Creset -%s %C(yellow)%d%Creset' --abbrev-commit"
   - $ git config -e [--global] 
-  - $ git config [--global] user.name "[name]" $ git config [--global] user.email "[email address]"
+  - $ git config [--global] user.name "[name]" 
+  - $ git config [--global] user.email "[email address]"
 
 ## 3. Config Diff
 
