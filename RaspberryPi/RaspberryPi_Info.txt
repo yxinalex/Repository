@@ -80,3 +80,8 @@ sudo raspi-config
 ----------------------------------------------------------------------
 
 http://bbs.eeworld.com.cn/thread-503614-1-1.html?_t=t
+
+
+
+Advanced IP Scanner
+ - http://www.advanced-ip-scanner.com/cn/
