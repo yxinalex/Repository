@@ -3,6 +3,11 @@ Raspberry PI for Install
 > Created by Alex on 2019.05.25
 ----------------------------------------------------------------------------------
 
+# Official Websit
+https://www.raspberrypi.org
+https://www.raspberrypi.org/downloads/
+https://www.raspberrypi.org/downloads/raspbian/
+
 # Preparation
  - Raspberry 3b+ 
     - Board
@@ -45,8 +50,7 @@ Raspberry PI for Install
 country=CN
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
-network= 
-{ 
+network={ 
     ssid="Pi" 
     psk="Raspberry" 
     key_mgmt=WPA-PSK 

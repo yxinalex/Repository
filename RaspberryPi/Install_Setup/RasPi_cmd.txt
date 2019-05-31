@@ -1,5 +1,11 @@
-1. Commands
+Raspberry PI for Commands
+==================================================================================
+> Created by Alex on 2019.05.25
+----------------------------------------------------------------------------------
 
+# Wi-Fi Commands
+
+```c
 sudo raspi-config
 
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
@@ -13,7 +19,7 @@ sudo iwlist wlan0 scan | grep SSID
 wpa_passphrase SSID password
 sudo wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i wlan0
 
-sudo systemctl restart networking  #重启网卡
+sudo systemctl restart networking
 sudo ifdown wlan0   
 sudo ifup wlan0     
 wpa_cli status      
@@ -25,3 +31,7 @@ sudo nano /etc/network/interfaces        //Set Static IP or Dynamic IP
 sudo apt-get update
 sudo apt-get install xrdp           //"Windows+R" keys to run "mstsc"
 sudo apt-get install vim
+```
+
+
+# Tools Install Command
