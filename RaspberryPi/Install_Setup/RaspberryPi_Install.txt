@@ -1,0 +1,99 @@
+Raspberry PI for Install
+==================================================================================
+> Created by Alex on 2019.05.25
+----------------------------------------------------------------------------------
+
+# Preparation
+ - Raspberry 3b+ 
+    - Board
+    - Image
+ - SD Card (SanDisk is better compatibility)
+ - Tools
+    - Burn Tool     : Win32DiskImager
+    - Remote Tool   : vncviewer, putty
+ - HDMI or VGA wire (Optional)
+ - Peripheral
+    - Keyboard
+    - Mouse
+    - Display (Optional)
+
+# Install Tools
+ - Burn Image Tool
+    - Win32DiskImager: Win32DiskImager-0.9.5-binary
+ - SD Formatter Tool
+    - PanasonicSDFormatter_ha
+ - Remote Tool in Windows
+    - mstsc (Windows comes along with this tool, named "Remote Desktop Connection")
+    - Putty
+    - Advanced_IP_Scanner
+    - RealVNC (VNC-Viewer)
+    - TeamViewer
+ - Remote Tool in Linux (N/A)
+ - Remote Tool in iOS (N/A)
+ - File Translate Tool
+    - FileZilla
+ 
+ 
+# Configuration
+ - Set "SSH Login" by default with specified Wi-Fi
+    - empty file without any suffied named "ssh"
+    - create file "wpa_supplicant.conf" with below content
+    - copy above two files into boot section of System SD Card
+ - Details of "wpa_supplicant.conf"
+    - $ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```c
+country=CN
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network= 
+{ 
+    ssid="Pi" 
+    psk="Raspberry" 
+    key_mgmt=WPA-PSK 
+    priority=1 
+    scan_ssid=1
+}
+
+network={
+    ssid="home"
+    psk="password"
+    key_mgmt=WPA-PSK
+    priority=2
+}
+```
+
+
+# Remote Raspberry
+
+## Remote Tools Installer
+ - Advanced IP Scanner
+    - http://www.advanced-ip-scanner.com/cn/
+ - Putty    
+ - Remote Desktop Connection (Windows comes along with this tool)
+    - First install "xrdp" in Raspberry Pi before remote
+        - $ sudo apt-get install xdrp
+    - Then, "run" -> "mstsc" in windows
+    - Default Account Login
+ - RealVNC (Support multi-platform: iOS, Mac, Linux, Windows, Android)
+    - Raspbian 201609 version and later versions has built-in realvnc-vnc-server
+    - Note: Open "Desktop OpenGL Full KMS" will cause black screen, so suggest to use "Fake KMS"
+    - First enable VNC Server
+        - $ sudo raspi-config
+        - "Interfacing Option" -> "P3 VNC" -> "Yes"
+    - Then, Install VNC-Viewer in windows
+    - Default Account Login
+
+## Remote Login
+ - Run Advanced IP Scanner to scan and get the IP address of Raspberry PI
+ - Run SSH to connect Raspberry PI with scanned IP
+ - Default Login account
+    - Name      : pi
+    - Password  : raspberry
+
+
+
+
+
+
+
+
