@@ -48,6 +48,7 @@ ls /dev/sd*
  - 3. Backup the SD Card
 ```c
 sudo dd if=/dev/sdb | gzip>/home/alex/raspberryPi_bkimg.gz
+sudo watch -n 5 pkill -USR1 -x dd           //Input this command in the other shell, to display the "dd" process
 ```
 
  - 4. Restore the backup image (Linux Commnads)
