@@ -3,6 +3,15 @@ Raspberry PI for System Backup
 > Created by Alex on 2019.05.31
 ----------------------------------------------------------------------------------
 
+# Raspberry Backup Solution
+ - Windows Solution (N/A)
+ - Linux Solutin
+    - Note: Using one Linux PC to backup the RaspberryPI System in RaspberryPI-SD-Card
+    - Preparation
+        - 1. Linux PC
+        - 2. RaspberryPi SD Card (which had installed RaspberryPi System e.g. Debian)
+        - 3. SD Card Reader
+
 # System Backup Procedure
  - 1. Manual mount SD Card (Ubuntu mount SD Card automatically, others need to mount manually)
  - 2. Check the mounted SD Card
