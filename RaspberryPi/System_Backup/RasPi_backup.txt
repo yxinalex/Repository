@@ -3,11 +3,41 @@ Raspberry PI for System Backup
 > Created by Alex on 2019.05.31
 ----------------------------------------------------------------------------------
 
+# System Backup Procedure
+ - 1. Manual mount SD Card (Ubuntu mount SD Card automatically, others need to mount manually)
+ - 2. Check the mounted SD Card
+ - 3. Backup the SD Card
+ - 4. Restore the backup image
+    - In Windows
+        - unzip backup file, then use win32diskimager to write image file into SD Card
+    - In Linux
+        - 1. Delete the SD Card partition
+        - 2. Write the backup image
+
 # System Backup Commands
-
+ - 1. Manual mount SD Card
 ```c
-
-
+cd /media
+sudo mkdir sdc1 sdc2
+sudo mount /dev/sdc1 /media/sdc1
+sudo mount /dev/sdc2 /media/sdc2
 ```
 
+- 2. Check the mounted SD Card
+```c
+df -h
+/dev/sdb1   //boot section
+/dev/sdb2   //system file section
+```
+
+ - 3. Backup the SD Card
+```c
+sudo dd if=/dev/sdc | gzip>/home/pi/raspberryPi_bkimg.gz
+```
+
+ - 4. Restore the backup image (Linux Commnads)
+```c
+fdisk
+sudo gzip -dc /home/pi/raspberryPi_bkimg.gz | sudo dd of=/dev/sdc
+```
 
