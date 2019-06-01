@@ -27,26 +27,32 @@ Raspberry PI for System Backup
  - 1. Manual mount SD Card
 ```c
 cd /media
-sudo mkdir sdc1 sdc2
-sudo mount /dev/sdc1 /media/sdc1
-sudo mount /dev/sdc2 /media/sdc2
+sudo mkdir sdb1 sdb2
+sudo mount /dev/sdb1 /media/boot
+sudo mount /dev/sdb2 /media/rootfs
 ```
 
 - 2. Check the mounted SD Card
 ```c
 df -h
-/dev/sdb1   //boot section
-/dev/sdb2   //system file section
+Filesystem  Size    Used    MountedOn
+/dev/sdb1                   /media/alex/boot
+/dev/sdb2                   /media/alex/rootfs
+
+ls /dev/sd*
+/dev/sdb
+/dev/sdb1
+/dev/sdb2
 ```
 
  - 3. Backup the SD Card
 ```c
-sudo dd if=/dev/sdc | gzip>/home/pi/raspberryPi_bkimg.gz
+sudo dd if=/dev/sdb | gzip>/home/alex/raspberryPi_bkimg.gz
 ```
 
  - 4. Restore the backup image (Linux Commnads)
 ```c
 fdisk
-sudo gzip -dc /home/pi/raspberryPi_bkimg.gz | sudo dd of=/dev/sdc
+sudo gzip -dc /home/alex/raspberryPi_bkimg.gz | sudo dd of=/dev/sdb
 ```
 
