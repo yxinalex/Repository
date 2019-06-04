@@ -26,6 +26,8 @@
 			= "Search Highlight Color":rgba(150, 150, 255, 0.3)
 			= "Use System Clipboard":Enabled. (using below <leader>w/y/d/c/p/P key plesae Disabled)
 			= Normal Mode Key Bindings Non Recursive
+                "vim.statusBarColorControl": true,
+                "vim.hlsearch": true,
 				"vim.useSystemClipboard": true,
 				"vim.normalModeKeyBindingsNonRecursive": 
 				[
@@ -186,6 +188,7 @@
 	- Settings: Place your settings here to overwrite the Default Settings.
 		* "Workspace Settings" in "..\workspace_folder\.vscode\settings.json"
 		* "User Settings" in "C:\Users\alex.yuan\AppData\Roaming\Code\User\settings.json"
+            //Windows 7
 			{
 				"editor.fontSize": 12,
 				"editor.fontFamily": "'DejaVu Sans Mono'",
@@ -203,6 +206,32 @@
 				"workbench.editor.enablePreview": false,
 				"workbench.sideBar.location": "left"
 			}
+            
+            //Windows 10
+            {
+            	"telemetry.enableCrashReporter": false,
+				"workbench.activityBar.visible": false,
+				"workbench.colorCustomizations": {
+					"statusBar.background": "#005f5f",
+					"statusBar.noFolderBackground": "#005f5f",
+					"statusBar.debuggingBackground": "#005f5f"
+				},
+				"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+				"workbench.statusBar.feedback.visible": false,
+				"search.location": "panel",
+				"explorer.confirmDelete": false,
+				"material-icon-theme.folders.theme": "specific",
+				"workbench.iconTheme": "material-icon-theme",
+				"workbench.colorTheme": "One Dark Pro Vivid",
+				"editor.fontFamily": "Consolas",
+				"editor.fontSize": 13,
+				"material-icon-theme.folders.color": "#42a5f5",
+				"files.associations": {
+					"*.txt": "markdown"
+				},
+				"editor.cursorStyle": "block",
+				"editor.cursorBlinking": "solid"
+            }
 		
 	- How to disable crash reporting
 		* If you don't wish to send crash data to Microsoft, you can set the telemetry.enableCrashReporter setting to false.

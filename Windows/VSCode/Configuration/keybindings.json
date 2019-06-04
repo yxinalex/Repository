@@ -1,0 +1,275 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "f2",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "f3",
+        "command": "editor.action.nextSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+f3",
+        "command": "-editor.action.nextSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "f3",
+        "command": "editor.action.wordHighlight.next",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "f7",
+        "command": "-editor.action.wordHighlight.next",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "shift+f3",
+        "command": "editor.action.previousSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+f3",
+        "command": "-editor.action.previousSelectionMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+f3",
+        "command": "editor.action.wordHighlight.prev",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "shift+f7",
+        "command": "-editor.action.wordHighlight.prev",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "shift+escape",
+        "command": "workbench.action.terminal.hideFindWidget",
+        "when": "terminalFindWidgetVisible && terminalFocus"
+    },
+    {
+        "key": "escape",
+        "command": "-workbench.action.terminal.hideFindWidget",
+        "when": "terminalFindWidgetVisible && terminalFocus"
+    },
+    {
+        "key": "f5",
+        "command": "workbench.action.openSettings"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "-workbench.action.openSettings"
+    },
+    {
+        "key": "f6",
+        "command": "workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "ctrl+k ctrl+s",
+        "command": "-workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "f7",
+        "command": "workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "-workbench.view.extensions"
+    },
+    {
+        "key": "f8",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "f10",
+        "command": "extension.ctag_generate"
+    },
+    {
+        "key": "f12",
+        "command": "toggleVim"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "alt+left",
+        "command": "-workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "alt+right",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "C_Cpp.GoToDeclaration",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
+    {
+        "key": "ctrl+f12",
+        "command": "-C_Cpp.GoToDeclaration",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "C_Cpp.GoToDeclaration",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    },
+    {
+        "key": "ctrl+f12",
+        "command": "-C_Cpp.GoToDeclaration",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "editor.action.revealDeclaration"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "editor.action.goToDeclaration"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "extension.findCTags",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-extension.findCTags",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "extension.findCTagsPrompt",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "-extension.findCTagsPrompt",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "extension.ctagsJumpBack",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+t",
+        "command": "-extension.ctagsJumpBack",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+;",
+        "command": "workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "C_Cpp.Navigate",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    },
+    {
+        "key": "alt+n",
+        "command": "-C_Cpp.Navigate",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "C_Cpp.Navigate",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
+    {
+        "key": "alt+n",
+        "command": "-C_Cpp.Navigate",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "C_Cpp.PeekDeclaration",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
+    {
+        "key": "ctrl+alt+f12",
+        "command": "-C_Cpp.PeekDeclaration",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "C_Cpp.PeekDeclaration",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    },
+    {
+        "key": "ctrl+alt+f12",
+        "command": "-C_Cpp.PeekDeclaration",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    }
+]
