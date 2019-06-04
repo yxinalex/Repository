@@ -9,4 +9,8 @@ https://www.raspberrypi.org
 https://www.raspberrypi.org/downloads/
 https://www.raspberrypi.org/downloads/raspbian/
 
+# Demo Development Websit
+http://shumeipai.nxez.com/
+http://shumeipai.nxez.com/2017/06/01/raspberry-pi-gpio-control-rgb-color-led-lights.html
+
 
