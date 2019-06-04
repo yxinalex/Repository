@@ -284,7 +284,28 @@
 	- Tab 				#AutoCompleteConfirmed
 }
 	
-#7 Package-"TortoiseSVN, fantasytyx.tortoise-sv"-KeyMap
+#7 Keymap between VScode vs. Vim
+```
+|:-----------------------------:|:------------------------:|:---------------------:|
+|                   Keymap for Ctags Jump VSCode vs. Vim                           |
+|:-----------------------------:|:------------------------:|:---------------------:|
+|           Command             |           VSCode         |         Vim           |
+|:-----------------------------:|:------------------------:|:---------------------:|
+|   Quick Open File             |           Ctrl+p         |        leader+f+f     |
+|   Go line                     |           Ctrl+g         |        (more)         |
+|   extension.findCTags         |           Ctrl+k         |        Ctrl+k         |
+|   extension.ctagsJumpBack     |           Ctrl+j         |        Ctrl+j         |
+|           -      |            |               -          |            -          |
+|   Go Symbol in Workspace      |           Ctrl+l         |        leader+f+a+t   |
+|   Go Symbol in File           |           Ctrl+;         |        leader+f+t     |
+|   C_Cpp.Navigate              |           Ctrl+'         |        leader+f+g     |
+|   C_Cpp.SwitchHeaderSource    |           Alt +o         |        N/A            |
+|   C_Cpp.GoToDeclaration       |           Ctrl+Shift+k   |        N/A            |
+|   C_Cpp.PeekDeclaration       |           Ctrl+Alt+k     |        N/A            |
+|:-----------------------------:|:------------------------:|:---------------------:|
+```
+    
+#8 Package-"TortoiseSVN, fantasytyx.tortoise-sv"-KeyMap
 
 alt+s u : "Workspace: SVN Update"
 alt+s c : "Workspace: SVN Commit"
