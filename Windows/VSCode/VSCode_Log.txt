@@ -12,8 +12,9 @@
 	- svn-TortoiseSVN-1.7.11.23600-x64-svn-1.7.8.msi: "C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe". While add the path into system environment variable: "C:\Program Files\TortoiseSVN\bin\"
 	
 #3 Package
-	- C/C++, ms-vscode.cpptools
-	- Vim, vscodevim.vim
+	- C/C++, ms-vscode.cpptools, Microsoft                          (Required)
+    - C++ Intellisense, austin.code-gnu-global, austin              (Disabled)
+	- Vim, vscodevim.vim                                            (Required)
 		* Enter Setting: "Settings->Extensions->Vim Configuration"
 		* Some Settings Favorite:
 			= "Status Bar Color Control":Enabled
@@ -72,26 +73,38 @@
 					{"before": ["<Leader>", "g"],				"commands": ["workbench.action.findInFiles"]},
 				]
 			
-	- ctags, hcyang.ctags
-	- ctagsx, jtanx.ctagsx
-		* Manual running below commands to generate the "tags" file.
-		* "ctags --tag-relative --extra=f -R"
-		* "ctags -R --fields=+iaS --extra=+q *"
-		* "ctags -R --tag-relative --fields=+iaS --extra=+qf *"
-	- Project Manager, alefragnani.project-manager
-	- TortoiseSVN, fantasytyx.tortoise-svn
-	- PlatformIO IDE, platformio.platformio-ide
+	- ctags, hcyang.ctags  (Required)
+        * Description       : Generate the CTAGs
+        * Install Tool      : "C:\ctags\ctags.exe". 
+        * Add Enviroement   : While add the path into system environment variable: "C:\ctags\" 
+	- ctagsx, jtanx.ctagsx (Required)
+		* First, need to generate and have the "tags" file.
+            = Automaticlly run above "CTAGS:Generate"
+            = Manual running below commands to generate the "tags" file.
+                * "ctags --tag-relative --extra=f -R"
+                * "ctags -R --fields=+iaS --extra=+q *"
+                * "ctags -R --tag-relative --fields=+iaS --extra=+qf *"
+        * Usage, it is for Vim hotkey in the tags jump. For example: below Vim hotkey setting
+            = Ctrl+t 			#extension.findCTagsPrompt
+            = Ctrl+k 			#extension.findCTags
+            = Ctrl+j 			#extension.ctagsJumpBack
+	- Project Manager, alefragnani.project-manager (Disabled)
+	- TortoiseSVN, fantasytyx.tortoise-svn                          (Required)
+	- PlatformIO IDE, platformio.platformio-ide (Disabled)
 	
-	- Active File Status, sgtsquiggs.vscode-active-file-status
+	- Active File Status, sgtsquiggs.vscode-active-file-status      (Required)
 		* Displays file's relative path to the current workspace.
 		* Displays file's absolute path when outside of current workspace.
 		* No configuration!
-	- Date & Time, rid9.datetime
+	- Date & Time, rid9.datetime (Disabled)
 		* Manual modify: "C:\Users\alex.yuan\.vscode\extensions\rid9.datetime-1.0.5\package.json" 
 		* Enter Setting: "Settings->Extensions->Data & Time Configuration"
 	
-	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer
-	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2
+	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer      (Disabled)
+	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2  (Required)
+    
+    - Python, ms-python.python, Microsoft (Required)
+        * Description: Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.
 	
 #4 Theme&Color
 	# Only Theme (Primary: Material Icon Theme)
@@ -244,11 +257,6 @@
 		
 	- Ctrl+o			#Go Back, workbench.action.navigateBack
 	- Ctrl+i 			#Go Forward, workbench.action.navigateForward
-	- Ctrl+Shift+k 		#Go Declaration,               //Another Map: extension.findCTagsPrompt(Maybe)
-						= editor.action.goToDeclaration
-						= editor.action.revealDeclaration
-						= C_Cpp.GoToDeclaration
-						= C_Cpp.GoToDeclaration
 	- Ctrl+t 			#extension.findCTagsPrompt
 	- Ctrl+k 			#extension.findCTags
 	- Ctrl+j 			#extension.ctagsJumpBack
@@ -257,6 +265,11 @@
 	- Ctrl+;			#Go Symbol in File(workbench.action.gotoSymbol)
 	- Ctrl+'			#C_Cpp.Navigate
 	- Alt+o 			#C_Cpp.SwitchHeaderSource
+    - Ctrl+Alt+k        #C_Cpp.PeekDeclaration
+	- Ctrl+Shift+k 		#C_Cpp.GoToDeclaration,               //Another Map: extension.findCTagsPrompt(Maybe)
+						= editor.action.goToDeclaration
+						= editor.action.revealDeclaration
+						= Go Declaration
 
 	- Ctrl+, 			#Go Previouse Edit Point, 
 	- Ctrl+.			#Go Next Edit Point

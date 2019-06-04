@@ -1,8 +1,28 @@
+Python Information
+==================================================================================
+> Created by Alex on 2019.06.04
+----------------------------------------------------------------------------------
 
+# Office Website
+ - https://www.python.org/
+ - https://www.python.org/downloads/
+ - https://www.python.org/downloads/release/python-373/
+
+# Windows Install
+ - Download package
+    - Browse: https://www.python.org/downloads/release/python-373/
+    - Select: Windows x86-64 executable installer	Windows	for AMD64/EM64T/x64
+ - VSCode Install
+    - Python, ms-python.python, Microsoft, Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.
+
+# Linux Install
+
+```c
 $sudo apt install python3-pyqt5
 $sudo apt install qt4-designer
 $sudo apt install pyqt4-dev-tools
 $sudo apt install pyqt5-dev-tools
 $pyuic4 -o a.py a.ui
 $pyuic5 -o a.py a.ui
+```
 
