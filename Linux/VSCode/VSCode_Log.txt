@@ -21,8 +21,9 @@
 
 	
 #3 Package
-	- C/C++, ms-vscode.cpptools
-	- Vim, vscodevim.vim
+	- C/C++, ms-vscode.cpptools, Microsoft                          (Required)
+    - C++ Intellisense, austin.code-gnu-global, austin              (Disabled)
+	- Vim, vscodevim.vim                                            (Required)
 		* Enter Setting: "Settings->Extensions->Vim Configuration"
 		* Some Settings Favorite:
 			= "Status Bar Color Control":Enabled
@@ -34,6 +35,8 @@
 			= "Search Highlight Color":rgba(150, 150, 255, 0.3)
 			= "Use System Clipboard":Enabled. (using below <leader>w/y/d/c/p/P key plesae Disabled)
 			= Normal Mode Key Bindings Non Recursive
+                "vim.statusBarColorControl": true,
+                "vim.hlsearch": true,
 				"vim.useSystemClipboard": true,
 				"vim.normalModeKeyBindingsNonRecursive": 
 				[
@@ -81,27 +84,45 @@
 					{"before": ["<Leader>", "g"],				"commands": ["workbench.action.findInFiles"]},
 				]
 			
-	- ctags, hcyang.ctags
-	- ctagsx, jtanx.ctagsx
-		* Manual running below commands to generate the "tags" file.
-		* "ctags --tag-relative --extra=f -R"
-		* "ctags -R --fields=+iaS --extra=+q *"
-		* "ctags -R --tag-relative --fields=+iaS --extra=+qf *"
+	- ctags, hcyang.ctags  (Required)
+        * Description       : Generate the CTAGs
+        * Install Tool      : "C:\ctags\ctags.exe". 
+        * Add Enviroement   : While add the path into system environment variable: "C:\ctags\" 
+	- ctagsx, jtanx.ctagsx (Required)
+		* First, need to generate and have the "tags" file.
+            = Automaticlly run above "CTAGS:Generate"
+            = Manual running below commands to generate the "tags" file.
+                * "ctags --tag-relative --extra=f -R"
+                * "ctags -R --fields=+iaS --extra=+q *"
+                * "ctags -R --tag-relative --fields=+iaS --extra=+qf *"
+        * Usage, it is for Vim hotkey in the tags jump. For example: below Vim hotkey setting
+            = Ctrl+t 			#extension.findCTagsPrompt
+            = Ctrl+k 			#extension.findCTags
+            = Ctrl+j 			#extension.ctagsJumpBack
+	- Project Manager, alefragnani.project-manager (Disabled)
+	- TortoiseSVN, fantasytyx.tortoise-svn                          (Required)
+	- PlatformIO IDE, platformio.platformio-ide (Disabled)
 	
-	- Active File Status, sgtsquiggs.vscode-active-file-status
+	- Active File Status, sgtsquiggs.vscode-active-file-status      (Required)
 		* Displays file's relative path to the current workspace.
 		* Displays file's absolute path when outside of current workspace.
 		* No configuration!
-	- Date & Time, rid9.datetime
+	- Date & Time, rid9.datetime (Disabled)
 		* Manual modify: "C:\Users\alex.yuan\.vscode\extensions\rid9.datetime-1.0.5\package.json" 
 		* Enter Setting: "Settings->Extensions->Data & Time Configuration"
 	
-	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer
-	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2
+	- Bracket Pair Colorizer, coenraads.bracket-pair-colorizer      (Disabled)
+	- Bracket Pair Colorizer 2, coenraads.bracket-pair-colorizer-2  (Required)
+    
+    - Python, ms-python.python, Microsoft (Required)
+        * Description: Linting, Debugging (multi-threaded, remote), Intellisense, code formatting, refactoring, unit tests, snippets, and more.
 	
 #4 Theme&Color
 	# Only Theme (Primary: Material Icon Theme)
 	- Material Icon Theme, pkief.material-icon-theme 							//Best
+		= Material Icons: Activate Icon Theme
+		= Material Icons: Change Folder Theme -> Specific
+		= Material Icons: Change Folder Color -> Blue
 	- Material Theme, equinusocio.vsc-material-theme 							//Better
 	- VSCode simpler Icons with Angular, davidbabel.vscode-simpler-icons 		//Normal
 	- Seti (improved), therobut.theme-setim 									//Disabled
@@ -139,11 +160,13 @@
 #5 Configuration
 	- Font Size: 12
 	- Font Family:
-		* Original: Consolas, 'Courier New', monospace
+		* Original: Consolas, 'Courier New', monospace  
+		* ModifyTo: Consolas                            //Font size 13, Windows 10 Primary
 		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
-		* ModifyTo: 'DejaVu Sans Mono' 			//Linux Primary
+		* ModifyTo: 'DejaVu Sans Mono'			//Linux Primary
 		* ModifyTo: 'Source Code Pro'
-		* ModifyTo: 'Lucida Console'
+		* ModifyTo: 'Lucida Console'		
+        * ModifyTo: Consolas, 'Calibri', monospace    
 		* ModifyTo: 'Monaco'
 		
 		* DejaVu Sans Mono 也是一款优秀的免费许可字体，来自 Bitstream Vera
@@ -165,9 +188,19 @@
 		* "workbench.editor.enablePreview": false
 		* Or find Settings-> Workbench -> Breadcrumbs -> Enable Preview
 
+	- Terminal › External: Windows Exec
+		* C:\Windows\System32\cmd.exe (Default)
+		* C:\cmder\Cmder.exe
+	- Terminal › Integrated › Shell: Windows
+		* C:\Windows\System32\cmd.exe (Default)
+		
 	- Settings: Place your settings here to overwrite the Default Settings.
-		* "Workspace Settings" in "..\workspace_folder\.vscode\settings.json"
-		* "User Settings" in "C:\Users\alex.yuan\AppData\Roaming\Code\User\settings.json"
+	    * Windows:
+		    = "Workspace Settings" in "..\workspace_folder\.vscode\settings.json"
+		    = "User Settings" in "C:\Users\alex.yuan\AppData\Roaming\Code\User\settings.json"
+		* Linux:
+		    = "User Settings" in "$HOME/.config/Code/User/settings.json:
+            //Windows 7
 			{
 				"editor.fontSize": 12,
 				"editor.fontFamily": "'DejaVu Sans Mono'",
@@ -185,6 +218,32 @@
 				"workbench.editor.enablePreview": false,
 				"workbench.sideBar.location": "left"
 			}
+            
+            //Windows 10
+            {
+            	"telemetry.enableCrashReporter": false,
+				"workbench.activityBar.visible": false,
+				"workbench.colorCustomizations": {
+					"statusBar.background": "#005f5f",
+					"statusBar.noFolderBackground": "#005f5f",
+					"statusBar.debuggingBackground": "#005f5f"
+				},
+				"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+				"workbench.statusBar.feedback.visible": false,
+				"search.location": "panel",
+				"explorer.confirmDelete": false,
+				"material-icon-theme.folders.theme": "specific",
+				"workbench.iconTheme": "material-icon-theme",
+				"workbench.colorTheme": "One Dark Pro Vivid",
+				"editor.fontFamily": "Consolas",
+				"editor.fontSize": 13,
+				"material-icon-theme.folders.color": "#42a5f5",
+				"files.associations": {
+					"*.txt": "markdown"
+				},
+				"editor.cursorStyle": "block",
+				"editor.cursorBlinking": "solid"
+            }
 		
 	- How to disable crash reporting
 		* If you don't wish to send crash data to Microsoft, you can set the telemetry.enableCrashReporter setting to false.
@@ -193,8 +252,10 @@
 			=  "telemetry.enableCrashReporter": false
 		
 #6 KeyMap
-	- F1				#Command Palette
-	- F2				#Toggle Side Bar Visibility
+	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
+
+	- F1				#workbench.action.showCommands
+	- F2				#workbench.action.toggleSidebarVisibility
 	
 	- F3				#	workbench.action.terminal.findNext						(Command: Find Next)
 						#	workbench.action.terminal.findNextTerminalFocus, 		(Command: Find Next)
@@ -213,52 +274,82 @@
 	- F4 				#search.action.focusNextSearchResult
 	- F4+Shift 			#search.action.focusPreviousSearchResult
 	
-	- F5				#Open Settings
-	- F6				#Open Keyboard Shortcuts
-	- F7	 			#Show Extensions
-	- F8	 			#Show Explorer
+	- F5				#workbench.action.openSettings
+	- F6				#workbench.action.openGlobalKeybindings
+	- F7	 			#workbench.view.extensions
+	- F8	 			#workbench.view.explorer
 	
 	- F9 				#Toggle Breakpoiont
 	
 	- F10 				#CTAGS:Generate
-	- F11 				#Full Screen
-	- F12			 	#Vim: Toggle Vim Mode
+	- F11 				#workbench.action.toggleFullScreen
+	- F12			 	#toggleVim, Vim:Toggle Vim Mode
 	
 	- Ctrl+F4 			#workbench.action.closeActiveEditor
 	- Ctrl+PgUp			#Open Previouse Editor(workbench.action.previousEditor)
 	- Ctrl+PgDn			#Open Next Editor(workbench.action.nextEditor)
-	- Ctrl+Shift+p 		#Command Palette	
+	- Ctrl+Shift+p 		#workbench.action.showCommandsm, Show All Command	
 	- Ctrl+p 			#Quick Open File(workbench.action.quickOpen)
-	- Ctrl+` 			#Terminal
+	- Ctrl+Shift+`		#workbench.action.terminal.new, Create New Integrated Terminal
+	- Ctrl+` 			#workbench.action.terminal.toggleTerminal, Toggle Integrated Terminal
 	- Ctrl+Shift+\		#workbench.action.toggleActivityBarVisibility
-	- Ctrl+\ 			#Toggle Panel(workbench.action.togglePanel)
+	- Ctrl+\ 			#View: Toggle Panel(workbench.action.togglePanel)
 	- Ctrl+Shift+f 		#Find in Files(workbench.action.findInFiles)
 		
-	- Ctrl+o			#Go Back
-	- Ctrl+i 			#Go Forward
-	- Ctrl+Shift+k 		#Go Declaration,                //Another Map: extension.findCTagsPrompt(Maybe)
+	- Ctrl+o			#Go Back, workbench.action.navigateBack
+	- Ctrl+i 			#Go Forward, workbench.action.navigateForward
+	- Ctrl+t 			#extension.findCTagsPrompt
 	- Ctrl+k 			#extension.findCTags
 	- Ctrl+j 			#extension.ctagsJumpBack
-	- Ctrl+g			#Go line
+	- Ctrl+g			#Go line, workbench.action.gotoLine
 	- Ctrl+l 			#Go Symbol in Workspace(workbench.action.showAllSymbols)
 	- Ctrl+;			#Go Symbol in File(workbench.action.gotoSymbol)
 	- Ctrl+'			#C_Cpp.Navigate
 	- Alt+o 			#C_Cpp.SwitchHeaderSource
+    - Ctrl+Alt+k        #C_Cpp.PeekDeclaration
+	- Ctrl+Shift+k 		#C_Cpp.GoToDeclaration,               //Another Map: extension.findCTagsPrompt(Maybe)
+						= editor.action.goToDeclaration
+						= editor.action.revealDeclaration
+						= Go Declaration
 
-	- Ctrl+, 			#Go Previouse Edit Point
+	- Ctrl+, 			#Go Previouse Edit Point, 
 	- Ctrl+.			#Go Next Edit Point
 	
 	- Ctrl+[			#editor.action.outdentLines,    //when extension.vim.disabled, "<<" in vim mode.
 	- Ctrl+] 			#editor.action.indentLines,     //when extension.vim.disabled, ">>" in vim mode.
 	- Ctrl+/ 			#Toggle Line Comment
 
-	- Alt+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)
-	- Alt+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)
-	
+	- Ctrl+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)	//Windows
+	- Ctrl+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)	//Windows
+
+	- Alt+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)	//Linux
+	- Alt+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)	//Linux
+
 	- Tab 				#AutoCompleteConfirmed
 }
 	
-#7 Package-"TortoiseSVN, fantasytyx.tortoise-sv"-KeyMap
+#7 Keymap between VScode vs. Vim
+```
+|:-----------------------------:|:------------------------:|:---------------------:|
+|                   Keymap for Ctags Jump VSCode vs. Vim                           |
+|:-----------------------------:|:------------------------:|:---------------------:|
+|           Command             |           VSCode         |         Vim           |
+|:-----------------------------:|:------------------------:|:---------------------:|
+|   Quick Open File             |           Ctrl+p         |        leader+f+f     |
+|   Go line                     |           Ctrl+g         |        (more)         |
+|   extension.findCTags         |           Ctrl+k         |        Ctrl+k         |
+|   extension.ctagsJumpBack     |           Ctrl+j         |        Ctrl+j         |
+|           -      |            |               -          |            -          |
+|   Go Symbol in Workspace      |           Ctrl+l         |        leader+f+a+t   |
+|   Go Symbol in File           |           Ctrl+;         |        leader+f+t     |
+|   C_Cpp.Navigate              |           Ctrl+'         |        leader+f+g     |
+|   C_Cpp.SwitchHeaderSource    |           Alt +o         |        N/A            |
+|   C_Cpp.GoToDeclaration       |           Ctrl+Shift+k   |        N/A            |
+|   C_Cpp.PeekDeclaration       |           Ctrl+Alt+k     |        N/A            |
+|:-----------------------------:|:------------------------:|:---------------------:|
+```
+    
+#8 Package-"TortoiseSVN, fantasytyx.tortoise-sv"-KeyMap
 
 alt+s u : "Workspace: SVN Update"
 alt+s c : "Workspace: SVN Commit"

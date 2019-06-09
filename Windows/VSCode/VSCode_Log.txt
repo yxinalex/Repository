@@ -154,7 +154,7 @@
 		* Original: Consolas, 'Courier New', monospace  
 		* ModifyTo: Consolas                            //Font size 13, Windows 10 Primary
 		* ModifyTo: Consolas, 'DejaVu Sans Mono', monospace
-		* ModifyTo: 'DejaVu Sans Mono'
+		* ModifyTo: 'DejaVu Sans Mono'			//Linux Primary
 		* ModifyTo: 'Source Code Pro'
 		* ModifyTo: 'Lucida Console'		
         * ModifyTo: Consolas, 'Calibri', monospace    
@@ -307,9 +307,12 @@
 	- Ctrl+] 			#editor.action.indentLines,     //when extension.vim.disabled, ">>" in vim mode.
 	- Ctrl+/ 			#Toggle Line Comment
 
-	- Ctrl+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)
-	- Ctrl+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)
-	
+	- Ctrl+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)	//Windows
+	- Ctrl+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)	//Windows
+
+	- Alt+Shift+u 		#Transform to Uppercase(editor.action.transformToUppercase)	//Linux
+	- Alt+Shift+l 		#Transform to Lowercase(editor.action.transformToLowercase)	//Linux
+
 	- Tab 				#AutoCompleteConfirmed
 }
 	
