@@ -186,6 +186,9 @@ Create by alex on 2018.05.07
   - $ git push origin [tag]  	# 推送Tag到远程
   - $ git push origin --tags 	# 通过--tags 参数来推送所有本地的Tag
 
+  - $ git pull origin [tag]  	# 取回Tag从远程
+  - $ git pull origin --tags 	# 通过--tags 参数来取回所有远程的Tag
+  
   ## 删除远程Tag. 
   - $ git tag -d <Tag 名字>						# 当本地Tag已经Push到远程代码仓库后，再要删除这个Tag,就必须删除本地Tag.
   - $ git push origin :refs/tags/<Tag 名字> 	# 删除本地Tag后，再重新Push到远程的代码仓库。
