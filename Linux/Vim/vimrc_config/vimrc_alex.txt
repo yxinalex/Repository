@@ -345,6 +345,7 @@ let g:ctrlsf_default_view_mode = 'compact'  " Possible values are 'normal' and '
                                            " In CtrlSF Window,  'M' Key - Switch result window between normal view and compact view.
 let g:ctrlsf_position = 'right'            " 'left', 'right', 'bottom', 'top'
 let g:ctrlsf_winsize = '35%'
+let g:ctrlsf_selected_line_hl = 'op'       " 'o' : highlight matching line in the target file after file is opened. 'p' : highlight matching line in preview window.
 let g:ctrlsf_auto_close = {
     \ "normal" : 0,
     \ "compact": 0
