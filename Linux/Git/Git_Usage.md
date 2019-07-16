@@ -23,12 +23,33 @@ Create by alex on 2018.05.07
 # 2. Config
 
 ## 1. Config Scope
-  - /etc/gitconfig  			        # 对所有用户有效
-  - ~/.gitconfig 			            # 对当前用户有效
-  - ./Project_Working_Dir/.git/config 	# 仅对当前项目有效
-
-## 2. Config common
-  - $ git config --list
+  - /etc/gitconfig  			        # 对所有用户有效   'System'
+  - ~/.gitconfig 			            # 对当前用户有效   'Global'
+  - ./Project_Working_Dir/.git/config 	# 仅对当前项目有效 'Local'
+NOTES: 
+这三个级别配置的内容都是相同的，不同的是优先级；同样的配置信息的优先级是：local > global > system; 
+也就是说，针对同样的某个配置，如果同时存在在local和global中时，local中的配置将会覆盖global中的配置项的值，当然也会同样覆盖system中的配置项，这样做的好处是：既方便共用，又可以个性化自定义。
+遵循的理念是：对于所有用户都通用的配置项放在system中；对于每个独立的用户相对的共用项放在global;对于某个仓库特殊的配置放在local.
+  
+## 2. Config Common
+  - $ git config -h       # 查看帮助
+  - $ git config -l       # 列出所有配置信息
+  - $ git config -e       # 编辑配置
+  - $ git config –get     # 获取某个配置项  
+  - $ git config –add     # 增加一项配置
+    = $ git config --local --add alias.ls "status"
+    = 
+  - $ git config –unset   # 取消指定设置
+    = $ git config --local --unset alias.ls  
+    
+## 2. Config Local  
+  - $ git config --local -l                 # 列出git仓库级别配置信息
+  - $ git config --local -e                 # 编辑git仓库级别配置信息,也可以直接编辑.git/config这个文件
+  - $ git config --local user.name "Alex"
+  - $ git config --local user.email "alex.yuan@emerson.com"
+  
+## 3. Config Global
+  - $ git config --global --list
   - $ git config --global user.name "alex"
   - $ git config --global user.email "yxinsiva@163.com"
   - $ git config --global core.editor emacs
@@ -43,7 +64,10 @@ Create by alex on 2018.05.07
   - $ git config [--global] user.name "[name]" 
   - $ git config [--global] user.email "[email address]"
 
-## 3. Config Diff
+## 4. Config System
+  - $ git config --sytem --list
+  
+## 5. Config Diff
 
 ### - difftool = meld
   - $ git config --global difftool.prompt true
@@ -59,7 +83,7 @@ Create by alex on 2018.05.07
   - $ git config --global merge.tool vimdiff
   - $ git d (hashid)
 
-## 4. Set SSH Github/Bitbucket
+## 6. Set SSH Github/Bitbucket
 
   - $ ssh-keygen                          # generate ssh key
   - $ vim /home/alexyuan/.ssh/id_rsa.pub  # copy ssh key and put it in github or bitbucket ssh key for access
