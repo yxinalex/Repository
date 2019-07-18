@@ -31,6 +31,11 @@ sudo nano /etc/network/interfaces        //Set Static IP or Dynamic IP
 sudo apt-get update
 sudo apt-get install xrdp           //"Windows+R" keys to run "mstsc"
 sudo apt-get install vim
+
+
+sudo ifconfig wlan0 down    //禁用wlan0
+sudo ifconfig wlan0 up      //开启wlan0
+ifconfig eth0 up            //启用网卡
 ```
 
 

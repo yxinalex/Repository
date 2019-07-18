@@ -40,7 +40,7 @@ https://www.raspberrypi.org/downloads/raspbian/
     - FileZilla
  
  
-# Configuration
+# WiFi Configuration
  - Set "SSH Login" by default with specified Wi-Fi
     - empty file without any suffied named "ssh"
     - create file "wpa_supplicant.conf" with below content
@@ -66,6 +66,18 @@ network={
     priority=2
 }
 ```
+
+# Ethernet Configuration
+ - Using the wire connectiont between LaptopWindows and RaspberryPi
+ - Set windows ethernet sharing
+    - Default Gateway IP: 192.168.137.1, submask:/24
+ - Set RaspberryPi ethernet Static IP: e.g. 192.168.137.36/24
+    - use "ifconfig" to look 
+    - sudo nano /etc/dhcpcd.conf 
+        - interface eth0
+        - static ip_address=192.168.137.36/24
+        - static routers=192.168.137.1
+        - static domain_name_servers=192.168.137.1 8.8.8.8
 
 
 # Remote Raspberry
