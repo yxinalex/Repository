@@ -178,26 +178,27 @@ NOTES:
   - $ git branch -a             # 列出所有本地分支和远程分支 
 
 ## Create
-  - $ git branch [branch-name]          # 新建一个分支，但依然停留在当前分支 
-  - $ git checkout -b [branch]          # 新建一个分支，并切换到该分支 
-  - $ git checkout -b [branch] [tag]    # 新建一个分支，指向某个tag 
-  - $ git branch [branch] [commit]      # 新建一个分支，指向指定commit 
+  - $ git branch [branch-name]                  # 新建一个分支，但依然停留在当前分支 
+  - $ git checkout -b [new_branch]              # 新建一个分支，并切换到该分支 
+  - $ git checkout -b [new_branch] [tag]        # 新建一个分支，指向某个tag 
+  - $ git checkout -b [new_branch] [commit]     # 新建一个分支，指向某个commit 
+  - $ git branch [new_branch] [commit]          # 新建一个分支，指向指定commit 
 
   - $ git checkout -b local-b origin/remote-b               # 建立新分支，建立关系，切换到新分支：基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
   - $ git branch --track local-b origin/remote-b            # 建立新分支，建立关系，不切换到新分支：新建一个分支，与指定的远程分支建立追踪关系，不切换分支，仍停留在当前分支  
   - $ git branch --set-upstream local-b origin/remote-b     # 不建立新分支，只建立追踪关系，不切换分支：在现有分支与指定的远程分支之间建立追踪关系
 
 ## Rename Branch
-  - $ git branch -m branch-name branch-new-name
+  - $ git branch -m [branch-old-name] [branch-new-name]
 
 ## Switch
   - $ git checkout [branch-name]        # 切换到指定分支，并更新暂存区和工作区，HEAD发生变化，指向新的Branch
 
 ## Delete
-  - $ git branch -d [branch-name]       # 删除分支 
-  - $ git branch -D [branch-name]       # Force 删除分支 
-  - $ git push origin --delete          # 删除远程分支 
-  - $ git branch -dr                    # 删除远程分支 
+  - $ git branch -d [branch-name]               # 删除分支 
+  - $ git branch -D [branch-name]               # Force 删除分支 
+  - $ git push origin --delete [branch-name]    # 删除远程分支 
+  - $ git branch -dr                            # 删除远程分支 
 
 # 8. Tag
   - $ git tag                   # 列出所有tag 
