@@ -30,7 +30,7 @@ NOTES:
 这三个级别配置的内容都是相同的，不同的是优先级；同样的配置信息的优先级是：local > global > system; 
 也就是说，针对同样的某个配置，如果同时存在在local和global中时，local中的配置将会覆盖global中的配置项的值，当然也会同样覆盖system中的配置项，这样做的好处是：既方便共用，又可以个性化自定义。
 遵循的理念是：对于所有用户都通用的配置项放在system中；对于每个独立的用户相对的共用项放在global;对于某个仓库特殊的配置放在local.
-  
+
 ## 2. Config Common
   - $ git config -h       # 查看帮助
   - $ git config -l       # 列出所有配置信息
@@ -47,7 +47,7 @@ NOTES:
   - $ git config --local -e                 # 编辑git仓库级别配置信息,也可以直接编辑.git/config这个文件
   - $ git config --local user.name "Alex"
   - $ git config --local user.email "alex.yuan@emerson.com"
-  
+
 ## 3. Config Global
   - $ git config --global --list
   - $ git config --global user.name "alex"
@@ -66,7 +66,7 @@ NOTES:
 
 ## 4. Config System
   - $ git config --sytem --list
-  
+
 ## 5. Config Diff
 
 ### - difftool = meld
@@ -83,16 +83,13 @@ NOTES:
   - $ git config --global merge.tool vimdiff
   - $ git d (hashid)
 
-## 6. Set SSH Github/Bitbucket
+## 6. Set SSH Github
 
   - $ ssh-keygen                          # generate ssh key
-  - $ vim /home/alexyuan/.ssh/id_rsa.pub  # copy ssh key and put it in github or bitbucket ssh key for access
+  - $ vim /home/alexyuan/.ssh/id_rsa.pub  # copy ssh key and put it in github ssh key for access
 
   - $ ssh -T git@github.com               # Check the access rights and authority
-  - $ ssh -T git@bitbucket.org
   - $ ssh -vT git@github.com
-  - $ ssh -vT git@bitbucket.org
-
   - $ eval "$(ssh-agent -s)"              # For example feedback: Agent pid 11918
   - $ ssh-add
 
@@ -213,12 +210,12 @@ NOTES:
 
   - $ git pull origin [tag]  	# 取回Tag从远程
   - $ git pull origin --tags 	# 通过--tags 参数来取回所有远程的Tag
-  
+
   ## 删除远程Tag. 
   - $ git tag -d <Tag 名字>						# 当本地Tag已经Push到远程代码仓库后，再要删除这个Tag,就必须删除本地Tag.
   - $ git push origin :refs/tags/<Tag 名字> 	# 删除本地Tag后，再重新Push到远程的代码仓库。
-  
-  
+
+
 NOTES: 
 The real difference between a tag and a branch is that the branch moves with the Commit, but the tag does not.
 As described in the section "misunderstanding branches", when Git advances a Commit, the branch it is in moves forward with it. But once the tag is posted, no matter how committed it is, the tag stays where it was posted. So you can think of branches as moving labels.
@@ -229,7 +226,7 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git status                # 显示有变更的文件 
   - $ git reflog                # 显示当前分支的最近几次提交 
   - $ git blame [file]          # 显示指定文件是什么人在什么时间修改过 
- 
+
   - $ git log                   # 显示当前分支的版本历史  
   - $ git log -n                # 显示当前分支的最近n次的提交版本历史  
   - $ git log --all
@@ -322,6 +319,7 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
 
 ## checkout file level
   - $ git checkout .                # 用暂存区的所有文件直接覆盖本地文件，HEAD不变
+                                  
                                     # NOTES: If "$ rm ./* -r", then "$ git checkout ."
   - $ git checkout [file]           # 用暂存区的指定文件重置工作区，对象是暂存区的file，HEAD不变
 
@@ -331,12 +329,14 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git checkout HEAD^^ [file_path]   #用HEAD之前的第二个commit的指定文件重置暂存区和工作区，对象是commit history中的commit，HEAD不变
 
   - $ git checkout HEAD .      	        # 用HEAD  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
-                                        # NOTES: If "$ git rm ./* -r", then it is required "$ git checkout HEAD ."
-
+                                      
+  # NOTES: If "$ git rm ./* -r", then it is required "$ git checkout HEAD ."
+                                      
   - $ git checkout HEAD [file_path]     # 用HEAD 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
   - $ git checkout [commit] [file_path] # 用commit 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
   - $ git checkout [branch] [file_path] # 用branch 中指定路劲的文件夹  重置暂存区和工作区，对象是commit history中的HEAD，HEAD不变
                                     									
+
 ##NOTES: "git checkout [...]", precondition: new file/folde in stage or delete file/folde in working, the following:
   - 1. These file/folde is not reset by commit to stage/working. 
   - 2. These file/folde is not reset by stage to working. 
@@ -356,13 +356,13 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git checkout [commit]         # 用指定的commit重置Staged和Working，HEAD发生变化指向commit，并且是匿名分支，Be in 'detached HEAD' state
                                     # NOTES: If be in 'detached HEAD' state, use command to restore: $ git checkout [master or branch]
                                     # NOTES: If be in 'detached HEAD' state, use command to new branch  : $ git branch [branch_name]
-									
+	
 ## reset file level
   - $ git reset [file]              # 重置暂存区的指定文件，与上一次commit保持一致，工作区不变，HEAD不变 
 									# NOTES: "git reset [file]" doesn't have "--soft, --mixed, --hard" parameter
   - $ git reset [Commit] [file]     # 用commit中指定的文件重置暂存区的指定文件，工作区不变，HEAD不变
   - $ git reset HEAD [file]         # 用HEAD中指定的文件重置暂存区的指定文件，工作区不变，HEAD不变
-  
+
 ## reset commit level  
   - $ git reset HEAD                # HEAD不变，用HEAD重置暂存区，但工作区保持不变
   - $ git reset HEAD --hard         # HEAD不变，用HEAD重置暂存区和工作区
@@ -376,14 +376,14 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git reset [commit]            # 同上 --mixed 
   - $ git reset [commit] --hard     # 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致 
   - $ git reset [commit] --keep     # ?
-  
+
 ## NOTES: "git reset [file]" & "git checkout [file]" Difference:
 									# checkout 只能同时重置工作区和暂存区 
 									# reset file 或者 reset --mixed 能只重置暂存区而不重置工作区
   - Sample:
   - $ git reset HEAD ./Project/main.c	# 用reset file 命令重置暂存区，主要是重置暂存区。如果只想重置暂存区，但又不想重置工作区，需要用reset file
   - $ git checkout HEAD . 				# 用checkout 命令重置暂存区和工作区，主要是重置工作区，因为checkout不能只重置工作区，它是工作区和暂存区一起重置
-  
+
 ## revert  
   - $ git revert [commit]           # 新建一个commit，用来撤销指定commit， 后者的所有变化都将被前者抵消，并且应用到当前分支 
 
@@ -418,8 +418,7 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
 ## Init Remote Repository
   - $ git clone https://github.com/yxinalex/Repository.git  	#HTTP
   - $ git clone git@github.com:yxinalex/Repository.git 			#SSH
-  - $ git clone git@bitbucket.org:yxinalex/repository.git
-  
+
 ## Look/Add/Remove/Rename Remote
   - $ git remote -v                             # 显示所有远程仓库 
   - $ git branch -vv                            # 显示本地分支跟踪的远程分支
@@ -428,9 +427,8 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git remote remove [shortname_origin]      # Remove one remote repository
   - $ git remote rename origin-old-name origin-new-name 		# Rename the origin name
   
-  - Smaple-1:
+  - Sample-1:
   - $ git remote add origin git@github.org:alex/repository.git		# First, create remote connection (When you have local repository)(Please enusere the remote server has already this repository)
-  - $ git remote add origin git@bitbucket.org:yxinalex/repository.git
   - $ git push -u origin master 									# Second, push master to remote origin
   
   - Sample-2:
@@ -449,6 +447,7 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git fetch origin master
   - $ git fetch origin local-b:remote-b         # 取回远程remote-b到本地local-b，不切换分支仍停留在当前分支，不merge remote-b到当前分支
   - $ git log -p FETCH_HEAD                     # 取回更新后，会返回一个FETCH_HEAD ，指的是某个branch在服务器上的最新状态
+                                              
                                                 # 可以在本地通过它查看刚取回的更新信息, 通过这些信息来判断是否产生冲突，以确定是否将更新merge到当前分支
   - $ git log -p master..origin/master
   - $ git merge origin/master
@@ -479,8 +478,9 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git push origin remote-branch-name        # 推送本地当前分支的变化，到远程仓库上指定分支。如果远程仓库没有此分支名，将创建新的分支 remote-branch-name
   - $ git push origin local-b:remote-b          # 使用本地的对应分支来更新对应的远程分支
   - $ git push -u origin master     # 把origin设置成upstream, 以后就可以直接使用不带别的参数的git pull从之前push到的分支来pull
-                                    # 如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用 git push
-
+                                  
+  # 如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用 git push
+                                  
   - $ git push [remote] --force                 # 强行推送当前分支到远程仓库，即使有冲突 
   - $ git push [remote] --all                   # 不管是否存在对应的远程分支，将本地的所有分支都推送到远程主机，这时需要使用–all选项
   - $ git push [remote] --tags                  # 提交所有tag 
