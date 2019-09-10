@@ -87,6 +87,9 @@ NOTES:
 
   - $ ssh-keygen                          # generate ssh key
   - $ vim /home/alexyuan/.ssh/id_rsa.pub  # copy ssh key and put it in github ssh key for access
+  
+  - $ pwd                                 # Windows 10 Git Bash: /c/Users/Alex
+  - $ vim ~/.ssh/id_rsa.pub
 
   - $ ssh -T git@github.com               # Check the access rights and authority
   - $ ssh -vT git@github.com
