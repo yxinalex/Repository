@@ -179,6 +179,7 @@ NOTES:
 
 ## Create
   - $ git branch [branch-name]                  # 新建一个分支，但依然停留在当前分支 
+  - $ git branch [branch-name] -f               # 强制新建一个分支，但依然停留在当前分支，如果已存在[branch-name]，则覆盖。
   - $ git checkout -b [new_branch]              # 新建一个分支，并切换到该分支 
   - $ git checkout -b [new_branch] [tag]        # 新建一个分支，指向某个tag 
   - $ git checkout -b [new_branch] [commit]     # 新建一个分支，指向某个commit 
@@ -203,13 +204,17 @@ NOTES:
 # 8. Tag
   - $ git tag                   # 列出所有tag 
   - $ git tag [tag]             # 新建一个tag在当前commit 
+  - $ git tag [tag] -f          # 强制新建一个tag在当前commit，如果已经存在[tag]，则覆盖
   - $ git tag [tag] [commit]    # 新建一个tag在指定commit 
   - $ git tag [tag] -m [message] [commit] #新建一个tag在指定commit, 并带有注释message
   
   - $ git tag -d [tag] 			# Delete one tag
   
   - $ git push origin [tag]  	# 推送Tag到远程
+  - $ git push origin --tag 	# 通过--tags 参数来推送所有本地的Tag
   - $ git push origin --tags 	# 通过--tags 参数来推送所有本地的Tag
+  - $ git push origin --tags -f	# 强制推送所有本地的Tag到远程
+  
 
   - $ git pull origin [tag]  	# 取回Tag从远程
   - $ git pull origin --tags 	# 通过--tags 参数来取回所有远程的Tag
