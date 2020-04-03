@@ -1,4 +1,18 @@
 ###############################################################
+#2020.04.03
+
+$ sudo ll /share/                               #查看Share folder的属性
+$ sudo usermod -a -G vboxsf alex                #加入用户到Shared Folder的群组vboxsf
+Usage: sudo usermod -a -G <group> <username>  
+
+$ sudo apt install gnome-tweak-tool             #调整虚拟机中Ubuntu的字体和Scaling Factor
+
+NOTE: 
+ 1) Disabled the 3D in virtual-box and 32M RAM is enough
+ 2) Create share folder and set usermode group into vbox group
+
+
+###############################################################
 #2018.03.13
 
 #Installer PDF Reader
