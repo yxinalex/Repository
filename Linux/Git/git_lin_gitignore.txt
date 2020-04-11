@@ -1,0 +1,13 @@
+
+
+
+.svn
+
+*.vim
+*.viminfo
+*.swp
+*.tags
+*.tags_sorted_by_file
+tags
+tag
+

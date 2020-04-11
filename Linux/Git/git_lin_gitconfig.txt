@@ -1,5 +1,5 @@
 [user]
-	name = axlin01
+	name = alex_vub
 	email = yxinsiva@163.com
 [core]
 	editor = vim
