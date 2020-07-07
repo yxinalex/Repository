@@ -1,0 +1,13 @@
+[user]
+	name = alex_win
+	email = yxinsiva@163.com
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = true
+[winUpdater]
+	recentlySeenVersion = 2.25.0.windows.1
+[alias]
+	glog = log --color --graph --date=iso --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(bold blue)<%cn>%Creset -%C(yellow)%d%Creset %s' --abbrev-commit

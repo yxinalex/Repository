@@ -26,3 +26,19 @@ $pyuic4 -o a.py a.ui
 $pyuic5 -o a.py a.ui
 ```
 
+
+2020-04-16, Thursday (XML-DOM-NOTE)
+------------------------------------------------------  
+This is easy and enough for us.
+https://www.cnblogs.com/miniren/p/5092019.html
+
+
+This is so great sample code for us
+http://www.java2s.com/Tutorial/Python/0400__XML/AccessingChildNodes.htm 
+http://www.java2s.com/Tutorial/Python/0400__XML/AccessingElementAttributes.htm
+
+
+Python office org website: (This is for our reference about the all interface of DOM)
+https://docs.python.org/zh-cn/3/library/xml.dom.html  
+https://docs.python.org/zh-cn/3/library/xml.dom.html#node-objects
+https://docs.python.org/zh-cn/3/library/xml.dom.html#dom-nodelist-objects
