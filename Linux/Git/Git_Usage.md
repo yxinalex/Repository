@@ -47,6 +47,14 @@ NOTES:
   - $ git config --local -e                 # 编辑git仓库级别配置信息,也可以直接编辑.git/config这个文件
   - $ git config --local user.name "Alex"
   - $ git config --local user.email "alex.yuan@emerson.com"
+  
+NOTE: 1) Local Git Config File: .git/config
+      2) Only Update the information:
+```c
+[user]
+	name = alex_win
+	email = yxinsiva@163.com
+```
 
 ## 3. Config Global
   - $ git config --global --list
@@ -150,13 +158,25 @@ NOTES:
 # 5. Stash
 
   - $ git stash                 # 想切换分支,但是不想提交正在进行中的工作，可以向堆栈上推送一个储藏保存当前变更
-  - $ git stash list            # 查看现有的储藏
-  - $ git stash drop stash@{0}  # 移除指定的储藏
-  - $ git stash apply           # 重新应用最近的储藏，对工作区的变更被重新应用，但是被暂存的文件没有重新被暂存
+  - $ git stash save -m "comments" # 想切换分支,但是不想提交正在进行中的工作，可以向堆栈上推送一个储藏保存当前变更，并且用save增加注释
+  - $ git stash push -m "comments"
+  
+  - $ git stash apply           # 将缓存堆栈中的stash多次应用到工作目录中，但并不删除stash拷贝
   - $ git stash apply --index   # 重新应用最近的储藏，对工作区的变更和暂存区的变更，都重新应用
-  - $ git stash pop             # 重新应用最近的储藏，并将其从栈顶移除
-  - $ git stash branch [branch_name]    # 从储藏中创建分支
+  - $ git stash apply stash@{1} # 将指定的Stash 的改动都恢复到工作区
+  - $ git stash drop stash@{0}  # 移除stash， 删除一个存储的进度。如果不指定stash_id，则默认删除最新的存储进度。
+  
+  - $ git stash pop             # 将缓存堆栈中的第一个stash删除(其从栈顶移除)，并将Stash 的改动都恢复到工作区
+  - $ git stash pop --index     # 将缓存堆栈中的第一个stash删除(其从栈顶移除)，并将Stash 的改动都恢复到工作区和暂存区
+  - $ git stash pop stash@{1}   # 将指定的Stash 的改动都恢复到工作区, 命令恢复进度后会删除当前进度
 
+  - $ git stash list            # 查看现有stash
+  - $ git stash clear           # 删除所有存储的进度。
+  - $ git stash show            # 查看指定stash的diff
+  - $ git stash show -p         # 在该命令后面添加-p或--patch可以查看特定stash的全部diff
+
+  - $ git stash branch [branch_name]    # 从stash创建分支, 该命令会用stash中的修改创建一个新的分支，创建成功后会删除此stash
+  
 # 6. Commit
 
   - $ git commit -m "comments"                  # 提交暂存区到仓库区 
@@ -390,7 +410,7 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
 									# reset file 或者 reset --mixed 能只重置暂存区而不重置工作区
   - Sample:
   - $ git reset HEAD ./Project/main.c	# 用reset file 命令重置暂存区，主要是重置暂存区。如果只想重置暂存区，但又不想重置工作区，需要用reset file
-  - $ git checkout HEAD . 				# 用checkout 命令重置暂存区和工作区，主要是重置工作区，因为checkout不能只重置工作区，它是工作区和暂存区一起重置
+  - $ git checkout HEAD . 				# 用checkout 命令重置暂存区和工作区，主要是重置工作区，因为checkout不能只重置工作区，而是工作区和暂存区一起重置
 
 ## revert  
   - $ git revert [commit]           # 新建一个commit，用来撤销指定commit， 后者的所有变化都将被前者抵消，并且应用到当前分支 
