@@ -151,6 +151,7 @@ NOTE: 1) Local Git Config File: .git/config
 
 ## - 删除掉untracked状态的目录
   - $ git clean -fd  # 使用git rm -rf dir 命令删除非空目录之后，本地还是会有空的目录存在，这时候空目录已经是untracked状态了, 再删除掉untracked状态的目录
+  - $ git clean -fdx
 
 ## - 改名文件，并且将这个改名放入暂存区 
   - $ git mv [file-original] [file-renamed]
@@ -201,8 +202,11 @@ NOTE: 1) Local Git Config File: .git/config
   - $ git branch [branch-name]                  # 新建一个分支，但依然停留在当前分支 
   - $ git branch [branch-name] -f               # 强制新建一个分支，但依然停留在当前分支，如果已存在[branch-name]，则覆盖。
   - $ git checkout -b [new_branch]              # 新建一个分支，并切换到该分支 
+  - $ git switch   -c [new_branch]              # 新建一个分支，并切换到该分支 
   - $ git checkout -b [new_branch] [tag]        # 新建一个分支，指向某个tag 
+  - $ git swtich   -c [new_branch] [tag]        # 新建一个分支，指向某个tag 
   - $ git checkout -b [new_branch] [commit]     # 新建一个分支，指向某个commit 
+  - $ git swtich   -c [new_branch] [commit]     # 新建一个分支，指向某个commit 
   - $ git branch [new_branch] [commit]          # 新建一个分支，指向指定commit 
 
   - $ git checkout -b local-b origin/remote-b               # 建立新分支，建立关系，切换到新分支：基于远程分支"origin/remote-b"，创建一个叫"local-b"的分支，并切换到分支local-b
@@ -214,12 +218,14 @@ NOTE: 1) Local Git Config File: .git/config
 
 ## Switch
   - $ git checkout [branch-name]        # 切换到指定分支，并更新暂存区和工作区，HEAD发生变化，指向新的Branch
+  - $ git swtich   [branch-name]        # 切换到指定分支，并更新暂存区和工作区，HEAD发生变化，指向新的Branch
 
 ## Delete
   - $ git branch -d [branch-name]               # 删除分支 
   - $ git branch -D [branch-name]               # Force 删除分支 
   - $ git push origin --delete [branch-name]    # 删除远程分支 
-  - $ git branch -dr                            # 删除远程分支 
+  - $ git push --delete origin [branch-name]    # 删除远程分支 
+  - $ git push origin [branch-name] --delete    # 删除远程分支 
 
 # 8. Tag
   - $ git tag                   # 列出所有tag 
@@ -344,6 +350,14 @@ There is a famous line in the movie cape no.7: "stay, or I will go with you", wh
   - $ git d HEAD --stat
 
 # 11. Redo
+
+## Restore (file level)
+  - $ git restore  .                # 用暂存区的所有文件直接覆盖本地文件，HEAD不变 
+  - $ git restore [file]            # 用暂存区的指定文件重置工作区，对象是暂存区的file，HEAD不变  
+  
+  - $ git restore --staged .        # 用Commit的文件重置暂存区，但本地文件不变 
+  - $ git restore --staged [file]   # 用Commit的文件重置暂存区，但本地文件不变
+  
 
 ## checkout file level
   - $ git checkout .                # 用暂存区的所有文件直接覆盖本地文件，HEAD不变
