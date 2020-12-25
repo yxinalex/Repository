@@ -110,7 +110,7 @@
 	
 #4 Theme&Color
 	# Only Theme (Primary: Material Icon Theme)
-	- Material Icon Theme, pkief.material-icon-theme 							//Best
+	- Material Icon Theme, pkief.material-icon-theme 							//Selected
 		= Material Icons: Activate Icon Theme
 		= Material Icons: Change Folder Theme -> Specific
 		= Material Icons: Change Folder Color -> Blue
@@ -123,11 +123,11 @@
 	- Atom Material Theme, tobiasalthoff.atom-material-theme					//Disabled
 
 	# Only Color (Primary: One Dark Pro)
+	- One Dark Pro, zhuangtongfa.material-them									//Selected, 	Gray Background		//One Dark Pro is better than Atom One Dark due to the "Selection Color"
 	- Monokai																	//Classic
 	- Dark+ Material, vangware.dark-plus-materia								//Best, 	Dark Background
 	- Monokai++, dcasella.monokai-plusplus										//Best, 	Dark Background
 	- Seti-theme, tsumina.seti-them												//Normal, 	Dark Background
-	- One Dark Pro, zhuangtongfa.material-them									//Better, 	Gray Background		//One Dark Pro is better than Atom One Dark due to the "Selection Color"
 	- Atom One Dark Theme, akamud.vscode-theme-onedark 							//Normal,	Gray Background
 	- Atom One Dark Syntax Theme, andischerer.theme-atom-one-dar 				//Normal,	Gray Background
 	- Panda Theme, tinkertrain.theme-panda										//Less,		Gray Background
