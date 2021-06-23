@@ -815,6 +815,9 @@ function! QuickfixToggle()
     endif
 endfunction
 
+" :help quickfix
+" :copen [height] 
+" :cclose [height]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 	 Vim KeyMap - Basic Key
@@ -1686,7 +1689,7 @@ endfunction
 " Set Terminal Font (Custom Font) = DejaVu Sans Mono Book, 10 " Vim Terminal's Font in Ubuntu
 " Set Terminal Font (Custom Font) = DejaVu Sans Mono, 9       " Sublime's Font in Ubuntu
 " Set Terminal Font (Custom Font) = DejaVu Sans Mono Book, 9  " Sublime's Font in Ubuntu
-" Set Terminal Font (Custom Font) = ubuntu Mono Regular, 10   " Vim Terminal's Font in VM-Ubuntu    // Selected by Alex on 2021-April-23
+" Set Terminal Font (Custom Font) = ubuntu Mono Regular, 10   " Vim Terminal's Font in Ubuntu    // Selected by Alex on 2021-April-23
 "
 " Optiont:
 " Set Terminal Font (Custom Font) = consolas, 10
